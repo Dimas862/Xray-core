@@ -46,3 +46,17 @@ func (c *BrowserDialerClient) PostPacket(ctx context.Context, url string, body i
 
 	return nil
 }
+
+func (c *BrowserDialerClient) PutPacket(ctx context.Context, url string, body io.Reader, contentLength int64) error {
+	bytes, err := io.ReadAll(body)
+	if err != nil {
+		return err
+	}
+
+	err = browser_dialer.DialPut(url, c.transportConfig.GetRequestHeader(url), bytes)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}

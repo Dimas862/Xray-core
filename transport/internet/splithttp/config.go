@@ -64,7 +64,7 @@ func (c *Config) GetRequestHeader(rawURL string) http.Header {
 func (c *Config) WriteResponseHeader(writer http.ResponseWriter) {
 	// CORS headers for the browser dialer
 	writer.Header().Set("Access-Control-Allow-Origin", "*")
-	writer.Header().Set("Access-Control-Allow-Methods", "GET, POST")
+	writer.Header().Set("Access-Control-Allow-Methods", "GET, PUT")
 	// writer.Header().Set("X-Version", core.Version())
 	writer.Header().Set("X-Padding", strings.Repeat("X", int(c.GetNormalizedXPaddingBytes().rand())))
 }

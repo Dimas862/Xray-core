@@ -143,6 +143,32 @@ func DialPost(uri string, headers http.Header, payload []byte) error {
 	return nil
 }
 
+func DialPut(uri string, headers http.Header, payload []byte) error {
+	task := task{
+		Method: "PUT",
+		URL:    uri,
+		Extra:  httpExtraFromHeaders(headers),
+	}
+
+	conn, err := dialTask(task)
+	if err != nil {
+		return err
+	}
+
+	err = conn.WriteMessage(websocket.BinaryMessage, payload)
+	if err != nil {
+		return err
+	}
+
+	err = CheckOK(conn)
+	if err != nil {
+		return err
+	}
+
+	conn.Close()
+	return nil
+}
+
 func dialTask(task task) (*websocket.Conn, error) {
 	data, err := json.Marshal(task)
 	if err != nil {

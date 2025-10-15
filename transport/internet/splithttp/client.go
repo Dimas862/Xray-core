@@ -25,6 +25,9 @@ type DialerClient interface {
 
 	// ctx, url, body, contentLength
 	PostPacket(context.Context, string, io.Reader, int64) error
+
+	// ctx, url, body, contentLength
+	PutPacket(context.Context, string, io.Reader, int64) error
 }
 
 // implements splithttp.DialerClient in terms of direct network connections
@@ -57,11 +60,11 @@ func (c *DefaultDialerClient) OpenStream(ctx context.Context, url string, body i
 
 	method := "GET" // stream-down
 	if body != nil {
-		method = "POST" // stream-up/one
+		method = "PUT" // stream-up/one
 	}
 	req, _ := http.NewRequestWithContext(context.WithoutCancel(ctx), method, url, body)
 	req.Header = c.transportConfig.GetRequestHeader(url)
-	if method == "POST" && !c.transportConfig.NoGRPCHeader {
+	if method == "PUT" && !c.transportConfig.NoGRPCHeader {
 		req.Header.Set("Content-Type", "application/grpc")
 	}
 
@@ -94,7 +97,86 @@ func (c *DefaultDialerClient) OpenStream(ctx context.Context, url string, body i
 }
 
 func (c *DefaultDialerClient) PostPacket(ctx context.Context, url string, body io.Reader, contentLength int64) error {
-	req, err := http.NewRequestWithContext(context.WithoutCancel(ctx), "POST", url, body)
+	req, err := http.NewRequestWithContext(context.WithoutCancel(ctx), "PUT", url, body)
+	if err != nil {
+		return err
+	}
+	req.ContentLength = contentLength
+	req.Header = c.transportConfig.GetRequestHeader(url)
+
+	if c.httpVersion != "1.1" {
+		resp, err := c.client.Do(req)
+		if err != nil {
+			c.closed = true
+			return err
+		}
+
+		io.Copy(io.Discard, resp.Body)
+		defer resp.Body.Close()
+
+		if resp.StatusCode != 200 {
+			return errors.New("bad status code:", resp.Status)
+		}
+	} else {
+		// stringify the entire HTTP/1.1 request so it can be
+		// safely retried. if instead req.Write is called multiple
+		// times, the body is already drained after the first
+		// request
+		requestBuff := new(bytes.Buffer)
+		common.Must(req.Write(requestBuff))
+
+		var uploadConn any
+		var h1UploadConn *H1Conn
+
+		for {
+			uploadConn = c.uploadRawPool.Get()
+			newConnection := uploadConn == nil
+			if newConnection {
+				newConn, err := c.dialUploadConn(context.WithoutCancel(ctx))
+				if err != nil {
+					return err
+				}
+				h1UploadConn = NewH1Conn(newConn)
+				uploadConn = h1UploadConn
+			} else {
+				h1UploadConn = uploadConn.(*H1Conn)
+
+				// TODO: Replace 0 here with a config value later
+				// Or add some other condition for optimization purposes
+				if h1UploadConn.UnreadedResponsesCount > 0 {
+					resp, err := http.ReadResponse(h1UploadConn.RespBufReader, req)
+					if err != nil {
+						c.closed = true
+						return fmt.Errorf("error while reading response: %s", err.Error())
+					}
+					io.Copy(io.Discard, resp.Body)
+					defer resp.Body.Close()
+					if resp.StatusCode != 200 {
+						return fmt.Errorf("got non-200 error response code: %d", resp.StatusCode)
+					}
+				}
+			}
+
+			_, err := h1UploadConn.Write(requestBuff.Bytes())
+			// if the write failed, we try another connection from
+			// the pool, until the write on a new connection fails.
+			// failed writes to a pooled connection are normal when
+			// the connection has been closed in the meantime.
+			if err == nil {
+				break
+			} else if newConnection {
+				return err
+			}
+		}
+
+		c.uploadRawPool.Put(uploadConn)
+	}
+
+	return nil
+}
+
+func (c *DefaultDialerClient) PutPacket(ctx context.Context, url string, body io.Reader, contentLength int64) error {
+	req, err := http.NewRequestWithContext(context.WithoutCancel(ctx), "PUT", url, body)
 	if err != nil {
 		return err
 	}

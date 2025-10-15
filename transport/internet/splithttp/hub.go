@@ -168,7 +168,7 @@ func (h *requestHandler) ServeHTTP(writer http.ResponseWriter, request *http.Req
 	}
 	scMaxEachPostBytes := int(h.ln.config.GetNormalizedScMaxEachPostBytes().To)
 
-	if request.Method == "POST" && sessionId != "" { // stream-up, packet-up
+	if request.Method == "PUT" && sessionId != "" { // stream-up, packet-up
 		seq := ""
 		if len(subpath) > 1 {
 			seq = subpath[1]
