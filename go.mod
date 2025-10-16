@@ -1,4 +1,4 @@
-module github.com/Dimas862/xray-core/v1.90.0
+module github.com/Dimas862/xray-core
 
 go 1.25
 
