@@ -16,21 +16,21 @@ import (
 	"time"
 
 	"github.com/pires/go-proxyproto"
-	"github.com/xtls/xray-core/app/dispatcher"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/features/routing"
-	"github.com/xtls/xray-core/features/stats"
-	"github.com/xtls/xray-core/proxy/vless/encryption"
-	"github.com/xtls/xray-core/transport"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/reality"
-	"github.com/xtls/xray-core/transport/internet/stat"
-	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/Dimas862/xray-core/app/dispatcher"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/common/signal"
+	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/Dimas862/xray-core/features/stats"
+	"github.com/Dimas862/xray-core/proxy/vless/encryption"
+	"github.com/Dimas862/xray-core/transport"
+	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/internet/reality"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/transport/internet/tls"
 )
 
 var (
@@ -735,3 +735,4 @@ func IsRAWTransportWithoutSecurity(conn stat.Connection) bool {
 	_, ok3 := iConn.(*internet.UnixConnWrapper)
 	return ok1 || ok2 || ok3
 }
+

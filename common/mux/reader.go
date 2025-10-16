@@ -3,11 +3,11 @@ package mux
 import (
 	"io"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/crypto"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/serial"
 )
 
 // PacketReader is an io.Reader that reads whole chunk of Mux frames every time.
@@ -57,3 +57,4 @@ func (r *PacketReader) ReadMultiBuffer() (buf.MultiBuffer, error) {
 func NewStreamReader(reader *buf.BufferedReader) buf.Reader {
 	return crypto.NewChunkStreamReaderWithChunkCount(crypto.PlainChunkSizeParser{}, reader, 1)
 }
+

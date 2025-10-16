@@ -4,9 +4,9 @@ import (
 	"io"
 	"time"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/features/stats"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/signal"
+	"github.com/Dimas862/xray-core/features/stats"
 )
 
 type dataHandler func(MultiBuffer)
@@ -133,3 +133,4 @@ func CopyOnceTimeout(reader Reader, writer Writer, timeout time.Duration) error 
 	}
 	return writer.WriteMultiBuffer(mb)
 }
+

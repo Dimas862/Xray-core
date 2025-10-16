@@ -4,12 +4,12 @@ import (
 	"bytes"
 	"context"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/net/cnc"
-	"github.com/xtls/xray-core/features/routing"
-	"github.com/xtls/xray-core/transport/internet/udp"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/net/cnc"
+	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/Dimas862/xray-core/transport/internet/udp"
 )
 
 // CreateObject creates a new object based on the given Xray instance and config. The Xray instance may be nil.
@@ -82,3 +82,4 @@ func DialUDP(ctx context.Context, v *Instance) (net.PacketConn, error) {
 	}
 	return udp.DialDispatcher(ctx, dispatcher.(routing.Dispatcher))
 }
+

@@ -3,8 +3,8 @@ package drain
 import (
 	"io"
 
-	"github.com/xtls/xray-core/common/dice"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/common/errors"
 )
 
 type BehaviorSeedLimitedDrainer struct {
@@ -60,3 +60,4 @@ func (n NopDrainer) Drain(reader io.Reader) error {
 func NewNopDrainer() Drainer {
 	return &NopDrainer{}
 }
+

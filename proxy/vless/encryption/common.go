@@ -12,8 +12,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/crypto"
+	"github.com/Dimas862/xray-core/common/errors"
 	"golang.org/x/crypto/chacha20poly1305"
 	"lukechampine.com/blake3"
 )
@@ -278,3 +278,4 @@ func CreatPadding(paddingLens, paddingGaps [][3]int) (length int, lens []int, ga
 	}
 	return
 }
+

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"io"
 
-	creflect "github.com/xtls/xray-core/common/reflect"
-	cserial "github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/main/commands/base"
-	"github.com/xtls/xray-core/main/confloader"
+	creflect "github.com/Dimas862/xray-core/common/reflect"
+	cserial "github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/main/commands/base"
+	"github.com/Dimas862/xray-core/main/confloader"
 )
 
 var cmdJson = &base.Command{
@@ -69,3 +69,4 @@ func executeTypedMessageToJson(cmd *base.Command, args []string) {
 		base.Fatalf("marshal TypedMessage to json failed")
 	}
 }
+

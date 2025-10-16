@@ -6,16 +6,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	c "github.com/xtls/xray-core/common/ctx"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/grpc/encoding"
-	"github.com/xtls/xray-core/transport/internet/reality"
-	"github.com/xtls/xray-core/transport/internet/stat"
-	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/Dimas862/xray-core/common"
+	c "github.com/Dimas862/xray-core/common/ctx"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/internet/grpc/encoding"
+	"github.com/Dimas862/xray-core/transport/internet/reality"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/transport/internet/tls"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/backoff"
 	"google.golang.org/grpc/connectivity"
@@ -186,3 +186,4 @@ func getGrpcClient(ctx context.Context, dest net.Destination, streamSettings *in
 	globalDialerMap[dialerConf{dest, streamSettings}] = conn
 	return conn, err
 }
+

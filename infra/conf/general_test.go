@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/xtls/xray-core/common"
-	. "github.com/xtls/xray-core/infra/conf"
+	"github.com/Dimas862/xray-core/common"
+	. "github.com/Dimas862/xray-core/infra/conf"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -34,3 +34,4 @@ func runMultiTestCase(t *testing.T, testCases []TestCase) {
 		}
 	}
 }
+

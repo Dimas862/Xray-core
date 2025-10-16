@@ -1,7 +1,7 @@
 package convert
 
 import (
-	"github.com/xtls/xray-core/main/commands/base"
+	"github.com/Dimas862/xray-core/main/commands/base"
 )
 
 // CmdConvert do config convertion
@@ -15,3 +15,4 @@ var CmdConvert = &base.Command{
 		cmdJson,
 	},
 }
+

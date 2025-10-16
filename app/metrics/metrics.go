@@ -7,16 +7,16 @@ import (
 	_ "net/http/pprof"
 	"strings"
 
-	"github.com/xtls/xray-core/app/observatory"
-	"github.com/xtls/xray-core/app/stats"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/signal/done"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/extension"
-	"github.com/xtls/xray-core/features/outbound"
-	feature_stats "github.com/xtls/xray-core/features/stats"
+	"github.com/Dimas862/xray-core/app/observatory"
+	"github.com/Dimas862/xray-core/app/stats"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/signal/done"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/extension"
+	"github.com/Dimas862/xray-core/features/outbound"
+	feature_stats "github.com/Dimas862/xray-core/features/stats"
 )
 
 type MetricsHandler struct {
@@ -137,3 +137,4 @@ func init() {
 		return NewMetricsHandler(ctx, cfg.(*Config))
 	}))
 }
+

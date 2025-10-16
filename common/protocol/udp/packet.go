@@ -1,8 +1,8 @@
 package udp
 
 import (
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/net"
 )
 
 // Packet is a UDP packet together with its source and destination address.
@@ -11,3 +11,4 @@ type Packet struct {
 	Source  net.Destination
 	Target  net.Destination
 }
+

@@ -8,9 +8,9 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/xtls/xray-core/common"
-	. "github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/transport/pipe"
+	"github.com/Dimas862/xray-core/common"
+	. "github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/transport/pipe"
 )
 
 func TestWriter(t *testing.T) {
@@ -95,3 +95,4 @@ func TestWriterInterface(t *testing.T) {
 		}
 	}
 }
+

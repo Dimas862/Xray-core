@@ -1,6 +1,6 @@
 package conf
 
-import "github.com/xtls/xray-core/common/errors"
+import "github.com/Dimas862/xray-core/common/errors"
 
 type ConfigureFilePostProcessingStage interface {
 	Process(conf *Config) error
@@ -23,3 +23,4 @@ func PostProcessConfigureFile(conf *Config) error {
 	}
 	return nil
 }
+

@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/xtls/xray-core/app/dns"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/features/dns"
+	. "github.com/Dimas862/xray-core/app/dns"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/features/dns"
 )
 
 func TestLocalNameServer(t *testing.T) {
@@ -24,3 +24,4 @@ func TestLocalNameServer(t *testing.T) {
 		t.Error("expect some ips, but got 0")
 	}
 }
+

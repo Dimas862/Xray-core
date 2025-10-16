@@ -7,8 +7,8 @@
 package socks
 
 import (
-	net "github.com/xtls/xray-core/common/net"
-	protocol "github.com/xtls/xray-core/common/protocol"
+	net "github.com/Dimas862/xray-core/common/net"
+	protocol "github.com/Dimas862/xray-core/common/protocol"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -360,3 +360,4 @@ func file_proxy_socks_config_proto_init() {
 	file_proxy_socks_config_proto_goTypes = nil
 	file_proxy_socks_config_proto_depIdxs = nil
 }
+

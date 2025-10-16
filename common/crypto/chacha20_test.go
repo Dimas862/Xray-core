@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/xtls/xray-core/common"
-	. "github.com/xtls/xray-core/common/crypto"
+	"github.com/Dimas862/xray-core/common"
+	. "github.com/Dimas862/xray-core/common/crypto"
 )
 
 func mustDecodeHex(s string) []byte {
@@ -74,3 +74,4 @@ func TestChaCha20Decoding(t *testing.T) {
 		t.Fatal(r)
 	}
 }
+

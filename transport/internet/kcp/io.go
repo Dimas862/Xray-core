@@ -5,9 +5,9 @@ import (
 	"crypto/rand"
 	"io"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/transport/internet"
 )
 
 type PacketReader interface {
@@ -93,3 +93,4 @@ func (w *KCPPacketWriter) Write(b []byte) (int, error) {
 	_, err := w.Writer.Write(bb.Bytes())
 	return len(b), err
 }
+

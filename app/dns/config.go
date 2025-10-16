@@ -1,10 +1,10 @@
 package dns
 
 import (
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/strmatcher"
-	"github.com/xtls/xray-core/common/uuid"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/strmatcher"
+	"github.com/Dimas862/xray-core/common/uuid"
 )
 
 var typeMap = map[DomainMatchingType]strmatcher.Type{
@@ -62,3 +62,4 @@ func generateRandomTag() string {
 	id := uuid.New()
 	return "xray.system." + id.String()
 }
+

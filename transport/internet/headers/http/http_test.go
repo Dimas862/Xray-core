@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/net"
-	. "github.com/xtls/xray-core/transport/internet/headers/http"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/net"
+	. "github.com/Dimas862/xray-core/transport/internet/headers/http"
 )
 
 func TestReaderWriter(t *testing.T) {
@@ -303,3 +303,4 @@ func TestConnectionInvReq(t *testing.T) {
 		t.Error("Resp to non http conn", string(l))
 	}
 }
+

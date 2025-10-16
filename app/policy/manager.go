@@ -3,8 +3,8 @@ package policy
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/features/policy"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/features/policy"
 )
 
 // Instance is an instance of Policy manager.
@@ -66,3 +66,4 @@ func init() {
 		return New(ctx, config.(*Config))
 	}))
 }
+

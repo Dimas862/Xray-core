@@ -7,10 +7,10 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	. "github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	. "github.com/Dimas862/xray-core/common/crypto"
+	"github.com/Dimas862/xray-core/common/protocol"
 )
 
 func TestAuthenticationReaderWriter(t *testing.T) {
@@ -132,3 +132,4 @@ func TestAuthenticationReaderWriterPacket(t *testing.T) {
 		t.Error("error: ", err)
 	}
 }
+

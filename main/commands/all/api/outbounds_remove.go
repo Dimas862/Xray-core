@@ -3,9 +3,9 @@ package api
 import (
 	"fmt"
 
-	handlerService "github.com/xtls/xray-core/app/proxyman/command"
-	"github.com/xtls/xray-core/infra/conf/serial"
-	"github.com/xtls/xray-core/main/commands/base"
+	handlerService "github.com/Dimas862/xray-core/app/proxyman/command"
+	"github.com/Dimas862/xray-core/infra/conf/serial"
+	"github.com/Dimas862/xray-core/main/commands/base"
 )
 
 var cmdRemoveOutbounds = &base.Command{
@@ -76,3 +76,4 @@ func executeRemoveOutbounds(cmd *base.Command, args []string) {
 		showJSONResponse(resp)
 	}
 }
+

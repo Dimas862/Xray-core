@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	"github.com/cloudflare/circl/sign/mldsa/mldsa65"
-	"github.com/xtls/xray-core/main/commands/base"
+	"github.com/Dimas862/xray-core/main/commands/base"
 )
 
 var cmdMLDSA65 = &base.Command{
@@ -44,3 +44,4 @@ func executeMLDSA65(cmd *base.Command, args []string) {
 		base64.RawURLEncoding.EncodeToString(seed[:]),
 		base64.RawURLEncoding.EncodeToString(pub.Bytes()))
 }
+

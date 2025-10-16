@@ -2,8 +2,8 @@ package version
 
 import (
 	"context"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
 	"strconv"
 	"strings"
 )
@@ -75,3 +75,4 @@ func init() {
 		return New(ctx, config.(*Config))
 	}))
 }
+

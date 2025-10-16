@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/xtls/xray-core/main/commands/base"
-	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/Dimas862/xray-core/main/commands/base"
+	"github.com/Dimas862/xray-core/transport/internet/tls"
 )
 
 var cmdCertChainHash = &base.Command{
@@ -38,3 +38,4 @@ func executeCertChainHash(cmd *base.Command, args []string) {
 	certChainHashB64 := tls.CalculatePEMCertChainSHA256Hash(certContent)
 	fmt.Println(certChainHashB64)
 }
+

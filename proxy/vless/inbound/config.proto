@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.proxy.vless.inbound;
 option csharp_namespace = "Xray.Proxy.Vless.Inbound";
-option go_package = "github.com/xtls/xray-core/proxy/vless/inbound";
+option go_package = "github.com/Dimas862/xray-core/proxy/vless/inbound";
 option java_package = "com.xray.proxy.vless.inbound";
 option java_multiple_files = true;
 
@@ -27,3 +27,4 @@ message Config {
   int64 seconds_to = 6;
   string padding = 7;
 }
+

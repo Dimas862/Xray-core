@@ -5,18 +5,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/app/dns"
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/app/router"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/proxy/blackhole"
-	"github.com/xtls/xray-core/proxy/freedom"
-	"github.com/xtls/xray-core/proxy/socks"
-	"github.com/xtls/xray-core/testing/servers/tcp"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/app/dns"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	"github.com/Dimas862/xray-core/app/router"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/proxy/blackhole"
+	"github.com/Dimas862/xray-core/proxy/freedom"
+	"github.com/Dimas862/xray-core/proxy/socks"
+	"github.com/Dimas862/xray-core/testing/servers/tcp"
+	"github.com/Dimas862/xray-core/transport/internet"
 	xproxy "golang.org/x/net/proxy"
 )
 
@@ -106,3 +106,4 @@ func TestResolveIP(t *testing.T) {
 		}
 	}
 }
+

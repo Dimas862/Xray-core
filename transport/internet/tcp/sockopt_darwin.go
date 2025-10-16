@@ -4,10 +4,10 @@
 package tcp
 
 import (
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
 )
 
 // GetOriginalDestination from tcp conn
@@ -24,3 +24,4 @@ func GetOriginalDestination(conn stat.Connection) (net.Destination, error) {
 	}
 	return dest, nil
 }
+

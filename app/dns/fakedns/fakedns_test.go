@@ -6,10 +6,10 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/uuid"
-	"github.com/xtls/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/uuid"
+	"github.com/Dimas862/xray-core/features/dns"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -204,3 +204,4 @@ func TestFakeDNSMulti(t *testing.T) {
 		})
 	})
 }
+

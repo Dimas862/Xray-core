@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/pipe"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/task"
+	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/pipe"
 )
 
 type Server struct {
@@ -107,3 +107,4 @@ func (server *Server) handleConnection(conn net.Conn) {
 func (server *Server) Close() error {
 	return server.listener.Close()
 }
+

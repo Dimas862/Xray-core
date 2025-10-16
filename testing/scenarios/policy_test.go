@@ -5,22 +5,22 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/app/log"
-	"github.com/xtls/xray-core/app/policy"
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/common"
-	clog "github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/common/uuid"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/proxy/dokodemo"
-	"github.com/xtls/xray-core/proxy/freedom"
-	"github.com/xtls/xray-core/proxy/vmess"
-	"github.com/xtls/xray-core/proxy/vmess/inbound"
-	"github.com/xtls/xray-core/proxy/vmess/outbound"
-	"github.com/xtls/xray-core/testing/servers/tcp"
+	"github.com/Dimas862/xray-core/app/log"
+	"github.com/Dimas862/xray-core/app/policy"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	"github.com/Dimas862/xray-core/common"
+	clog "github.com/Dimas862/xray-core/common/log"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/common/uuid"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/proxy/dokodemo"
+	"github.com/Dimas862/xray-core/proxy/freedom"
+	"github.com/Dimas862/xray-core/proxy/vmess"
+	"github.com/Dimas862/xray-core/proxy/vmess/inbound"
+	"github.com/Dimas862/xray-core/proxy/vmess/outbound"
+	"github.com/Dimas862/xray-core/testing/servers/tcp"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -256,3 +256,4 @@ func TestZeroBuffer(t *testing.T) {
 		t.Error(err)
 	}
 }
+

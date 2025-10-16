@@ -3,7 +3,7 @@ package wireguard
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/errors"
 )
 
 func (c *DeviceConfig) preferIP4() bool {
@@ -52,3 +52,4 @@ func (c *DeviceConfig) createTun() tunCreator {
 	errors.LogWarning(context.Background(), "Using kernel TUN.")
 	return createKernelTun
 }
+

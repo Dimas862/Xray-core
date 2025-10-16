@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	. "github.com/xtls/xray-core/app/stats"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/features/stats"
+	. "github.com/Dimas862/xray-core/app/stats"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/features/stats"
 )
 
 func TestStatsCounter(t *testing.T) {
@@ -29,3 +29,4 @@ func TestStatsCounter(t *testing.T) {
 		t.Fatal("unexpected Value() return: ", v, ", wanted ", 0)
 	}
 }
+

@@ -4,7 +4,7 @@
 package udp
 
 import (
-	"github.com/xtls/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/net"
 )
 
 func RetrieveOriginalDest(oob []byte) net.Destination {
@@ -15,3 +15,4 @@ func ReadUDPMsg(conn *net.UDPConn, payload []byte, oob []byte) (int, int, int, *
 	nBytes, addr, err := conn.ReadFromUDP(payload)
 	return nBytes, 0, 0, addr, err
 }
+

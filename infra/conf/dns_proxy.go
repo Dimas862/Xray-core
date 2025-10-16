@@ -1,9 +1,9 @@
 package conf
 
 import (
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/proxy/dns"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/proxy/dns"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -36,3 +36,4 @@ func (c *DNSOutboundConfig) Build() (proto.Message, error) {
 	config.BlockTypes = c.BlockTypes
 	return config, nil
 }
+

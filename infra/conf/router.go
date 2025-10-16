@@ -6,11 +6,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/xtls/xray-core/app/router"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/platform/filesystem"
-	"github.com/xtls/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/app/router"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/platform/filesystem"
+	"github.com/Dimas862/xray-core/common/serial"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -665,3 +665,4 @@ func ParseRule(msg json.RawMessage) (*router.RoutingRule, error) {
 	}
 	return fieldrule, nil
 }
+

@@ -8,10 +8,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/testing/servers/tcp"
-	"github.com/xtls/xray-core/transport/internet"
-	. "github.com/xtls/xray-core/transport/internet/tcp"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/testing/servers/tcp"
+	"github.com/Dimas862/xray-core/transport/internet"
+	. "github.com/Dimas862/xray-core/transport/internet/tcp"
 )
 
 func TestGetOriginalDestination(t *testing.T) {
@@ -31,3 +31,4 @@ func TestGetOriginalDestination(t *testing.T) {
 		t.Error("unexpected state")
 	}
 }
+

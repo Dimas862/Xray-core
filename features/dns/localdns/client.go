@@ -1,8 +1,8 @@
 package localdns
 
 import (
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/features/dns"
 )
 
 // Client is an implementation of dns.Client, which queries localhost for DNS.
@@ -64,3 +64,4 @@ func (*Client) LookupIP(host string, option dns.IPOption) ([]net.IP, uint32, err
 func New() *Client {
 	return &Client{}
 }
+

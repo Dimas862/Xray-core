@@ -3,13 +3,13 @@ package internet_test
 import (
 	"testing"
 
-	"github.com/xtls/xray-core/common"
-	. "github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/headers/noop"
-	"github.com/xtls/xray-core/transport/internet/headers/srtp"
-	"github.com/xtls/xray-core/transport/internet/headers/utp"
-	"github.com/xtls/xray-core/transport/internet/headers/wechat"
-	"github.com/xtls/xray-core/transport/internet/headers/wireguard"
+	"github.com/Dimas862/xray-core/common"
+	. "github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/internet/headers/noop"
+	"github.com/Dimas862/xray-core/transport/internet/headers/srtp"
+	"github.com/Dimas862/xray-core/transport/internet/headers/utp"
+	"github.com/Dimas862/xray-core/transport/internet/headers/wechat"
+	"github.com/Dimas862/xray-core/transport/internet/headers/wireguard"
 )
 
 func TestAllHeadersLoadable(t *testing.T) {
@@ -47,3 +47,4 @@ func TestAllHeadersLoadable(t *testing.T) {
 		}
 	}
 }
+

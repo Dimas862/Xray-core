@@ -1,8 +1,8 @@
 package api
 
 import (
-	routerService "github.com/xtls/xray-core/app/router/command"
-	"github.com/xtls/xray-core/main/commands/base"
+	routerService "github.com/Dimas862/xray-core/app/router/command"
+	"github.com/Dimas862/xray-core/main/commands/base"
 )
 
 var cmdBalancerOverride = &base.Command{
@@ -71,3 +71,4 @@ func executeBalancerOverride(cmd *base.Command, args []string) {
 		base.Fatalf("failed to perform balancer health checks: %s", err)
 	}
 }
+

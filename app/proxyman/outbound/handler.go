@@ -9,27 +9,27 @@ import (
 	gonet "net"
 	"os"
 
-	"github.com/xtls/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/common/dice"
 
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/mux"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/net/cnc"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/outbound"
-	"github.com/xtls/xray-core/features/policy"
-	"github.com/xtls/xray-core/features/stats"
-	"github.com/xtls/xray-core/proxy"
-	"github.com/xtls/xray-core/transport"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/stat"
-	"github.com/xtls/xray-core/transport/internet/tls"
-	"github.com/xtls/xray-core/transport/pipe"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/mux"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/net/cnc"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/outbound"
+	"github.com/Dimas862/xray-core/features/policy"
+	"github.com/Dimas862/xray-core/features/stats"
+	"github.com/Dimas862/xray-core/proxy"
+	"github.com/Dimas862/xray-core/transport"
+	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/transport/internet/tls"
+	"github.com/Dimas862/xray-core/transport/pipe"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -410,3 +410,4 @@ func ParseRandomIP(addr net.Address, prefix string) net.Address {
 
 	return net.ParseAddress(gonet.IP(padded).String())
 }
+

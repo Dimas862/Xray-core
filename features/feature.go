@@ -1,7 +1,7 @@
 package features
 
 import (
-	"github.com/xtls/xray-core/common"
+	"github.com/Dimas862/xray-core/common"
 )
 
 // Feature is the interface for Xray features. All features must implement this interface.
@@ -10,3 +10,4 @@ type Feature interface {
 	common.HasType
 	common.Runnable
 }
+

@@ -6,7 +6,7 @@ import (
 	"net"
 	"strings"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/errors"
 )
 
 var (
@@ -217,3 +217,4 @@ func NewIPOrDomain(addr Address) *IPOrDomain {
 		panic("Unknown Address type.")
 	}
 }
+

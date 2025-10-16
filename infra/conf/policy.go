@@ -1,7 +1,7 @@
 package conf
 
 import (
-	"github.com/xtls/xray-core/app/policy"
+	"github.com/Dimas862/xray-core/app/policy"
 )
 
 type Policy struct {
@@ -100,3 +100,4 @@ func (c *PolicyConfig) Build() (*policy.Config, error) {
 
 	return config, nil
 }
+

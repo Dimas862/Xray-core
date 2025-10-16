@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.proxy.freedom;
 option csharp_namespace = "Xray.Proxy.Freedom";
-option go_package = "github.com/xtls/xray-core/proxy/freedom";
+option go_package = "github.com/Dimas862/xray-core/proxy/freedom";
 option java_package = "com.xray.proxy.freedom";
 option java_multiple_files = true;
 
@@ -40,3 +40,4 @@ message Config {
   uint32 proxy_protocol = 6;
   repeated Noise noises = 7;
 }
+

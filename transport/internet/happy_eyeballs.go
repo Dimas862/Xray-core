@@ -2,8 +2,8 @@ package internet
 
 import (
 	"context"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
 	"time"
 )
 
@@ -173,3 +173,4 @@ func tcpTryDial(ctx context.Context, src net.Address, sockopt *SocketConfig, ip 
 		return
 	}
 }
+

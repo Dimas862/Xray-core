@@ -1,7 +1,7 @@
 package pipe
 
 import (
-	"github.com/xtls/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/buf"
 )
 
 // Writer is a buf.Writer that writes data into a pipe.
@@ -27,3 +27,4 @@ func (w *Writer) Len() int32 {
 func (w *Writer) Interrupt() {
 	w.pipe.Interrupt()
 }
+

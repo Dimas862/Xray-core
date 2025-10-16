@@ -10,10 +10,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/common/signal/semaphore"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/signal"
+	"github.com/Dimas862/xray-core/common/signal/semaphore"
 )
 
 var (
@@ -661,3 +661,4 @@ func (c *Connection) Ping(current uint32, cmd Command) {
 	atomic.StoreUint32(&c.lastPingTime, current)
 	seg.Release()
 }
+

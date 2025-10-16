@@ -3,9 +3,9 @@ package protocol
 import (
 	"runtime"
 
-	"github.com/xtls/xray-core/common/bitmask"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/uuid"
+	"github.com/Dimas862/xray-core/common/bitmask"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/uuid"
 	"golang.org/x/sys/cpu"
 )
 
@@ -102,3 +102,4 @@ func (sc *SecurityConfig) GetSecurityType() SecurityType {
 func isDomainTooLong(domain string) bool {
 	return len(domain) > 256
 }
+

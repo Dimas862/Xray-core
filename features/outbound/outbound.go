@@ -3,10 +3,10 @@ package outbound
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/features"
-	"github.com/xtls/xray-core/transport"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/features"
+	"github.com/Dimas862/xray-core/transport"
 )
 
 // Handler is the interface for handlers that process outbound connections.
@@ -49,3 +49,4 @@ type Manager interface {
 func ManagerType() interface{} {
 	return (*Manager)(nil)
 }
+

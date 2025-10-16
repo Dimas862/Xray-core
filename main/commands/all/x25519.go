@@ -1,7 +1,7 @@
 package all
 
 import (
-	"github.com/xtls/xray-core/main/commands/base"
+	"github.com/Dimas862/xray-core/main/commands/base"
 )
 
 var cmdX25519 = &base.Command{
@@ -27,3 +27,4 @@ var input_x25519 = cmdX25519.Flag.String("i", "", "")
 func executeX25519(cmd *base.Command, args []string) {
 	Curve25519Genkey(false, *input_x25519)
 }
+

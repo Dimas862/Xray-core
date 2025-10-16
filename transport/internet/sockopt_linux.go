@@ -8,7 +8,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/errors"
 	"golang.org/x/sys/unix"
 )
 
@@ -271,3 +271,4 @@ func setReusePort(fd uintptr) error {
 	}
 	return nil
 }
+

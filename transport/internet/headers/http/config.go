@@ -3,7 +3,7 @@ package http
 import (
 	"strings"
 
-	"github.com/xtls/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/common/dice"
 )
 
 func pickString(arr []string) string {
@@ -98,3 +98,4 @@ func (v *ResponseConfig) GetStatusValue() *Status {
 	}
 	return v.Status
 }
+

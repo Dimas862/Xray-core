@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/protocol/tls/cert"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/main/commands/base"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/protocol/tls/cert"
+	"github.com/Dimas862/xray-core/common/task"
+	"github.com/Dimas862/xray-core/main/commands/base"
 )
 
 // cmdCert is the tls cert command
@@ -144,3 +144,4 @@ type jsonCert struct {
 	Certificate []string `json:"certificate"`
 	Key         []string `json:"key"`
 }
+

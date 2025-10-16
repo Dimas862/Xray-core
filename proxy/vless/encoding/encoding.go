@@ -4,14 +4,14 @@ import (
 	"context"
 	"io"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/proxy"
-	"github.com/xtls/xray-core/proxy/vless"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/common/signal"
+	"github.com/Dimas862/xray-core/proxy"
+	"github.com/Dimas862/xray-core/proxy/vless"
 )
 
 const (
@@ -200,3 +200,4 @@ func XtlsRead(reader buf.Reader, writer buf.Writer, timer *signal.ActivityTimer,
 	}
 	return nil
 }
+

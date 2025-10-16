@@ -3,9 +3,9 @@ package internet
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
 )
 
 var transportListenerCache = make(map[string]ListenFunc)
@@ -91,3 +91,4 @@ func ListenSystem(ctx context.Context, addr net.Addr, sockopt *SocketConfig) (ne
 func ListenSystemPacket(ctx context.Context, addr net.Addr, sockopt *SocketConfig) (net.PacketConn, error) {
 	return effectiveListener.ListenPacket(ctx, addr, sockopt)
 }
+

@@ -3,12 +3,12 @@ package dns
 import (
 	"context"
 	go_errors "errors"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/signal/pubsub"
-	"github.com/xtls/xray-core/common/task"
-	dns_feature "github.com/xtls/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/signal/pubsub"
+	"github.com/Dimas862/xray-core/common/task"
+	dns_feature "github.com/Dimas862/xray-core/features/dns"
 	"golang.org/x/net/dns/dnsmessage"
 	"sync"
 	"time"
@@ -186,3 +186,4 @@ func closeSubscribers(sub4 *pubsub.Subscriber, sub6 *pubsub.Subscriber) {
 		sub6.Close()
 	}
 }
+

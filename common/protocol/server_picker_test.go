@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/common/net"
-	. "github.com/xtls/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/net"
+	. "github.com/Dimas862/xray-core/common/protocol"
 )
 
 func TestServerList(t *testing.T) {
@@ -69,3 +69,4 @@ func TestServerPicker(t *testing.T) {
 		t.Error("server: ", server.Destination())
 	}
 }
+

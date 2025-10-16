@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	. "github.com/xtls/xray-core/common/strmatcher"
+	. "github.com/Dimas862/xray-core/common/strmatcher"
 )
 
 func TestDomainMatcherGroup(t *testing.T) {
@@ -74,3 +74,4 @@ func TestEmptyDomainMatcherGroup(t *testing.T) {
 		t.Error("Expect [], but ", r)
 	}
 }
+

@@ -11,9 +11,9 @@ import (
 
 	"golang.zx2c4.com/wireguard/conn"
 
-	xnet "github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/features/dns"
-	"github.com/xtls/xray-core/transport/internet"
+	xnet "github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/transport/internet"
 )
 
 type netReadInfo struct {
@@ -261,3 +261,4 @@ func toNetIpAddr(addr xnet.Address) netip.Addr {
 		return netip.AddrFrom16(arr)
 	}
 }
+

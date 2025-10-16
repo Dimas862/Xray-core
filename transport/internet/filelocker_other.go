@@ -7,7 +7,7 @@ import (
 	"context"
 	"os"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/errors"
 	"golang.org/x/sys/unix"
 )
 
@@ -37,3 +37,4 @@ func (fl *FileLocker) Release() {
 		errors.LogInfoInner(context.Background(), err, "failed to remove file: ", fl.path)
 	}
 }
+

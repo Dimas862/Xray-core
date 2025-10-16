@@ -5,13 +5,13 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/uuid"
-	"github.com/xtls/xray-core/proxy/vmess"
-	. "github.com/xtls/xray-core/proxy/vmess/encoding"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/uuid"
+	"github.com/Dimas862/xray-core/proxy/vmess"
+	. "github.com/Dimas862/xray-core/proxy/vmess/encoding"
 )
 
 func toAccount(a *vmess.Account) protocol.Account {
@@ -151,3 +151,4 @@ func TestMuxRequest(t *testing.T) {
 		t.Error(r)
 	}
 }
+

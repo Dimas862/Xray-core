@@ -3,10 +3,10 @@ package dns
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/features/dns"
-	"github.com/xtls/xray-core/features/routing"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/features/routing"
 )
 
 // ResolvableContext is an implementation of routing.Context, with domain resolving capability.
@@ -47,3 +47,4 @@ func (ctx *ResolvableContext) GetTargetIPs() []net.IP {
 func ContextWithDNSClient(ctx routing.Context, client dns.Client) routing.Context {
 	return &ResolvableContext{Context: ctx, dnsClient: client}
 }
+

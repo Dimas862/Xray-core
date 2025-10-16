@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/binary"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/dice"
 )
 
 type VideoChat struct {
@@ -41,3 +41,4 @@ func NewVideoChat(ctx context.Context, config interface{}) (interface{}, error) 
 func init() {
 	common.Must(common.RegisterConfig((*VideoConfig)(nil), NewVideoChat))
 }
+

@@ -8,7 +8,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/errors"
 )
 
 type XmuxConn interface {
@@ -111,3 +111,4 @@ func (m *XmuxManager) GetXmuxClient(ctx context.Context) *XmuxClient { // when l
 	}
 	return xmuxClient
 }
+

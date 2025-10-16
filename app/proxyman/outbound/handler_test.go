@@ -8,17 +8,17 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/app/policy"
-	"github.com/xtls/xray-core/app/proxyman"
-	. "github.com/xtls/xray-core/app/proxyman/outbound"
-	"github.com/xtls/xray-core/app/stats"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/common/session"
-	core "github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/outbound"
-	"github.com/xtls/xray-core/proxy/freedom"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/app/policy"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	. "github.com/Dimas862/xray-core/app/proxyman/outbound"
+	"github.com/Dimas862/xray-core/app/stats"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/common/session"
+	core "github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/outbound"
+	"github.com/Dimas862/xray-core/proxy/freedom"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
 )
 
 func TestInterfaces(t *testing.T) {
@@ -174,3 +174,4 @@ func TestTagsCache(t *testing.T) {
 	stop_get = true
 	wg_get.Wait()
 }
+

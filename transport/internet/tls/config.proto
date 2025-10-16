@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.transport.internet.tls;
 option csharp_namespace = "Xray.Transport.Internet.Tls";
-option go_package = "github.com/xtls/xray-core/transport/internet/tls";
+option go_package = "github.com/Dimas862/xray-core/transport/internet/tls";
 option java_package = "com.xray.transport.internet.tls";
 option java_multiple_files = true;
 
@@ -102,3 +102,4 @@ message Config {
 
   SocketConfig ech_socket_settings = 21;
 }
+

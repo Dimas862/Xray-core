@@ -5,8 +5,8 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/dice"
 )
 
 type DNS struct {
@@ -121,3 +121,4 @@ func packDomainName(s string, msg []byte) (off1 int, err error) {
 func init() {
 	common.Must(common.RegisterConfig((*Config)(nil), NewDNS))
 }
+

@@ -1,4 +1,4 @@
-package platform // import "github.com/xtls/xray-core/common/platform"
+package platform // import "github.com/Dimas862/xray-core/common/platform"
 
 import (
 	"os"
@@ -100,3 +100,4 @@ func GetConfDirPath() string {
 	configPath := NewEnvFlag(ConfdirLocation).GetValue(func() string { return "" })
 	return configPath
 }
+

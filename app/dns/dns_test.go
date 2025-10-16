@@ -6,20 +6,20 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/miekg/dns"
-	"github.com/xtls/xray-core/app/dispatcher"
-	. "github.com/xtls/xray-core/app/dns"
-	"github.com/xtls/xray-core/app/policy"
-	"github.com/xtls/xray-core/app/proxyman"
-	_ "github.com/xtls/xray-core/app/proxyman/outbound"
-	"github.com/xtls/xray-core/app/router"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/core"
-	feature_dns "github.com/xtls/xray-core/features/dns"
-	"github.com/xtls/xray-core/proxy/freedom"
-	"github.com/xtls/xray-core/testing/servers/udp"
+	"github.com/Dimas862/xray-core/app/dispatcher"
+	. "github.com/Dimas862/xray-core/app/dns"
+	"github.com/Dimas862/xray-core/app/policy"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	_ "github.com/Dimas862/xray-core/app/proxyman/outbound"
+	"github.com/Dimas862/xray-core/app/router"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/core"
+	feature_dns "github.com/Dimas862/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/proxy/freedom"
+	"github.com/Dimas862/xray-core/testing/servers/udp"
 )
 
 type staticHandler struct{}
@@ -1063,3 +1063,4 @@ func TestMultiMatchPrioritizedDomain(t *testing.T) {
 		t.Error("DNS query doesn't finish in 2 seconds.")
 	}
 }
+

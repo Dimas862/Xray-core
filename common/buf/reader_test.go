@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/xtls/xray-core/common"
-	. "github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/transport/pipe"
+	"github.com/Dimas862/xray-core/common"
+	. "github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/transport/pipe"
 )
 
 func TestBytesReaderWriteTo(t *testing.T) {
@@ -129,3 +129,4 @@ func TestReaderInterface(t *testing.T) {
 	_ = (io.ByteReader)(new(BufferedReader))
 	_ = (io.WriterTo)(new(BufferedReader))
 }
+

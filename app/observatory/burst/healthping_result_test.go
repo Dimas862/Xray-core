@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/app/observatory/burst"
+	"github.com/Dimas862/xray-core/app/observatory/burst"
 )
 
 func TestHealthPingResults(t *testing.T) {
@@ -104,3 +104,4 @@ func TestHealthPingResultsIgnoreOutdated(t *testing.T) {
 		t.Errorf("expected: %v, actual: %v", expected, actual)
 	}
 }
+

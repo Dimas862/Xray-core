@@ -4,20 +4,20 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/app/router"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/proxy/blackhole"
-	"github.com/xtls/xray-core/proxy/dokodemo"
-	"github.com/xtls/xray-core/proxy/freedom"
-	"github.com/xtls/xray-core/proxy/http"
-	"github.com/xtls/xray-core/proxy/socks"
-	"github.com/xtls/xray-core/testing/servers/tcp"
-	"github.com/xtls/xray-core/testing/servers/udp"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	"github.com/Dimas862/xray-core/app/router"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/proxy/blackhole"
+	"github.com/Dimas862/xray-core/proxy/dokodemo"
+	"github.com/Dimas862/xray-core/proxy/freedom"
+	"github.com/Dimas862/xray-core/proxy/http"
+	"github.com/Dimas862/xray-core/proxy/socks"
+	"github.com/Dimas862/xray-core/testing/servers/tcp"
+	"github.com/Dimas862/xray-core/testing/servers/udp"
 	xproxy "golang.org/x/net/proxy"
 	socks4 "h12.io/socks"
 )
@@ -493,3 +493,4 @@ func TestSocksConformanceMod(t *testing.T) {
 		}
 	}
 }
+

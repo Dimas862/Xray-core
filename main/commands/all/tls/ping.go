@@ -8,8 +8,8 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/xtls/xray-core/main/commands/base"
-	. "github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/Dimas862/xray-core/main/commands/base"
+	. "github.com/Dimas862/xray-core/transport/internet/tls"
 )
 
 // cmdPing is the tls ping command
@@ -161,3 +161,4 @@ func showCert() func(rawCerts [][]byte, verifiedChains [][]*x509.Certificate) er
 		return nil
 	}
 }
+

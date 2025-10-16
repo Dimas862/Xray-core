@@ -3,8 +3,8 @@ package all
 import (
 	"fmt"
 
-	"github.com/xtls/xray-core/common/uuid"
-	"github.com/xtls/xray-core/main/commands/base"
+	"github.com/Dimas862/xray-core/common/uuid"
+	"github.com/Dimas862/xray-core/main/commands/base"
 )
 
 var cmdUUID = &base.Command{
@@ -38,3 +38,4 @@ func executeUUID(cmd *base.Command, args []string) {
 	}
 	fmt.Println(output)
 }
+

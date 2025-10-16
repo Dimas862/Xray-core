@@ -6,11 +6,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/outbound"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/outbound"
 )
 
 // Manager is to manage all outbound handlers.
@@ -196,3 +196,4 @@ func init() {
 		return NewHandler(ctx, config.(*core.OutboundHandlerConfig))
 	}))
 }
+

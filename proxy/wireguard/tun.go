@@ -11,10 +11,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/log"
-	xnet "github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/proxy/wireguard/gvisortun"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/log"
+	xnet "github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/proxy/wireguard/gvisortun"
 	"gvisor.dev/gvisor/pkg/tcpip"
 	"gvisor.dev/gvisor/pkg/tcpip/adapters/gonet"
 	"gvisor.dev/gvisor/pkg/tcpip/transport/tcp"
@@ -203,3 +203,4 @@ func createGVisorTun(localAddresses []netip.Addr, mtu int, handler promiscuousMo
 	out.tun, out.net = tun, n
 	return out, nil
 }
+

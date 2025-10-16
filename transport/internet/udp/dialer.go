@@ -3,10 +3,10 @@ package udp
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
 )
 
 func init() {
@@ -24,3 +24,4 @@ func init() {
 			return stat.Connection(conn), nil
 		}))
 }
+

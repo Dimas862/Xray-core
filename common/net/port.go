@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"strconv"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/errors"
 )
 
 // Port represents a network port in TCP and UDP protocol.
@@ -95,3 +95,4 @@ func (mpl MemoryPortList) Contains(port Port) bool {
 	}
 	return false
 }
+

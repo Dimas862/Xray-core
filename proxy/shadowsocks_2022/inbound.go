@@ -11,16 +11,16 @@ import (
 	E "github.com/sagernet/sing/common/exceptions"
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/singbridge"
-	"github.com/xtls/xray-core/features/routing"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/log"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/common/singbridge"
+	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
 )
 
 func init() {
@@ -169,3 +169,4 @@ func (c *natPacketConn) WritePacket(buffer *B.Buffer, addr M.Socksaddr) error {
 	_, err := buffer.WriteTo(c)
 	return err
 }
+

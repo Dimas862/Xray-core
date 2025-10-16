@@ -3,7 +3,7 @@ package mux_test
 import (
 	"testing"
 
-	. "github.com/xtls/xray-core/common/mux"
+	. "github.com/Dimas862/xray-core/common/mux"
 )
 
 func TestSessionManagerAdd(t *testing.T) {
@@ -49,3 +49,4 @@ func TestSessionManagerClose(t *testing.T) {
 		t.Error("not able to close")
 	}
 }
+

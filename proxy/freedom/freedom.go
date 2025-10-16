@@ -7,25 +7,25 @@ import (
 	"time"
 
 	"github.com/pires/go-proxyproto"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/common/dice"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/platform"
-	"github.com/xtls/xray-core/common/retry"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/common/utils"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/policy"
-	"github.com/xtls/xray-core/features/stats"
-	"github.com/xtls/xray-core/proxy"
-	"github.com/xtls/xray-core/transport"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/crypto"
+	"github.com/Dimas862/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/platform"
+	"github.com/Dimas862/xray-core/common/retry"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/common/signal"
+	"github.com/Dimas862/xray-core/common/task"
+	"github.com/Dimas862/xray-core/common/utils"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/policy"
+	"github.com/Dimas862/xray-core/features/stats"
+	"github.com/Dimas862/xray-core/proxy"
+	"github.com/Dimas862/xray-core/transport"
+	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
 )
 
 var useSplice bool
@@ -577,3 +577,4 @@ func GenerateRandomBytes(n int64) ([]byte, error) {
 
 	return b, nil
 }
+

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.transport.internet.kcp;
 option csharp_namespace = "Xray.Transport.Internet.Kcp";
-option go_package = "github.com/xtls/xray-core/transport/internet/kcp";
+option go_package = "github.com/Dimas862/xray-core/transport/internet/kcp";
 option java_package = "com.xray.transport.internet.kcp";
 option java_multiple_files = true;
 
@@ -61,3 +61,4 @@ message Config {
   reserved 9;
   EncryptionSeed seed = 10;
 }
+

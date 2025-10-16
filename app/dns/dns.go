@@ -9,12 +9,12 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/strmatcher"
-	"github.com/xtls/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/common/strmatcher"
+	"github.com/Dimas862/xray-core/features/dns"
 )
 
 // DNS is a DNS rely server.
@@ -346,3 +346,4 @@ func checkSystemNetwork() (supportIPv4 bool, supportIPv6 bool) {
 	}
 	return
 }
+

@@ -1,15 +1,15 @@
 // Package session provides functions for sessions of incoming requests.
-package session // import "github.com/xtls/xray-core/common/session"
+package session // import "github.com/Dimas862/xray-core/common/session"
 
 import (
 	"context"
 	"math/rand"
 
-	c "github.com/xtls/xray-core/common/ctx"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/signal"
+	c "github.com/Dimas862/xray-core/common/ctx"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/signal"
 )
 
 // NewID generates a new ID. The generated ID is high likely to be unique, but not cryptographically secure.
@@ -120,3 +120,4 @@ func (c *Content) Attribute(name string) string {
 	}
 	return c.Attributes[name]
 }
+

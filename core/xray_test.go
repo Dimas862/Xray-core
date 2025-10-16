@@ -3,21 +3,21 @@ package core_test
 import (
 	"testing"
 
-	"github.com/xtls/xray-core/app/dispatcher"
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/common/uuid"
-	. "github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/dns"
-	"github.com/xtls/xray-core/features/dns/localdns"
-	_ "github.com/xtls/xray-core/main/distro/all"
-	"github.com/xtls/xray-core/proxy/dokodemo"
-	"github.com/xtls/xray-core/proxy/vmess"
-	"github.com/xtls/xray-core/proxy/vmess/outbound"
-	"github.com/xtls/xray-core/testing/servers/tcp"
+	"github.com/Dimas862/xray-core/app/dispatcher"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/common/uuid"
+	. "github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/features/dns/localdns"
+	_ "github.com/Dimas862/xray-core/main/distro/all"
+	"github.com/Dimas862/xray-core/proxy/dokodemo"
+	"github.com/Dimas862/xray-core/proxy/vmess"
+	"github.com/Dimas862/xray-core/proxy/vmess/outbound"
+	"github.com/Dimas862/xray-core/testing/servers/tcp"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -88,3 +88,4 @@ func TestXrayClose(t *testing.T) {
 	common.Must(err)
 	server.Close()
 }
+

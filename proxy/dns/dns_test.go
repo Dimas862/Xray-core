@@ -7,20 +7,20 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/miekg/dns"
-	"github.com/xtls/xray-core/app/dispatcher"
-	dnsapp "github.com/xtls/xray-core/app/dns"
-	"github.com/xtls/xray-core/app/policy"
-	"github.com/xtls/xray-core/app/proxyman"
-	_ "github.com/xtls/xray-core/app/proxyman/inbound"
-	_ "github.com/xtls/xray-core/app/proxyman/outbound"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/core"
-	dns_proxy "github.com/xtls/xray-core/proxy/dns"
-	"github.com/xtls/xray-core/proxy/dokodemo"
-	"github.com/xtls/xray-core/testing/servers/tcp"
-	"github.com/xtls/xray-core/testing/servers/udp"
+	"github.com/Dimas862/xray-core/app/dispatcher"
+	dnsapp "github.com/Dimas862/xray-core/app/dns"
+	"github.com/Dimas862/xray-core/app/policy"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	_ "github.com/Dimas862/xray-core/app/proxyman/inbound"
+	_ "github.com/Dimas862/xray-core/app/proxyman/outbound"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/core"
+	dns_proxy "github.com/Dimas862/xray-core/proxy/dns"
+	"github.com/Dimas862/xray-core/proxy/dokodemo"
+	"github.com/Dimas862/xray-core/testing/servers/tcp"
+	"github.com/Dimas862/xray-core/testing/servers/udp"
 )
 
 type staticHandler struct{}
@@ -368,3 +368,4 @@ func TestUDP2TCPDNSTunnel(t *testing.T) {
 		t.Error(r)
 	}
 }
+

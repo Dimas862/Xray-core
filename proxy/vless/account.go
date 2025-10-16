@@ -3,9 +3,9 @@ package vless
 import (
 	"google.golang.org/protobuf/proto"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/uuid"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/uuid"
 )
 
 // AsAccount implements protocol.Account.AsAccount().
@@ -60,3 +60,4 @@ func (a *MemoryAccount) ToProto() proto.Message {
 		Reverse:    a.Reverse,
 	}
 }
+

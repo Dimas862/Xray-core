@@ -8,9 +8,9 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
 )
 
 const SO_ORIGINAL_DST = 80
@@ -50,3 +50,4 @@ func GetOriginalDestination(conn stat.Connection) (net.Destination, error) {
 	}
 	return dest, nil
 }
+

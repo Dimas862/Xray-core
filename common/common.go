@@ -10,7 +10,7 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/errors"
 )
 
 // ErrNoClue is for the situation that existing information is not enough to make a decision. For example, Router may return this error when there is no suitable route.
@@ -165,3 +165,4 @@ func CloseIfExists(obj any) error {
 	}
 	return nil
 }
+

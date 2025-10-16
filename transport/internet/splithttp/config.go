@@ -5,9 +5,9 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/crypto"
+	"github.com/Dimas862/xray-core/transport/internet"
 )
 
 func (c *Config) GetNormalizedPath() string {
@@ -185,3 +185,4 @@ func init() {
 func (c RangeConfig) rand() int32 {
 	return int32(crypto.RandBetween(int64(c.From), int64(c.To)))
 }
+

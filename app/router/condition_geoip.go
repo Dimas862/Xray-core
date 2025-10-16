@@ -4,7 +4,7 @@ import (
 	"net/netip"
 	"strconv"
 
-	"github.com/xtls/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/net"
 	"go4.org/netipx"
 )
 
@@ -142,3 +142,4 @@ func MatchIPs(matchers []*GeoIPMatcher, ips []net.IP, reverse bool) []net.IP {
 	}
 	return newIPs
 }
+

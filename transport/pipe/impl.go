@@ -7,10 +7,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/common/signal/done"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/signal"
+	"github.com/Dimas862/xray-core/common/signal/done"
 )
 
 type state byte
@@ -216,3 +216,4 @@ func (p *pipe) Interrupt() {
 
 	common.Must(p.done.Close())
 }
+

@@ -4,8 +4,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/protocol"
 )
 
 // Validator stores valid trojan users.
@@ -80,3 +80,4 @@ func (v *Validator) GetCount() int64 {
 	})
 	return c
 }
+

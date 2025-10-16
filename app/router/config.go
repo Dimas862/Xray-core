@@ -5,9 +5,9 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/features/outbound"
-	"github.com/xtls/xray-core/features/routing"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/features/outbound"
+	"github.com/Dimas862/xray-core/features/routing"
 )
 
 type Rule struct {
@@ -159,3 +159,4 @@ func (br *BalancingRule) Build(ohm outbound.Manager, dispatcher routing.Dispatch
 		return nil, errors.New("unrecognized balancer type")
 	}
 }
+

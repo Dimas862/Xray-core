@@ -5,16 +5,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/common/dice"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/mux"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/proxy"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/app/proxyman"
+	"github.com/Dimas862/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/mux"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/common/task"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/proxy"
+	"github.com/Dimas862/xray-core/transport/internet"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -220,3 +220,4 @@ func (h *DynamicInboundHandler) ProxySettings() *serial.TypedMessage {
 	}
 	return nil
 }
+

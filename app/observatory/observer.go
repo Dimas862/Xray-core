@@ -9,17 +9,17 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	v2net "github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/signal/done"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/extension"
-	"github.com/xtls/xray-core/features/outbound"
-	"github.com/xtls/xray-core/features/routing"
-	"github.com/xtls/xray-core/transport/internet/tagged"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	v2net "github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/common/signal/done"
+	"github.com/Dimas862/xray-core/common/task"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/extension"
+	"github.com/Dimas862/xray-core/features/outbound"
+	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/Dimas862/xray-core/transport/internet/tagged"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -238,3 +238,4 @@ func init() {
 		return New(ctx, config.(*Config))
 	}))
 }
+

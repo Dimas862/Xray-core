@@ -6,13 +6,13 @@ import (
 
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/net/cnc"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/proxy"
-	"github.com/xtls/xray-core/transport"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/pipe"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/net/cnc"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/proxy"
+	"github.com/Dimas862/xray-core/transport"
+	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/pipe"
 )
 
 var _ N.Dialer = (*XrayDialer)(nil)
@@ -62,3 +62,4 @@ func (d *XrayOutboundDialer) DialContext(ctx context.Context, network string, de
 func (d *XrayOutboundDialer) ListenPacket(ctx context.Context, destination M.Socksaddr) (net.PacketConn, error) {
 	return nil, os.ErrInvalid
 }
+

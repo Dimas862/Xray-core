@@ -7,9 +7,9 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/miekg/dns"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
-	dns_feature "github.com/xtls/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/net"
+	dns_feature "github.com/Dimas862/xray-core/features/dns"
 	"golang.org/x/net/dns/dnsmessage"
 )
 
@@ -183,3 +183,4 @@ func TestFqdn(t *testing.T) {
 		})
 	}
 }
+

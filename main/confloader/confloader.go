@@ -5,7 +5,7 @@ import (
 	"io"
 	"os"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/errors"
 )
 
 type (
@@ -37,3 +37,4 @@ func LoadExtConfig(files []string, reader io.Reader) (io.Reader, error) {
 
 	return EffectiveExtConfigLoader(files, reader)
 }
+

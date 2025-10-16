@@ -10,9 +10,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/errors"
 )
 
 const (
@@ -318,3 +318,4 @@ func init() {
 		return NewAuthenticator(ctx, config.(*Config))
 	}))
 }
+

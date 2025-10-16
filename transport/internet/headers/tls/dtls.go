@@ -3,8 +3,8 @@ package tls
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/dice"
 )
 
 // DTLS writes header as DTLS. See https://tools.ietf.org/html/rfc6347
@@ -53,3 +53,4 @@ func New(ctx context.Context, config interface{}) (interface{}, error) {
 func init() {
 	common.Must(common.RegisterConfig((*PacketConfig)(nil), New))
 }
+

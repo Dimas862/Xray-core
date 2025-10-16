@@ -1,8 +1,8 @@
 package udp
 
 import (
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/net"
 )
 
 // PickPort returns an unused UDP port in the system. The port returned is highly likely to be unused, but not guaranteed.
@@ -17,3 +17,4 @@ func PickPort() net.Port {
 	addr := conn.LocalAddr().(*net.UDPAddr)
 	return net.Port(addr.Port)
 }
+

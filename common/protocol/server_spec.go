@@ -4,8 +4,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common/dice"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/common/net"
 )
 
 type ValidationStrategy interface {
@@ -120,3 +120,4 @@ func (s *ServerSpec) IsValid() bool {
 func (s *ServerSpec) Invalidate() {
 	s.valid.Invalidate()
 }
+

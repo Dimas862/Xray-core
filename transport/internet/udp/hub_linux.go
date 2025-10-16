@@ -6,7 +6,7 @@ package udp
 import (
 	"syscall"
 
-	"github.com/xtls/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/net"
 	"golang.org/x/sys/unix"
 )
 
@@ -32,3 +32,4 @@ func RetrieveOriginalDest(oob []byte) net.Destination {
 func ReadUDPMsg(conn *net.UDPConn, payload []byte, oob []byte) (int, int, int, *net.UDPAddr, error) {
 	return conn.ReadMsgUDP(payload, oob)
 }
+

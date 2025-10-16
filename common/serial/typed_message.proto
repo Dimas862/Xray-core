@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.common.serial;
 option csharp_namespace = "Xray.Common.Serial";
-option go_package = "github.com/xtls/xray-core/common/serial";
+option go_package = "github.com/Dimas862/xray-core/common/serial";
 option java_package = "com.xray.common.serial";
 option java_multiple_files = true;
 
@@ -13,3 +13,4 @@ message TypedMessage {
   // Serialized proto message.
   bytes value = 2;
 }
+

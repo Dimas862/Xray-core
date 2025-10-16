@@ -7,7 +7,7 @@
 package command
 
 import (
-	observatory "github.com/xtls/xray-core/app/observatory"
+	observatory "github.com/Dimas862/xray-core/app/observatory"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -232,3 +232,4 @@ func file_app_observatory_command_command_proto_init() {
 	file_app_observatory_command_command_proto_goTypes = nil
 	file_app_observatory_command_command_proto_depIdxs = nil
 }
+

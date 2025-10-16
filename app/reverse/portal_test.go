@@ -3,8 +3,8 @@ package reverse_test
 import (
 	"testing"
 
-	"github.com/xtls/xray-core/app/reverse"
-	"github.com/xtls/xray-core/common"
+	"github.com/Dimas862/xray-core/app/reverse"
+	"github.com/Dimas862/xray-core/common"
 )
 
 func TestStaticPickerEmpty(t *testing.T) {
@@ -18,3 +18,4 @@ func TestStaticPickerEmpty(t *testing.T) {
 		t.Error("expected nil worker, but not nil")
 	}
 }
+

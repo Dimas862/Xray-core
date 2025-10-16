@@ -5,20 +5,20 @@ import (
 	goerrors "errors"
 	"io"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	c "github.com/xtls/xray-core/common/ctx"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/dns"
-	"github.com/xtls/xray-core/features/policy"
-	"github.com/xtls/xray-core/features/routing"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	c "github.com/Dimas862/xray-core/common/ctx"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/log"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/common/signal"
+	"github.com/Dimas862/xray-core/common/task"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/features/policy"
+	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
 )
 
 var nullDestination = net.TCPDestination(net.AnyIP, 0)
@@ -188,3 +188,4 @@ func (s *Server) forwardConnection(dest net.Destination, conn net.Conn) {
 		return
 	}
 }
+

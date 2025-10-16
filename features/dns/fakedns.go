@@ -1,8 +1,8 @@
 package dns
 
 import (
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/features"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/features"
 )
 
 type FakeDNSEngine interface {
@@ -21,3 +21,4 @@ type FakeDNSEngineRev0 interface {
 	IsIPInIPPool(ip net.Address) bool
 	GetFakeIPForDomain3(domain string, IPv4, IPv6 bool) []net.Address
 }
+

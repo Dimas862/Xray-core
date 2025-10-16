@@ -3,8 +3,8 @@ package kcp
 import (
 	"crypto/cipher"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/transport/internet"
 )
 
 // GetMTUValue returns the value of MTU settings.
@@ -104,3 +104,4 @@ func init() {
 		return new(Config)
 	}))
 }
+

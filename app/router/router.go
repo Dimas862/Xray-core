@@ -4,14 +4,14 @@ import (
 	"context"
 	sync "sync"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/dns"
-	"github.com/xtls/xray-core/features/outbound"
-	"github.com/xtls/xray-core/features/routing"
-	routing_dns "github.com/xtls/xray-core/features/routing/dns"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/features/outbound"
+	"github.com/Dimas862/xray-core/features/routing"
+	routing_dns "github.com/Dimas862/xray-core/features/routing/dns"
 )
 
 // Router is an implementation of routing.Router.
@@ -253,3 +253,4 @@ func init() {
 		return r, nil
 	}))
 }
+

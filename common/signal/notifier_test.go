@@ -3,7 +3,7 @@ package signal_test
 import (
 	"testing"
 
-	. "github.com/xtls/xray-core/common/signal"
+	. "github.com/Dimas862/xray-core/common/signal"
 )
 
 func TestNotifierSignal(t *testing.T) {
@@ -18,3 +18,4 @@ func TestNotifierSignal(t *testing.T) {
 		t.Fail()
 	}
 }
+

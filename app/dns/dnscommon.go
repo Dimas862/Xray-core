@@ -6,13 +6,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/core"
-	dns_feature "github.com/xtls/xray-core/features/dns"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/log"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/core"
+	dns_feature "github.com/Dimas862/xray-core/features/dns"
 	"golang.org/x/net/dns/dnsmessage"
 )
 
@@ -263,3 +263,4 @@ func toDnsContext(ctx context.Context, addr string) context.Context {
 	})
 	return dnsCtx
 }
+

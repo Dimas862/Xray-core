@@ -3,9 +3,9 @@ package buf
 import (
 	"io"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/serial"
 )
 
 // ReadAllToBytes reads all content from the reader into a byte array, until EOF.
@@ -308,3 +308,4 @@ func (c *MultiBufferContainer) Close() error {
 	c.MultiBuffer = ReleaseMulti(c.MultiBuffer)
 	return nil
 }
+

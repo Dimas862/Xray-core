@@ -1,4 +1,4 @@
-package uuid // import "github.com/xtls/xray-core/common/uuid"
+package uuid // import "github.com/Dimas862/xray-core/common/uuid"
 
 import (
 	"bytes"
@@ -6,8 +6,8 @@ import (
 	"crypto/sha1"
 	"encoding/hex"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
 )
 
 var byteGroups = []int{8, 4, 4, 4, 12}
@@ -99,3 +99,4 @@ func ParseString(str string) (UUID, error) {
 
 	return uuid, nil
 }
+

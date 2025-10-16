@@ -7,7 +7,7 @@
 package protocol
 
 import (
-	serial "github.com/xtls/xray-core/common/serial"
+	serial "github.com/Dimas862/xray-core/common/serial"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -159,3 +159,4 @@ func file_common_protocol_user_proto_init() {
 	file_common_protocol_user_proto_goTypes = nil
 	file_common_protocol_user_proto_depIdxs = nil
 }
+

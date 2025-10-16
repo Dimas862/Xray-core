@@ -3,7 +3,7 @@ package pipe
 import (
 	"time"
 
-	"github.com/xtls/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/buf"
 )
 
 // Reader is a buf.Reader that reads content from a pipe.
@@ -39,3 +39,4 @@ func (r *Reader) Recover() (err error) {
 	}
 	return
 }
+

@@ -3,11 +3,11 @@ package router
 import (
 	"context"
 
-	"github.com/xtls/xray-core/app/observatory"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/dice"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/extension"
+	"github.com/Dimas862/xray-core/app/observatory"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/dice"
+	"github.com/Dimas862/xray-core/core"
+	"github.com/Dimas862/xray-core/features/extension"
 )
 
 // RandomStrategy represents a random balancing strategy
@@ -65,3 +65,4 @@ func (s *RandomStrategy) PickOutbound(candidates []string) string {
 	}
 	return candidates[dice.Roll(count)]
 }
+

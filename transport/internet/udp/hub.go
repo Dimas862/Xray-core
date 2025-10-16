@@ -3,11 +3,11 @@ package udp
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol/udp"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol/udp"
+	"github.com/Dimas862/xray-core/transport/internet"
 )
 
 type HubOption func(h *Hub)
@@ -139,3 +139,4 @@ func (h *Hub) Addr() net.Addr {
 func (h *Hub) Receive() <-chan *udp.Packet {
 	return h.cache
 }
+

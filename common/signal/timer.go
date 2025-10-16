@@ -6,8 +6,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/task"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/task"
 )
 
 type ActivityUpdater interface {
@@ -83,3 +83,4 @@ func CancelAfterInactivity(ctx context.Context, cancel context.CancelFunc, timeo
 	timer.SetTimeout(timeout)
 	return timer
 }
+

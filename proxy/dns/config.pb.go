@@ -7,7 +7,7 @@
 package dns
 
 import (
-	net "github.com/xtls/xray-core/common/net"
+	net "github.com/Dimas862/xray-core/common/net"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -167,3 +167,4 @@ func file_proxy_dns_config_proto_init() {
 	file_proxy_dns_config_proto_goTypes = nil
 	file_proxy_dns_config_proto_depIdxs = nil
 }
+

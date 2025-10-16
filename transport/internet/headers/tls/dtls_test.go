@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	. "github.com/xtls/xray-core/transport/internet/headers/tls"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	. "github.com/Dimas862/xray-core/transport/internet/headers/tls"
 )
 
 func TestDTLSWrite(t *testing.T) {
@@ -24,3 +24,4 @@ func TestDTLSWrite(t *testing.T) {
 		t.Error("payload len: ", payload.Len(), " want ", int32(len(content))+dtls.Size())
 	}
 }
+

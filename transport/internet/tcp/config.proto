@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.transport.internet.tcp;
 option csharp_namespace = "Xray.Transport.Internet.Tcp";
-option go_package = "github.com/xtls/xray-core/transport/internet/tcp";
+option go_package = "github.com/Dimas862/xray-core/transport/internet/tcp";
 option java_package = "com.xray.transport.internet.tcp";
 option java_multiple_files = true;
 
@@ -13,3 +13,4 @@ message Config {
   xray.common.serial.TypedMessage header_settings = 2;
   bool accept_proxy_protocol = 3;
 }
+

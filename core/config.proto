@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.core;
 option csharp_namespace = "Xray.Core";
-option go_package = "github.com/xtls/xray-core/core";
+option go_package = "github.com/Dimas862/xray-core/core";
 option java_package = "com.xray.core";
 option java_multiple_files = true;
 
@@ -55,3 +55,4 @@ message OutboundHandlerConfig {
   // Comment of this outbound handler. Not used for now.
   string comment = 5;
 }
+

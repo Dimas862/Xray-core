@@ -3,14 +3,14 @@ package dispatcher
 import (
 	"context"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/protocol/bittorrent"
-	"github.com/xtls/xray-core/common/protocol/http"
-	"github.com/xtls/xray-core/common/protocol/quic"
-	"github.com/xtls/xray-core/common/protocol/tls"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/protocol/bittorrent"
+	"github.com/Dimas862/xray-core/common/protocol/http"
+	"github.com/Dimas862/xray-core/common/protocol/quic"
+	"github.com/Dimas862/xray-core/common/protocol/tls"
 )
 
 type SniffResult interface {
@@ -140,3 +140,4 @@ type SnifferResultComposite interface {
 type SnifferIsProtoSubsetOf interface {
 	IsProtoSubsetOf(protocolName string) bool
 }
+

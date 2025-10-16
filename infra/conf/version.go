@@ -1,8 +1,8 @@
 package conf
 
 import (
-	"github.com/xtls/xray-core/app/version"
-	"github.com/xtls/xray-core/core"
+	"github.com/Dimas862/xray-core/app/version"
+	"github.com/Dimas862/xray-core/core"
 	"strconv"
 )
 
@@ -20,3 +20,4 @@ func (c *VersionConfig) Build() (*version.Config, error) {
 		MaxVersion:  c.MaxVersion,
 	}, nil
 }
+

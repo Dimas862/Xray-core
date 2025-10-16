@@ -7,13 +7,13 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	http_proto "github.com/xtls/xray-core/common/protocol/http"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/stat"
-	v2tls "github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/net"
+	http_proto "github.com/Dimas862/xray-core/common/protocol/http"
+	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
+	v2tls "github.com/Dimas862/xray-core/transport/internet/tls"
 )
 
 type server struct {
@@ -149,3 +149,4 @@ func ListenHTTPUpgrade(ctx context.Context, address net.Address, port net.Port, 
 func init() {
 	common.Must(internet.RegisterTransportListener(protocolName, ListenHTTPUpgrade))
 }
+

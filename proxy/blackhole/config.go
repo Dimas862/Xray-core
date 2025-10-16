@@ -1,8 +1,8 @@
 package blackhole
 
 import (
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
 )
 
 const (
@@ -45,3 +45,4 @@ func (c *Config) GetInternalResponse() (ResponseConfig, error) {
 	}
 	return config.(ResponseConfig), nil
 }
+

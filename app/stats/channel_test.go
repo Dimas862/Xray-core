@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/xtls/xray-core/app/stats"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/features/stats"
+	. "github.com/Dimas862/xray-core/app/stats"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/features/stats"
 )
 
 func TestStatsChannel(t *testing.T) {
@@ -403,3 +403,4 @@ func TestStatsChannelConcurrency(t *testing.T) {
 	case <-stopCh:
 	}
 }
+

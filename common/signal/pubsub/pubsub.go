@@ -5,9 +5,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/signal/done"
-	"github.com/xtls/xray-core/common/task"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/signal/done"
+	"github.com/Dimas862/xray-core/common/task"
 )
 
 type Subscriber struct {
@@ -103,3 +103,4 @@ func (s *Service) Publish(name string, message interface{}) {
 		}
 	}
 }
+

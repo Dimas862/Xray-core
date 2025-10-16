@@ -7,8 +7,8 @@ import (
 	"testing"
 
 	"github.com/sagernet/sing/common/control"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/transport/internet"
 )
 
 func TestRegisterListenerController(t *testing.T) {
@@ -31,3 +31,4 @@ func TestRegisterListenerController(t *testing.T) {
 		t.Error("expected none-zero fd, but actually 0")
 	}
 }
+

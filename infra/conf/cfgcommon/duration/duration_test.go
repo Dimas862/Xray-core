@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/infra/conf/cfgcommon/duration"
+	"github.com/Dimas862/xray-core/infra/conf/cfgcommon/duration"
 )
 
 type testWithDuration struct {
@@ -31,3 +31,4 @@ func TestDurationJSON(t *testing.T) {
 		t.Errorf("expected: %s, actual: %s", time.Duration(expected.Duration), time.Duration(actual.Duration))
 	}
 }
+

@@ -1,8 +1,8 @@
 package encoding
 
 import (
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
 )
 
 const (
@@ -15,3 +15,4 @@ var addrParser = protocol.NewAddressParser(
 	protocol.AddressFamilyByte(byte(protocol.AddressTypeIPv6), net.AddressFamilyIPv6),
 	protocol.PortThenAddress(),
 )
+

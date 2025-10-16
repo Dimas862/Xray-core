@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/xtls/xray-core/common"
-	. "github.com/xtls/xray-core/common/strmatcher"
+	"github.com/Dimas862/xray-core/common"
+	. "github.com/Dimas862/xray-core/common/strmatcher"
 )
 
 func TestMatcherGroup(t *testing.T) {
@@ -263,3 +263,4 @@ func TestACAutomaton(t *testing.T) {
 		}
 	}
 }
+

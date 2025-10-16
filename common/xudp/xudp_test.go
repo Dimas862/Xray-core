@@ -3,9 +3,9 @@ package xudp
 import (
 	"testing"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/net"
 )
 
 func TestXudpReadWrite(t *testing.T) {
@@ -34,3 +34,4 @@ func TestXudpReadWrite(t *testing.T) {
 		t.Error("failed to parse xudp buffer")
 	}
 }
+

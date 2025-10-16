@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package xray.transport.internet.grpc.encoding;
-option go_package = "github.com/xtls/xray-core/transport/internet/grpc";
+option go_package = "github.com/Dimas862/xray-core/transport/internet/grpc";
 
 message Config {
   string authority = 1;
@@ -13,3 +13,4 @@ message Config {
   int32 initial_windows_size = 7;
   string user_agent = 8;
 }
+

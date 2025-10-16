@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"strings"
 
-	routerService "github.com/xtls/xray-core/app/router/command"
-	cserial "github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/infra/conf/serial"
-	"github.com/xtls/xray-core/main/commands/base"
+	routerService "github.com/Dimas862/xray-core/app/router/command"
+	cserial "github.com/Dimas862/xray-core/common/serial"
+	"github.com/Dimas862/xray-core/infra/conf/serial"
+	"github.com/Dimas862/xray-core/main/commands/base"
 )
 
 var cmdSourceIpBlock = &base.Command{
@@ -138,3 +138,4 @@ func executeSourceIpBlock(cmd *base.Command, args []string) {
 	showJSONResponse(resp)
 
 }
+

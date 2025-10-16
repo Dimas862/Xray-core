@@ -7,23 +7,23 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/common/uuid"
-	"github.com/xtls/xray-core/core"
-	feature_inbound "github.com/xtls/xray-core/features/inbound"
-	"github.com/xtls/xray-core/features/policy"
-	"github.com/xtls/xray-core/features/routing"
-	"github.com/xtls/xray-core/proxy/vmess"
-	"github.com/xtls/xray-core/proxy/vmess/encoding"
-	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/Dimas862/xray-core/common"
+	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/Dimas862/xray-core/common/log"
+	"github.com/Dimas862/xray-core/common/net"
+	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/Dimas862/xray-core/common/session"
+	"github.com/Dimas862/xray-core/common/signal"
+	"github.com/Dimas862/xray-core/common/task"
+	"github.com/Dimas862/xray-core/common/uuid"
+	"github.com/Dimas862/xray-core/core"
+	feature_inbound "github.com/Dimas862/xray-core/features/inbound"
+	"github.com/Dimas862/xray-core/features/policy"
+	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/Dimas862/xray-core/proxy/vmess"
+	"github.com/Dimas862/xray-core/proxy/vmess/encoding"
+	"github.com/Dimas862/xray-core/transport/internet/stat"
 )
 
 type userByEmail struct {
@@ -363,3 +363,4 @@ func init() {
 		return New(ctx, config.(*Config))
 	}))
 }
+
