@@ -3,9 +3,9 @@ package dispatcher_test
 import (
 	"testing"
 
-	. "github.com/Dimas862/xray-core/app/dispatcher"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
+	. "github.com/dimas862/xray-core/app/dispatcher"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
 )
 
 type TestCounter int64
@@ -42,4 +42,5 @@ func TestStatsWriter(t *testing.T) {
 		t.Fatal("unexpected counter value. want 7, but got ", c.Value())
 	}
 }
+
 

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.proxy.vmess.inbound;
 option csharp_namespace = "Xray.Proxy.Vmess.Inbound";
-option go_package = "github.com/Dimas862/xray-core/proxy/vmess/inbound";
+option go_package = "github.com/dimas862/xray-core/proxy/vmess/inbound";
 option java_package = "com.xray.proxy.vmess.inbound";
 option java_multiple_files = true;
 
@@ -22,4 +22,5 @@ message Config {
   DetourConfig detour = 3;
   // 4 is for legacy setting
 }
+
 

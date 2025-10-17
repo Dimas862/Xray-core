@@ -3,12 +3,12 @@ package reverse
 import (
 	"context"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	core "github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/outbound"
-	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	core "github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/outbound"
+	"github.com/dimas862/xray-core/features/routing"
 )
 
 const (
@@ -92,4 +92,5 @@ func (r *Reverse) Close() error {
 
 	return errors.Combine(errs...)
 }
+
 

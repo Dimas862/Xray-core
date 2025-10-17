@@ -5,11 +5,11 @@ import (
 	"net"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/signal/done"
-	core "github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/outbound"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/signal/done"
+	core "github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/outbound"
 	"google.golang.org/grpc"
 )
 
@@ -119,4 +119,5 @@ func init() {
 		return NewCommander(ctx, cfg.(*Config))
 	}))
 }
+
 

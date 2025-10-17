@@ -7,13 +7,13 @@ import (
 	"time"
 
 	goreality "github.com/xtls/reality"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/reality"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/reality"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 )
 
 // Listener is an internet.Listener that listens for TCP connections.
@@ -138,4 +138,5 @@ func (v *Listener) Close() error {
 func init() {
 	common.Must(internet.RegisterTransportListener(protocolName, ListenTCP))
 }
+
 

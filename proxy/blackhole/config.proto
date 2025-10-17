@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.proxy.blackhole;
 option csharp_namespace = "Xray.Proxy.Blackhole";
-option go_package = "github.com/Dimas862/xray-core/proxy/blackhole";
+option go_package = "github.com/dimas862/xray-core/proxy/blackhole";
 option java_package = "com.xray.proxy.blackhole";
 option java_multiple_files = true;
 
@@ -15,4 +15,5 @@ message HTTPResponse {}
 message Config {
   xray.common.serial.TypedMessage response = 1;
 }
+
 

@@ -3,8 +3,8 @@ package splithttp_test
 import (
 	"testing"
 
-	"github.com/Dimas862/xray-core/common"
-	. "github.com/Dimas862/xray-core/transport/internet/splithttp"
+	"github.com/dimas862/xray-core/common"
+	. "github.com/dimas862/xray-core/transport/internet/splithttp"
 )
 
 func Test_regression_readzero(t *testing.T) {
@@ -20,4 +20,5 @@ func Test_regression_readzero(t *testing.T) {
 		t.Error("n=", n)
 	}
 }
+
 

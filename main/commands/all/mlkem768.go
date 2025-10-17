@@ -6,7 +6,7 @@ import (
 	"encoding/base64"
 	"fmt"
 
-	"github.com/Dimas862/xray-core/main/commands/base"
+	"github.com/dimas862/xray-core/main/commands/base"
 	"lukechampine.com/blake3"
 )
 
@@ -58,4 +58,5 @@ func genMLKEM768(inputSeed *[64]byte) (seed [64]byte, client []byte, hash32 [32]
 	hash32 = blake3.Sum256(client)
 	return
 }
+
 

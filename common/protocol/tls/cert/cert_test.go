@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/task"
 )
 
 func TestGenerate(t *testing.T) {
@@ -93,4 +93,5 @@ func writeFile(content []byte, name string) error {
 
 	return common.Error2(f.Write(content))
 }
+
 

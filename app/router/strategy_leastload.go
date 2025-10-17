@@ -6,12 +6,12 @@ import (
 	"sort"
 	"time"
 
-	"github.com/Dimas862/xray-core/app/observatory"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/dice"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/extension"
+	"github.com/dimas862/xray-core/app/observatory"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/extension"
 )
 
 // LeastLoadStrategy represents a least load balancing strategy
@@ -201,4 +201,5 @@ func leastloadSort(nodes []*node) {
 		return left.Tag < right.Tag
 	})
 }
+
 

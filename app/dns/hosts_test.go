@@ -4,10 +4,10 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	. "github.com/Dimas862/xray-core/app/dns"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/features/dns"
+	. "github.com/dimas862/xray-core/app/dns"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/features/dns"
 )
 
 func TestStaticHosts(t *testing.T) {
@@ -130,4 +130,5 @@ func TestStaticHosts(t *testing.T) {
 		}
 	}
 }
+
 

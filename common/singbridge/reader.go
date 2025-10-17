@@ -6,8 +6,8 @@ import (
 	"github.com/sagernet/sing/common"
 	"github.com/sagernet/sing/common/bufio"
 	N "github.com/sagernet/sing/common/network"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 var (
@@ -64,4 +64,5 @@ func (c *Conn) WriteMultiBuffer(bufferList buf.MultiBuffer) error {
 	}
 	return nil
 }
+
 

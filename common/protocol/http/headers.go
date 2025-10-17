@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 // ParseXForwardedFor parses X-Forwarded-For header in http headers, and return the IP list in it.
@@ -66,4 +66,5 @@ func ParseHost(rawHost string, defaultPort net.Port) (net.Destination, error) {
 
 	return net.TCPDestination(net.ParseAddress(host), port), nil
 }
+
 

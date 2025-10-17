@@ -3,10 +3,10 @@ package api
 import (
 	"fmt"
 
-	handlerService "github.com/Dimas862/xray-core/app/proxyman/command"
-	"github.com/Dimas862/xray-core/infra/conf"
-	"github.com/Dimas862/xray-core/infra/conf/serial"
-	"github.com/Dimas862/xray-core/main/commands/base"
+	handlerService "github.com/dimas862/xray-core/app/proxyman/command"
+	"github.com/dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/infra/conf/serial"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 var cmdAddOutbounds = &base.Command{
@@ -76,4 +76,5 @@ func executeAddOutbounds(cmd *base.Command, args []string) {
 		showJSONResponse(resp)
 	}
 }
+
 

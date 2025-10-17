@@ -6,11 +6,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/Dimas862/xray-core/app/router"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/platform"
-	"github.com/Dimas862/xray-core/common/platform/filesystem"
+	"github.com/dimas862/xray-core/app/router"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/platform/filesystem"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -277,4 +277,5 @@ func BenchmarkGeoIPMatcher6US(b *testing.B) {
 		_ = matcher.Match(net.ParseAddress("2001:4860:4860::8888").IP())
 	}
 }
+
 

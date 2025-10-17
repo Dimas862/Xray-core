@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Dimas862/xray-core/common"
-	. "github.com/Dimas862/xray-core/infra/conf/json"
+	"github.com/dimas862/xray-core/common"
+	. "github.com/dimas862/xray-core/infra/conf/json"
 )
 
 func TestReader(t *testing.T) {
@@ -94,4 +94,5 @@ func TestReader1(t *testing.T) {
 		}
 	}
 }
+
 

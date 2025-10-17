@@ -1,10 +1,10 @@
 package dns
 
 import (
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/features"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/features"
 )
 
 // IPOption is an object for IP query options.
@@ -70,4 +70,5 @@ func RCodeFromError(err error) uint16 {
 	}
 	return 0
 }
+
 

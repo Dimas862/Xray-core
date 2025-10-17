@@ -6,8 +6,8 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/Dimas862/xray-core/common"
-	. "github.com/Dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common"
+	. "github.com/dimas862/xray-core/common/platform"
 )
 
 func TestNormalizeEnvName(t *testing.T) {
@@ -63,4 +63,5 @@ func TestGetAssetLocation(t *testing.T) {
 		}
 	}
 }
+
 

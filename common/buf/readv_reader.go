@@ -7,8 +7,8 @@ import (
 	"io"
 	"syscall"
 
-	"github.com/Dimas862/xray-core/common/platform"
-	"github.com/Dimas862/xray-core/features/stats"
+	"github.com/dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/features/stats"
 )
 
 type allocStrategy struct {
@@ -153,4 +153,5 @@ func init() {
 		useReadv = true
 	}
 }
+
 

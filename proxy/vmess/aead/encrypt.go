@@ -7,8 +7,8 @@ import (
 	"io"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/crypto"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/crypto"
 )
 
 func SealVMessAEADHeader(key [16]byte, data []byte) []byte {
@@ -133,4 +133,5 @@ func OpenVMessAEADHeader(key [16]byte, authid [16]byte, data io.Reader) ([]byte,
 
 	return decryptedAEADHeaderPayloadR, false, bytesRead, nil
 }
+
 

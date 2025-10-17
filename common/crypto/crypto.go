@@ -1,5 +1,5 @@
 // Package crypto provides common crypto libraries for Xray.
-package crypto // import "github.com/Dimas862/xray-core/common/crypto"
+package crypto // import "github.com/dimas862/xray-core/common/crypto"
 
 import (
 	"crypto/rand"
@@ -16,4 +16,5 @@ func RandBetween(from int64, to int64) int64 {
 	bigInt, _ := rand.Int(rand.Reader, big.NewInt(to-from))
 	return from + bigInt.Int64()
 }
+
 

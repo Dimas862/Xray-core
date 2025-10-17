@@ -7,7 +7,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/Dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common"
 )
 
 func TestECHDial(t *testing.T) {
@@ -77,4 +77,5 @@ func TestECHDialFail(t *testing.T) {
 		t.Error("unexpected nil error in ECH config record")
 	}
 }
+
 

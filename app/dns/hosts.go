@@ -4,10 +4,10 @@ import (
 	"context"
 	"strconv"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/strmatcher"
-	"github.com/Dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/strmatcher"
+	"github.com/dimas862/xray-core/features/dns"
 )
 
 // StaticHosts represents static domain-ip mapping in DNS server.
@@ -116,4 +116,5 @@ func (h *StaticHosts) lookup(domain string, option dns.IPOption, maxDepth int) (
 func (h *StaticHosts) Lookup(domain string, option dns.IPOption) ([]net.Address, error) {
 	return h.lookup(domain, option, 5)
 }
+
 

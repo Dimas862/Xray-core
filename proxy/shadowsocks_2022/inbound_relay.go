@@ -13,17 +13,17 @@ import (
 	E "github.com/sagernet/sing/common/exceptions"
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/common/singbridge"
-	"github.com/Dimas862/xray-core/common/uuid"
-	"github.com/Dimas862/xray-core/features/routing"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/singbridge"
+	"github.com/dimas862/xray-core/common/uuid"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/transport/internet/stat"
 )
 
 func init() {
@@ -180,4 +180,5 @@ func (i *RelayInbound) NewError(ctx context.Context, err error) {
 	}
 	errors.LogWarning(ctx, err.Error())
 }
+
 

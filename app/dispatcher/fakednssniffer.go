@@ -4,12 +4,12 @@ import (
 	"context"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/dns"
 )
 
 // newFakeDNSSniffer Creates a Fake DNS metadata sniffer
@@ -119,4 +119,5 @@ func newFakeDNSThenOthers(ctx context.Context, fakeDNSSniffer protocolSnifferWit
 		metadataSniffer: false,
 	}, nil
 }
+
 

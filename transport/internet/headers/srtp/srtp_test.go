@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	. "github.com/Dimas862/xray-core/transport/internet/headers/srtp"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	. "github.com/dimas862/xray-core/transport/internet/headers/srtp"
 )
 
 func TestSRTPWrite(t *testing.T) {
@@ -25,4 +25,5 @@ func TestSRTPWrite(t *testing.T) {
 		t.Error("expected ", expectedLen, " of bytes, but got ", payload.Len())
 	}
 }
+
 

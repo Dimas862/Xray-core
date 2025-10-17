@@ -3,8 +3,8 @@ package buf
 import (
 	"io"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 func readOneUDP(r io.Reader) (*Buffer, error) {
@@ -172,4 +172,5 @@ func (r *PacketReader) ReadMultiBuffer() (MultiBuffer, error) {
 	}
 	return MultiBuffer{b}, nil
 }
+
 

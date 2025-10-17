@@ -8,9 +8,9 @@ import (
 	"encoding/gob"
 	"io"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 // RetrieveOriginalDest from stored laddr, caddr
@@ -44,4 +44,5 @@ func ReadUDPMsg(conn *net.UDPConn, payload []byte, oob []byte) (int, int, int, *
 	noob, _ := reader.Read(oob)
 	return nBytes, noob, 0, addr, err
 }
+
 

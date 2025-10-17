@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.proxy.wireguard;
 option csharp_namespace = "Xray.Proxy.WireGuard";
-option go_package = "github.com/Dimas862/xray-core/proxy/wireguard";
+option go_package = "github.com/dimas862/xray-core/proxy/wireguard";
 option java_package = "com.xray.proxy.wireguard";
 option java_multiple_files = true;
 
@@ -32,3 +32,4 @@ message DeviceConfig {
   bool is_client = 8;
   bool no_kernel_tun = 9;
 }
+

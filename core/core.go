@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"runtime"
 
-	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/serial"
 )
 
 var (
@@ -41,4 +41,5 @@ func VersionStatement() []string {
 		intro,
 	}
 }
+
 

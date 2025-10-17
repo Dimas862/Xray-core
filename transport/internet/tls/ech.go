@@ -18,17 +18,17 @@ import (
 	"time"
 
 	utls "github.com/refraction-networking/utls"
-	"github.com/Dimas862/xray-core/common/crypto"
-	dns2 "github.com/Dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/common/crypto"
+	dns2 "github.com/dimas862/xray-core/features/dns"
 	"golang.org/x/net/http2"
 
 	"github.com/miekg/dns"
 	"github.com/xtls/reality"
 	"github.com/xtls/reality/hpke"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/utils"
-	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/utils"
+	"github.com/dimas862/xray-core/transport/internet"
 	"golang.org/x/crypto/cryptobyte"
 )
 
@@ -428,4 +428,5 @@ func GenerateECHKeySet(configID uint8, domain string, kem uint16) (reality.EchCo
 	// }
 	// TODO: add mlkem768 (former kyber768 draft00). The golang mlkem private key is 64 bytes seed?
 }
+
 

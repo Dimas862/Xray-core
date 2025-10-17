@@ -3,10 +3,10 @@ package command
 import (
 	"context"
 
-	"github.com/Dimas862/xray-core/app/observatory"
-	"github.com/Dimas862/xray-core/common"
-	core "github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/extension"
+	"github.com/dimas862/xray-core/app/observatory"
+	"github.com/dimas862/xray-core/common"
+	core "github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/extension"
 	"google.golang.org/grpc"
 )
 
@@ -45,4 +45,5 @@ func init() {
 		return sv, nil
 	}))
 }
+
 

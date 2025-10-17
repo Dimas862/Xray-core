@@ -3,7 +3,7 @@ package splithttp_test
 import (
 	"testing"
 
-	. "github.com/Dimas862/xray-core/transport/internet/splithttp"
+	. "github.com/dimas862/xray-core/transport/internet/splithttp"
 )
 
 func Test_GetNormalizedPath(t *testing.T) {
@@ -16,4 +16,5 @@ func Test_GetNormalizedPath(t *testing.T) {
 		t.Error("Unexpected: ", path)
 	}
 }
+
 

@@ -5,24 +5,24 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Dimas862/xray-core/app/log"
-	"github.com/Dimas862/xray-core/app/proxyman"
-	"github.com/Dimas862/xray-core/common"
-	clog "github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/common/uuid"
-	core "github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/proxy/dokodemo"
-	"github.com/Dimas862/xray-core/proxy/freedom"
-	"github.com/Dimas862/xray-core/proxy/vmess"
-	"github.com/Dimas862/xray-core/proxy/vmess/inbound"
-	"github.com/Dimas862/xray-core/proxy/vmess/outbound"
-	"github.com/Dimas862/xray-core/testing/servers/tcp"
-	"github.com/Dimas862/xray-core/testing/servers/udp"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/kcp"
+	"github.com/dimas862/xray-core/app/log"
+	"github.com/dimas862/xray-core/app/proxyman"
+	"github.com/dimas862/xray-core/common"
+	clog "github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/uuid"
+	core "github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/proxy/dokodemo"
+	"github.com/dimas862/xray-core/proxy/freedom"
+	"github.com/dimas862/xray-core/proxy/vmess"
+	"github.com/dimas862/xray-core/proxy/vmess/inbound"
+	"github.com/dimas862/xray-core/proxy/vmess/outbound"
+	"github.com/dimas862/xray-core/testing/servers/tcp"
+	"github.com/dimas862/xray-core/testing/servers/udp"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/kcp"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -1473,4 +1473,5 @@ func TestVMessGCMLengthAuthPlusNoTerminationSignal(t *testing.T) {
 		t.Error(err)
 	}
 }
+
 

@@ -4,9 +4,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/uuid"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/uuid"
 )
 
 type Validator interface {
@@ -96,4 +96,5 @@ func (v *MemoryValidator) GetCount() int64 {
 	})
 	return c
 }
+
 

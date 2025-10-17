@@ -8,20 +8,20 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	dns_proto "github.com/Dimas862/xray-core/common/protocol/dns"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/common/signal"
-	"github.com/Dimas862/xray-core/common/task"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/dns"
-	"github.com/Dimas862/xray-core/features/policy"
-	"github.com/Dimas862/xray-core/transport"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	dns_proto "github.com/dimas862/xray-core/common/protocol/dns"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/signal"
+	"github.com/dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/features/policy"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/stat"
 	"golang.org/x/net/dns/dnsmessage"
 )
 
@@ -455,4 +455,5 @@ func (c *outboundConn) Close() error {
 	c.access.Unlock()
 	return nil
 }
+
 

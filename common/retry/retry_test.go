@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	. "github.com/Dimas862/xray-core/common/retry"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	. "github.com/dimas862/xray-core/common/retry"
 )
 
 var errorTestOnly = errors.New("this is a fake error")
@@ -94,4 +94,5 @@ func TestExponentialBackoff(t *testing.T) {
 		t.Error("duration: ", v)
 	}
 }
+
 

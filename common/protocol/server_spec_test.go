@@ -5,11 +5,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/net"
-	. "github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/uuid"
-	"github.com/Dimas862/xray-core/proxy/vmess"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/net"
+	. "github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/uuid"
+	"github.com/dimas862/xray-core/proxy/vmess"
 )
 
 func TestAlwaysValidStrategy(t *testing.T) {
@@ -77,4 +77,5 @@ func TestPickUser(t *testing.T) {
 		t.Error("user: ", user.Email)
 	}
 }
+
 

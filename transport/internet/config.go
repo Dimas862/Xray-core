@@ -1,9 +1,9 @@
 package internet
 
 import (
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/serial"
 )
 
 type ConfigCreator func() interface{}
@@ -150,4 +150,5 @@ func (s DomainStrategy) GetDynamicStrategy(addrFamily net.AddressFamily) DomainS
 	}
 	return s
 }
+
 

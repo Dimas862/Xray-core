@@ -5,9 +5,9 @@ import (
 	"io"
 	gonet "net"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/transport/internet/browser_dialer"
-	"github.com/Dimas862/xray-core/transport/internet/websocket"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/transport/internet/browser_dialer"
+	"github.com/dimas862/xray-core/transport/internet/websocket"
 )
 
 // BrowserDialerClient implements splithttp.DialerClient in terms of browser dialer
@@ -60,3 +60,4 @@ func (c *BrowserDialerClient) PutPacket(ctx context.Context, url string, body io
 
 	return nil
 }
+

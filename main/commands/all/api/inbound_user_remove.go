@@ -3,10 +3,10 @@ package api
 import (
 	"fmt"
 
-	handlerService "github.com/Dimas862/xray-core/app/proxyman/command"
-	cserial "github.com/Dimas862/xray-core/common/serial"
+	handlerService "github.com/dimas862/xray-core/app/proxyman/command"
+	cserial "github.com/dimas862/xray-core/common/serial"
 
-	"github.com/Dimas862/xray-core/main/commands/base"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 var cmdRemoveInboundUsers = &base.Command{
@@ -60,4 +60,5 @@ func executeRemoveUsers(cmd *base.Command, args []string) {
 	}
 	fmt.Println("Removed", success, "user(s) in total.")
 }
+
 

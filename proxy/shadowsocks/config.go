@@ -8,12 +8,12 @@ import (
 	"google.golang.org/protobuf/proto"
 	"io"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/antireplay"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/crypto"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/antireplay"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/crypto"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/protocol"
 	"golang.org/x/crypto/chacha20poly1305"
 	"golang.org/x/crypto/hkdf"
 )
@@ -250,4 +250,5 @@ func hkdfSHA1(secret, salt, outKey []byte) {
 	r := hkdf.New(sha1.New, secret, salt, []byte("ss-subkey"))
 	common.Must2(io.ReadFull(r, outKey))
 }
+
 

@@ -3,9 +3,9 @@ package pipe
 import (
 	"context"
 
-	"github.com/Dimas862/xray-core/common/signal"
-	"github.com/Dimas862/xray-core/common/signal/done"
-	"github.com/Dimas862/xray-core/features/policy"
+	"github.com/dimas862/xray-core/common/signal"
+	"github.com/dimas862/xray-core/common/signal/done"
+	"github.com/dimas862/xray-core/features/policy"
 )
 
 // Option for creating new Pipes.
@@ -68,4 +68,5 @@ func New(opts ...Option) (*Reader, *Writer) {
 			pipe: p,
 		}
 }
+
 

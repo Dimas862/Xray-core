@@ -4,11 +4,11 @@ import (
 	"context"
 	"io"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	creflect "github.com/Dimas862/xray-core/common/reflect"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/infra/conf"
-	"github.com/Dimas862/xray-core/main/confloader"
+	"github.com/dimas862/xray-core/common/errors"
+	creflect "github.com/dimas862/xray-core/common/reflect"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/main/confloader"
 )
 
 func MergeConfigFromFiles(files []*core.ConfigSource) (string, error) {
@@ -64,4 +64,5 @@ func init() {
 	core.ConfigBuilderForFiles = BuildConfig
 	core.ConfigMergedFormFiles = MergeConfigFromFiles
 }
+
 

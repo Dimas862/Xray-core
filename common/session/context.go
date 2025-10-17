@@ -4,10 +4,10 @@ import (
 	"context"
 	_ "unsafe"
 
-	"github.com/Dimas862/xray-core/common/ctx"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/features/outbound"
-	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/common/ctx"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/features/outbound"
+	"github.com/dimas862/xray-core/features/routing"
 )
 
 //go:linkname IndependentCancelCtx context.newCancelCtx
@@ -196,4 +196,5 @@ func MitmServerNameFromContext(ctx context.Context) string {
 	}
 	return ""
 }
+
 

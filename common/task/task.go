@@ -3,7 +3,7 @@ package task
 import (
 	"context"
 
-	"github.com/Dimas862/xray-core/common/signal/semaphore"
+	"github.com/dimas862/xray-core/common/signal/semaphore"
 )
 
 // OnSuccess executes g() after f() returns nil.
@@ -62,4 +62,5 @@ func Run(ctx context.Context, tasks ...func() error) error {
 
 	return nil
 }
+
 

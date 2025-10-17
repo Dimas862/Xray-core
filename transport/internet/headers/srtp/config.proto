@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.transport.internet.headers.srtp;
 option csharp_namespace = "Xray.Transport.Internet.Headers.Srtp";
-option go_package = "github.com/Dimas862/xray-core/transport/internet/headers/srtp";
+option go_package = "github.com/dimas862/xray-core/transport/internet/headers/srtp";
 option java_package = "com.xray.transport.internet.headers.srtp";
 option java_multiple_files = true;
 
@@ -14,4 +14,5 @@ message Config {
 	bool marker     = 5;
 	uint32 payload_type = 6;
 }
+
 

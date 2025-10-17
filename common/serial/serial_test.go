@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/serial"
 )
 
 func TestUint16Serial(t *testing.T) {
@@ -85,4 +85,5 @@ func BenchmarkWriteUint64(b *testing.B) {
 		writer.Clear()
 	}
 }
+
 

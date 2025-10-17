@@ -3,7 +3,7 @@ package kcp
 import (
 	"encoding/binary"
 
-	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/buf"
 )
 
 // Command is a KCP command that indicate the purpose of a Segment.
@@ -301,4 +301,5 @@ func ReadSegment(buf []byte) (Segment, []byte) {
 	}
 	return seg, extra
 }
+
 

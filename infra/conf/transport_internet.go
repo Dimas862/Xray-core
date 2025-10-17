@@ -11,18 +11,18 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/platform/filesystem"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/httpupgrade"
-	"github.com/Dimas862/xray-core/transport/internet/kcp"
-	"github.com/Dimas862/xray-core/transport/internet/reality"
-	"github.com/Dimas862/xray-core/transport/internet/splithttp"
-	"github.com/Dimas862/xray-core/transport/internet/tcp"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
-	"github.com/Dimas862/xray-core/transport/internet/websocket"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/platform/filesystem"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/httpupgrade"
+	"github.com/dimas862/xray-core/transport/internet/kcp"
+	"github.com/dimas862/xray-core/transport/internet/reality"
+	"github.com/dimas862/xray-core/transport/internet/splithttp"
+	"github.com/dimas862/xray-core/transport/internet/tcp"
+	"github.com/dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/transport/internet/websocket"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -1086,4 +1086,5 @@ func (v *ProxyConfig) Build() (*internet.ProxyConfig, error) {
 		TransportLayerProxy: v.TransportLayerProxy,
 	}, nil
 }
+
 

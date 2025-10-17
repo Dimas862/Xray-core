@@ -9,7 +9,7 @@ import (
 	"runtime"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 type Packet struct {
@@ -162,4 +162,5 @@ func (h *uploadHeap) Pop() any {
 	*h = old[0 : n-1]
 	return x
 }
+
 

@@ -7,10 +7,10 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	. "github.com/Dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	. "github.com/dimas862/xray-core/infra/conf"
 )
 
 func TestStringListUnmarshalError(t *testing.T) {
@@ -227,4 +227,5 @@ func TestInvalidUserJson(t *testing.T) {
 		t.Error("nil error")
 	}
 }
+
 

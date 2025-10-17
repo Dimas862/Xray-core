@@ -7,19 +7,19 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/common/signal/done"
-	"github.com/Dimas862/xray-core/common/task"
-	"github.com/Dimas862/xray-core/common/xudp"
-	"github.com/Dimas862/xray-core/proxy"
-	"github.com/Dimas862/xray-core/transport"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/pipe"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/signal/done"
+	"github.com/dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/common/xudp"
+	"github.com/dimas862/xray-core/proxy"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/pipe"
 )
 
 type ClientManager struct {
@@ -413,4 +413,5 @@ func (m *ClientWorker) fetchOutput() {
 		}
 	}
 }
+
 

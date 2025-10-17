@@ -3,7 +3,7 @@ package units_test
 import (
 	"testing"
 
-	"github.com/Dimas862/xray-core/common/units"
+	"github.com/dimas862/xray-core/common/units"
 )
 
 func TestByteSizes(t *testing.T) {
@@ -64,4 +64,5 @@ func assertSizeString(t *testing.T, size units.ByteSize, expected string) string
 	}
 	return expected
 }
+
 

@@ -3,7 +3,7 @@ package extension
 import (
 	"context"
 
-	"github.com/Dimas862/xray-core/features"
+	"github.com/dimas862/xray-core/features"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -16,4 +16,5 @@ type Observatory interface {
 func ObservatoryType() interface{} {
 	return (*Observatory)(nil)
 }
+
 

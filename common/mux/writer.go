@@ -1,11 +1,11 @@
 package mux
 
 import (
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
 )
 
 type Writer struct {
@@ -130,4 +130,5 @@ func (w *Writer) Close() error {
 	w.writer.WriteMultiBuffer(buf.MultiBuffer{frame})
 	return nil
 }
+
 

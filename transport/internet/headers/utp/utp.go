@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/binary"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/dice"
 )
 
 type UTP struct {
@@ -37,4 +37,5 @@ func New(ctx context.Context, config interface{}) (interface{}, error) {
 func init() {
 	common.Must(common.RegisterConfig((*Config)(nil), New))
 }
+
 

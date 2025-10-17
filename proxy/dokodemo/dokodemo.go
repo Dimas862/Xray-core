@@ -5,19 +5,19 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/policy"
-	"github.com/Dimas862/xray-core/features/routing"
-	"github.com/Dimas862/xray-core/transport"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/policy"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 )
 
 func init() {
@@ -260,4 +260,5 @@ func (w *PacketWriter) Close() error {
 	}
 	return nil
 }
+
 

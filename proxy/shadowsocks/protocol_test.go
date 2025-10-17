@@ -4,11 +4,11 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	. "github.com/Dimas862/xray-core/proxy/shadowsocks"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	. "github.com/dimas862/xray-core/proxy/shadowsocks"
 )
 
 func toAccount(a *Account) protocol.Account {
@@ -236,4 +236,5 @@ func TestUDPReaderWriter(t *testing.T) {
 		}
 	}
 }
+
 

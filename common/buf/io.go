@@ -8,9 +8,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/features/stats"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/features/stats"
+	"github.com/dimas862/xray-core/transport/internet/stat"
 )
 
 // Reader extends io.Reader with MultiBuffer.
@@ -194,4 +194,5 @@ func NewWriter(writer io.Writer) Writer {
 		counter: counter,
 	}
 }
+
 

@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	. "github.com/Dimas862/xray-core/common/net"
+	. "github.com/dimas862/xray-core/common/net"
 )
 
 func TestAddressProperty(t *testing.T) {
@@ -191,4 +191,5 @@ func BenchmarkParseAddressDomain(b *testing.B) {
 		}
 	}
 }
+
 

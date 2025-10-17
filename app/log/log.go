@@ -7,9 +7,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
 )
 
 // Instance is a log.Handler that handles logs.
@@ -204,4 +204,5 @@ func init() {
 		return New(ctx, config.(*Config))
 	}))
 }
+
 

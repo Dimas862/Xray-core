@@ -6,11 +6,11 @@ import (
 
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/features/routing"
-	"github.com/Dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/transport"
 )
 
 var (
@@ -48,4 +48,5 @@ func (d *Dispatcher) NewPacketConnection(ctx context.Context, conn N.PacketConn,
 func (d *Dispatcher) NewError(ctx context.Context, err error) {
 	errors.LogInfo(ctx, err.Error())
 }
+
 

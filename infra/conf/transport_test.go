@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	. "github.com/Dimas862/xray-core/infra/conf"
-	"github.com/Dimas862/xray-core/transport/internet"
+	. "github.com/dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/transport/internet"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -156,4 +156,5 @@ func TestSocketConfig(t *testing.T) {
 		t.Fatalf("unexpected parsed TFO value, which should be -1")
 	}
 }
+
 

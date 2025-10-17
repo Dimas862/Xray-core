@@ -4,10 +4,10 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/strmatcher"
-	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/strmatcher"
+	"github.com/dimas862/xray-core/features/routing"
 )
 
 type Condition interface {
@@ -325,4 +325,5 @@ func (m *AttributeMatcher) Apply(ctx routing.Context) bool {
 	}
 	return m.Match(attributes)
 }
+
 

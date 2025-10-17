@@ -3,8 +3,8 @@ package protocol
 import (
 	"crypto/md5"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/uuid"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/uuid"
 )
 
 const (
@@ -47,4 +47,5 @@ func NewID(uuid uuid.UUID) *ID {
 	md5hash.Sum(id.cmdKey[:0])
 	return id
 }
+
 

@@ -9,13 +9,13 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/browser_dialer"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/browser_dialer"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 )
 
 // Dial dials a WebSocket connection to the given destination.
@@ -183,4 +183,5 @@ func (d *delayDialConn) Close() error {
 	}
 	return d.Conn.Close()
 }
+
 

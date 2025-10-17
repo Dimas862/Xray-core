@@ -3,14 +3,14 @@ package conf
 import (
 	"strings"
 
-	"github.com/Dimas862/xray-core/app/commander"
-	loggerservice "github.com/Dimas862/xray-core/app/log/command"
-	observatoryservice "github.com/Dimas862/xray-core/app/observatory/command"
-	handlerservice "github.com/Dimas862/xray-core/app/proxyman/command"
-	routerservice "github.com/Dimas862/xray-core/app/router/command"
-	statsservice "github.com/Dimas862/xray-core/app/stats/command"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/app/commander"
+	loggerservice "github.com/dimas862/xray-core/app/log/command"
+	observatoryservice "github.com/dimas862/xray-core/app/observatory/command"
+	handlerservice "github.com/dimas862/xray-core/app/proxyman/command"
+	routerservice "github.com/dimas862/xray-core/app/router/command"
+	statsservice "github.com/dimas862/xray-core/app/stats/command"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/serial"
 )
 
 type APIConfig struct {
@@ -48,4 +48,5 @@ func (c *APIConfig) Build() (*commander.Config, error) {
 		Service: services,
 	}, nil
 }
+
 

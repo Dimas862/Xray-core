@@ -8,15 +8,15 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Dimas862/xray-core/app/dispatcher"
-	"github.com/Dimas862/xray-core/app/proxyman"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/serial"
-	core "github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/proxy/freedom"
-	"github.com/Dimas862/xray-core/testing/servers/tcp"
-	"github.com/Dimas862/xray-core/testing/servers/udp"
+	"github.com/dimas862/xray-core/app/dispatcher"
+	"github.com/dimas862/xray-core/app/proxyman"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/serial"
+	core "github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/proxy/freedom"
+	"github.com/dimas862/xray-core/testing/servers/tcp"
+	"github.com/dimas862/xray-core/testing/servers/udp"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -228,4 +228,5 @@ func TestXrayDialUDP(t *testing.T) {
 		}
 	}
 }
+
 

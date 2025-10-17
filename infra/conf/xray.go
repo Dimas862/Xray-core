@@ -9,14 +9,14 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/Dimas862/xray-core/app/dispatcher"
-	"github.com/Dimas862/xray-core/app/proxyman"
-	"github.com/Dimas862/xray-core/app/stats"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/serial"
-	core "github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/app/dispatcher"
+	"github.com/dimas862/xray-core/app/proxyman"
+	"github.com/dimas862/xray-core/app/stats"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/serial"
+	core "github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 var (
@@ -672,4 +672,5 @@ func ParseSendThough(Addr *string) *Address {
 	addr.Address = net.ParseAddress(strings.Split(*Addr, "/")[0])
 	return &addr
 }
+
 

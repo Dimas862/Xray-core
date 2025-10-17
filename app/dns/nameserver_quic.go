@@ -10,14 +10,14 @@ import (
 	"time"
 
 	"github.com/quic-go/quic-go"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol/dns"
-	"github.com/Dimas862/xray-core/common/session"
-	dns_feature "github.com/Dimas862/xray-core/features/dns"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol/dns"
+	"github.com/dimas862/xray-core/common/session"
+	dns_feature "github.com/dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 	"golang.org/x/net/http2"
 )
 
@@ -292,4 +292,5 @@ func (s *QUICNameServer) openStream(ctx context.Context) (*quic.Stream, error) {
 	// open a new stream
 	return conn.OpenStreamSync(ctx)
 }
+
 

@@ -5,10 +5,10 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/net"
-	. "github.com/Dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/net"
+	. "github.com/dimas862/xray-core/common/protocol"
 )
 
 func TestAddressReading(t *testing.T) {
@@ -240,4 +240,5 @@ func BenchmarkAddressWritingDomain(b *testing.B) {
 		writer.Clear()
 	}
 }
+
 

@@ -7,10 +7,10 @@ import (
 
 	"github.com/ghodss/yaml"
 	"github.com/pelletier/go-toml"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/infra/conf"
-	json_reader "github.com/Dimas862/xray-core/infra/conf/json"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/infra/conf"
+	json_reader "github.com/dimas862/xray-core/infra/conf/json"
 )
 
 type offset struct {
@@ -147,4 +147,5 @@ func LoadYAMLConfig(reader io.Reader) (*core.Config, error) {
 
 	return pbConfig, nil
 }
+
 

@@ -3,13 +3,13 @@ package conf_test
 import (
 	"testing"
 
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/serial"
-	. "github.com/Dimas862/xray-core/infra/conf"
-	"github.com/Dimas862/xray-core/proxy/vmess"
-	"github.com/Dimas862/xray-core/proxy/vmess/inbound"
-	"github.com/Dimas862/xray-core/proxy/vmess/outbound"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
+	. "github.com/dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/proxy/vmess"
+	"github.com/dimas862/xray-core/proxy/vmess/inbound"
+	"github.com/dimas862/xray-core/proxy/vmess/outbound"
 )
 
 func TestVMessOutbound(t *testing.T) {
@@ -109,4 +109,5 @@ func TestVMessInbound(t *testing.T) {
 		},
 	})
 }
+
 

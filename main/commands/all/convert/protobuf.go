@@ -5,10 +5,10 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common/cmdarg"
-	creflect "github.com/Dimas862/xray-core/common/reflect"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/main/commands/base"
+	"github.com/dimas862/xray-core/common/cmdarg"
+	creflect "github.com/dimas862/xray-core/common/reflect"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/main/commands/base"
 
 	"google.golang.org/protobuf/proto"
 )
@@ -114,4 +114,5 @@ func getFileExtension(filename string) string {
 	}
 	return filename[idx+1:]
 }
+
 

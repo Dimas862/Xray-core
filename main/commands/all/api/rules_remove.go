@@ -3,8 +3,8 @@ package api
 import (
 	"fmt"
 
-	routerService "github.com/Dimas862/xray-core/app/router/command"
-	"github.com/Dimas862/xray-core/main/commands/base"
+	routerService "github.com/dimas862/xray-core/app/router/command"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 var cmdRemoveRules = &base.Command{
@@ -58,4 +58,5 @@ func executeRemoveRules(cmd *base.Command, args []string) {
 	}
 
 }
+
 

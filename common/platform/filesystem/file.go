@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/platform"
 )
 
 type FileReaderFunc func(path string) (io.ReadCloser, error)
@@ -50,4 +50,5 @@ func CopyFile(dst string, src string) error {
 	_, err = f.Write(bytes)
 	return err
 }
+
 

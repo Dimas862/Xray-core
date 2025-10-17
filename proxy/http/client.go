@@ -11,22 +11,22 @@ import (
 	"sync"
 	"text/template"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/bytespool"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/retry"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/common/signal"
-	"github.com/Dimas862/xray-core/common/task"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/policy"
-	"github.com/Dimas862/xray-core/transport"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/bytespool"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/retry"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/signal"
+	"github.com/dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/policy"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 	"golang.org/x/net/http2"
 )
 
@@ -378,4 +378,5 @@ func init() {
 		return NewClient(ctx, config.(*ClientConfig))
 	}))
 }
+
 

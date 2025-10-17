@@ -8,16 +8,16 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol/dns"
-	udp_proto "github.com/Dimas862/xray-core/common/protocol/udp"
-	"github.com/Dimas862/xray-core/common/task"
-	dns_feature "github.com/Dimas862/xray-core/features/dns"
-	"github.com/Dimas862/xray-core/features/routing"
-	"github.com/Dimas862/xray-core/transport/internet/udp"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol/dns"
+	udp_proto "github.com/dimas862/xray-core/common/protocol/udp"
+	"github.com/dimas862/xray-core/common/task"
+	dns_feature "github.com/dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/transport/internet/udp"
 	"golang.org/x/net/dns/dnsmessage"
 )
 
@@ -215,4 +215,5 @@ func (s *ClassicNameServer) QueryIP(ctx context.Context, domain string, option d
 	return ips, ttl, err
 
 }
+
 

@@ -3,10 +3,10 @@ package conf
 import (
 	"google.golang.org/protobuf/proto"
 
-	"github.com/Dimas862/xray-core/app/observatory"
-	"github.com/Dimas862/xray-core/app/observatory/burst"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/infra/conf/cfgcommon/duration"
+	"github.com/dimas862/xray-core/app/observatory"
+	"github.com/dimas862/xray-core/app/observatory/burst"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/infra/conf/cfgcommon/duration"
 )
 
 type ObservatoryConfig struct {
@@ -36,4 +36,5 @@ func (b BurstObservatoryConfig) Build() (proto.Message, error) {
 		return nil, err
 	}
 }
+
 

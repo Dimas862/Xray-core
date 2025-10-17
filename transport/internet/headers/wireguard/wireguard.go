@@ -3,7 +3,7 @@ package wireguard
 import (
 	"context"
 
-	"github.com/Dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common"
 )
 
 type Wireguard struct{}
@@ -28,4 +28,5 @@ func NewWireguard(ctx context.Context, config interface{}) (interface{}, error) 
 func init() {
 	common.Must(common.RegisterConfig((*WireguardConfig)(nil), NewWireguard))
 }
+
 

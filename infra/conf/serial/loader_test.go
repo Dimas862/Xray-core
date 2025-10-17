@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Dimas862/xray-core/infra/conf/serial"
+	"github.com/dimas862/xray-core/infra/conf/serial"
 )
 
 func TestLoaderError(t *testing.T) {
@@ -61,4 +61,5 @@ func TestLoaderError(t *testing.T) {
 		}
 	}
 }
+
 

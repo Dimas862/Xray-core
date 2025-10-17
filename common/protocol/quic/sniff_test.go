@@ -5,9 +5,9 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/protocol/quic"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/protocol/quic"
 )
 
 func TestSniffQUIC(t *testing.T) {
@@ -285,4 +285,5 @@ func TestSniffFakeQUICPacketWithTooShortData(t *testing.T) {
 		t.Error("failed")
 	}
 }
+
 

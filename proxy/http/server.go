@@ -10,21 +10,21 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	http_proto "github.com/Dimas862/xray-core/common/protocol/http"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/common/task"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/policy"
-	"github.com/Dimas862/xray-core/features/routing"
-	"github.com/Dimas862/xray-core/proxy"
-	"github.com/Dimas862/xray-core/transport"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	http_proto "github.com/dimas862/xray-core/common/protocol/http"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/policy"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/proxy"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/internet/stat"
 )
 
 // Server is an HTTP proxy server.
@@ -348,4 +348,5 @@ func init() {
 		return NewServer(ctx, config.(*ServerConfig))
 	}))
 }
+
 

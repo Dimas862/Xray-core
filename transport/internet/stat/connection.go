@@ -3,7 +3,7 @@ package stat
 import (
 	"net"
 
-	"github.com/Dimas862/xray-core/features/stats"
+	"github.com/dimas862/xray-core/features/stats"
 )
 
 type Connection interface {
@@ -32,4 +32,5 @@ func (c *CounterConnection) Write(b []byte) (int, error) {
 	}
 	return nBytes, err
 }
+
 

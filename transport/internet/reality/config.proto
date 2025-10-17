@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.transport.internet.reality;
 option csharp_namespace = "Xray.Transport.Internet.Reality";
-option go_package = "github.com/Dimas862/xray-core/transport/internet/reality";
+option go_package = "github.com/dimas862/xray-core/transport/internet/reality";
 option java_package = "com.xray.transport.internet.reality";
 option java_multiple_files = true;
 
@@ -38,4 +38,5 @@ message LimitFallback {
   uint64 bytes_per_sec = 2;
   uint64 burst_bytes_per_sec = 3;
 }
+
 

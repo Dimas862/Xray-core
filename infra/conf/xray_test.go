@@ -6,22 +6,22 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Dimas862/xray-core/app/dispatcher"
-	"github.com/Dimas862/xray-core/app/log"
-	"github.com/Dimas862/xray-core/app/proxyman"
-	"github.com/Dimas862/xray-core/app/router"
-	"github.com/Dimas862/xray-core/common"
-	clog "github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/serial"
-	core "github.com/Dimas862/xray-core/core"
-	. "github.com/Dimas862/xray-core/infra/conf"
-	"github.com/Dimas862/xray-core/proxy/vmess"
-	"github.com/Dimas862/xray-core/proxy/vmess/inbound"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
-	"github.com/Dimas862/xray-core/transport/internet/websocket"
+	"github.com/dimas862/xray-core/app/dispatcher"
+	"github.com/dimas862/xray-core/app/log"
+	"github.com/dimas862/xray-core/app/proxyman"
+	"github.com/dimas862/xray-core/app/router"
+	"github.com/dimas862/xray-core/common"
+	clog "github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
+	core "github.com/dimas862/xray-core/core"
+	. "github.com/dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/proxy/vmess"
+	"github.com/dimas862/xray-core/proxy/vmess/inbound"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/transport/internet/websocket"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -298,4 +298,5 @@ func TestConfig_Override(t *testing.T) {
 		})
 	}
 }
+
 

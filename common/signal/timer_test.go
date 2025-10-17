@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/Dimas862/xray-core/common/signal"
+	. "github.com/dimas862/xray-core/common/signal"
 )
 
 func TestActivityTimer(t *testing.T) {
@@ -58,4 +58,5 @@ func TestActivityTimerZeroTimeout(t *testing.T) {
 	}
 	runtime.KeepAlive(timer)
 }
+
 

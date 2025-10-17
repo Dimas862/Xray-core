@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"testing"
 
-	. "github.com/Dimas862/xray-core/common/dice"
+	. "github.com/dimas862/xray-core/common/dice"
 )
 
 func BenchmarkRoll1(b *testing.B) {
@@ -48,4 +48,5 @@ func BenchmarkIntn(b *testing.B) {
 		_ = uint16(rand.Intn(65536))
 	}
 }
+
 

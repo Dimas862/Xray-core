@@ -8,8 +8,8 @@ import (
 	"time"
 
 	utls "github.com/refraction-networking/utls"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 type Interface interface {
@@ -251,4 +251,5 @@ var OtherFingerprints = map[string]*utls.ClientHelloID{
 	"hellochrome_115_pq_psk":           &utls.HelloChrome_115_PQ_PSK,
 	"hellochrome_120_pq":               &utls.HelloChrome_120_PQ,
 }
+
 

@@ -3,11 +3,11 @@ package conf_test
 import (
 	"testing"
 
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/serial"
-	. "github.com/Dimas862/xray-core/infra/conf"
-	"github.com/Dimas862/xray-core/proxy/shadowsocks"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
+	. "github.com/dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/proxy/shadowsocks"
 )
 
 func TestShadowsocksServerConfigParsing(t *testing.T) {
@@ -34,4 +34,5 @@ func TestShadowsocksServerConfigParsing(t *testing.T) {
 		},
 	})
 }
+
 

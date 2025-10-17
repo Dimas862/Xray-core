@@ -3,7 +3,7 @@ package protocol
 import (
 	"time"
 
-	"github.com/Dimas862/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/dice"
 )
 
 type Timestamp int64
@@ -20,4 +20,5 @@ func NewTimestampGenerator(base Timestamp, delta int) TimestampGenerator {
 		return base + Timestamp(rangeInDelta)
 	}
 }
+
 

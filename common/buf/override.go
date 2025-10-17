@@ -1,7 +1,7 @@
 package buf
 
 import (
-	"github.com/Dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 type EndpointOverrideReader struct {
@@ -36,4 +36,5 @@ func (w *EndpointOverrideWriter) WriteMultiBuffer(mb MultiBuffer) error {
 	}
 	return w.Writer.WriteMultiBuffer(mb)
 }
+
 

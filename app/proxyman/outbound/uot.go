@@ -5,10 +5,10 @@ import (
 	"os"
 
 	"github.com/sagernet/sing/common/uot"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/stat"
 )
 
 func (h *Handler) getUoTConnection(ctx context.Context, dest net.Destination) (stat.Connection, error) {
@@ -33,4 +33,5 @@ func (h *Handler) getUoTConnection(ctx context.Context, dest net.Destination) (s
 	conn := uot.NewServerConn(packetConn, uotVersion)
 	return h.getStatCouterConnection(conn), nil
 }
+
 

@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/features/dns"
-	"github.com/Dimas862/xray-core/features/dns/localdns"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/features/dns/localdns"
 )
 
 // LocalNameServer is an wrapper over local DNS feature.
@@ -47,4 +47,5 @@ func NewLocalNameServer() *LocalNameServer {
 func NewLocalDNSClient(ipOption dns.IPOption) *Client {
 	return &Client{server: NewLocalNameServer(), ipOption: &ipOption}
 }
+
 

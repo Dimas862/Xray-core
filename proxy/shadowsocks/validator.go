@@ -8,9 +8,9 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common/dice"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/protocol"
 )
 
 // Validator stores valid Shadowsocks users.
@@ -164,4 +164,5 @@ func (v *Validator) GetBehaviorSeed() uint64 {
 	}
 	return v.behaviorSeed
 }
+
 

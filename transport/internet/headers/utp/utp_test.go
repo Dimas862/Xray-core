@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	. "github.com/Dimas862/xray-core/transport/internet/headers/utp"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	. "github.com/dimas862/xray-core/transport/internet/headers/utp"
 )
 
 func TestUTPWrite(t *testing.T) {
@@ -24,4 +24,5 @@ func TestUTPWrite(t *testing.T) {
 		t.Error("unexpected payload length: ", payload.Len())
 	}
 }
+
 

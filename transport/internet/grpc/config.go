@@ -4,8 +4,8 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 func init() {
@@ -57,4 +57,5 @@ func (c *Config) getTunMultiStreamName() string {
 		return url.PathEscape(streamNames[1])
 	}
 }
+
 

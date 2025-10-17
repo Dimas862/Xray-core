@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/sagernet/sing/common/logger"
-	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 var _ logger.ContextLogger = (*XrayLogger)(nil)
@@ -68,4 +68,5 @@ func (l *XrayLogger) FatalContext(ctx context.Context, args ...any) {
 
 func (l *XrayLogger) PanicContext(ctx context.Context, args ...any) {
 }
+
 

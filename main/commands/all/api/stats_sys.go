@@ -1,8 +1,8 @@
 package api
 
 import (
-	statsService "github.com/Dimas862/xray-core/app/stats/command"
-	"github.com/Dimas862/xray-core/main/commands/base"
+	statsService "github.com/dimas862/xray-core/app/stats/command"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 var cmdSysStats = &base.Command{
@@ -42,4 +42,5 @@ func executeSysStats(cmd *base.Command, args []string) {
 	}
 	showJSONResponse(resp)
 }
+
 

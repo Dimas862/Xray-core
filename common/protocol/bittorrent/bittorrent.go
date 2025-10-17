@@ -6,8 +6,8 @@ import (
 	"math"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
 )
 
 type SniffHeader struct{}
@@ -88,4 +88,5 @@ func SniffUTP(b []byte) (*SniffHeader, error) {
 
 	return &SniffHeader{}, nil
 }
+
 

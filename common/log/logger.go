@@ -6,9 +6,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/Dimas862/xray-core/common/platform"
-	"github.com/Dimas862/xray-core/common/signal/done"
-	"github.com/Dimas862/xray-core/common/signal/semaphore"
+	"github.com/dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/signal/done"
+	"github.com/dimas862/xray-core/common/signal/semaphore"
 )
 
 // Writer is the interface for writing logs.
@@ -182,4 +182,5 @@ func CreateFileLogWriter(path string) (WriterCreator, error) {
 func init() {
 	RegisterHandler(NewLogger(CreateStdoutLogWriter()))
 }
+
 

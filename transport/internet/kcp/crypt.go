@@ -5,8 +5,8 @@ import (
 	"encoding/binary"
 	"hash/fnv"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 // SimpleAuthenticator is a legacy AEAD used for KCP encryption.
@@ -75,4 +75,5 @@ func (a *SimpleAuthenticator) Open(dst, nonce, cipherText, extra []byte) ([]byte
 
 	return dst[6:], nil
 }
+
 

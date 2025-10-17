@@ -14,12 +14,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/ocsp"
-	"github.com/Dimas862/xray-core/common/platform/filesystem"
-	"github.com/Dimas862/xray-core/common/protocol/tls/cert"
-	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/ocsp"
+	"github.com/dimas862/xray-core/common/platform/filesystem"
+	"github.com/dimas862/xray-core/common/protocol/tls/cert"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 var globalSessionCache = tls.NewLRUClientSessionCache(128)
@@ -526,4 +526,5 @@ func ParseCurveName(curveNames []string) []tls.CurveID {
 func IsFromMitm(str string) bool {
 	return strings.ToLower(str) == "frommitm"
 }
+
 

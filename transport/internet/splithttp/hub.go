@@ -15,15 +15,15 @@ import (
 	"github.com/quic-go/quic-go"
 	"github.com/quic-go/quic-go/http3"
 	goreality "github.com/xtls/reality"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	http_proto "github.com/Dimas862/xray-core/common/protocol/http"
-	"github.com/Dimas862/xray-core/common/signal/done"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/reality"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	http_proto "github.com/dimas862/xray-core/common/protocol/http"
+	"github.com/dimas862/xray-core/common/signal/done"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/reality"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 )
 
 type requestHandler struct {
@@ -476,4 +476,5 @@ func getTLSConfig(streamSettings *internet.MemoryStreamConfig) *gotls.Config {
 func init() {
 	common.Must(internet.RegisterTransportListener(protocolName, ListenXH))
 }
+
 

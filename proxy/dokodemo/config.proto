@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.proxy.dokodemo;
 option csharp_namespace = "Xray.Proxy.Dokodemo";
-option go_package = "github.com/Dimas862/xray-core/proxy/dokodemo";
+option go_package = "github.com/dimas862/xray-core/proxy/dokodemo";
 option java_package = "com.xray.proxy.dokodemo";
 option java_multiple_files = true;
 
@@ -21,4 +21,5 @@ message Config {
   bool follow_redirect = 5;
   uint32 user_level = 6;
 }
+
 

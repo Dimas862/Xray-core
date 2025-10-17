@@ -1,8 +1,8 @@
 package conf
 
 import (
-	"github.com/Dimas862/xray-core/app/metrics"
-	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/app/metrics"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 type MetricsConfig struct {
@@ -24,4 +24,5 @@ func (c *MetricsConfig) Build() (*metrics.Config, error) {
 		Listen: c.Listen,
 	}, nil
 }
+
 

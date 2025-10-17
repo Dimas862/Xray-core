@@ -3,7 +3,7 @@ package router
 import (
 	sync "sync"
 
-	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 func (r *Router) OverrideBalancer(balancer string, target string) error {
@@ -50,4 +50,5 @@ func (o *override) Clear() {
 	defer o.access.Unlock()
 	o.settings.target = ""
 }
+
 

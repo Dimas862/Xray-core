@@ -7,10 +7,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common/dice"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/proxy/vmess/aead"
+	"github.com/dimas862/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/proxy/vmess/aead"
 )
 
 // TimedUserValidator is a user Validator based on time.
@@ -125,4 +125,5 @@ func (v *TimedUserValidator) GetBehaviorSeed() uint64 {
 var ErrNotFound = errors.New("Not Found")
 
 var ErrTainted = errors.New("ErrTainted")
+
 

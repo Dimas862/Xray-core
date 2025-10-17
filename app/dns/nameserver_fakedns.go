@@ -3,9 +3,9 @@ package dns
 import (
 	"context"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/features/dns"
 )
 
 type FakeDNSServer struct {
@@ -44,4 +44,5 @@ func (f *FakeDNSServer) QueryIP(ctx context.Context, domain string, opt dns.IPOp
 	}
 	return nil, 0, dns.ErrEmptyResponse
 }
+
 

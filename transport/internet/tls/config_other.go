@@ -7,7 +7,7 @@ import (
 	"crypto/x509"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 type rootCertsCache struct {
@@ -53,4 +53,5 @@ func (c *Config) getCertPool() (*x509.CertPool, error) {
 	}
 	return pool, nil
 }
+
 

@@ -1,7 +1,7 @@
 package routing
 
 import (
-	"github.com/Dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 // Context is a feature to store connection information for routing.
@@ -50,4 +50,5 @@ type Context interface {
 	// GetSkipDNSResolve returns a flag switch for weather skip dns resolve during route pick.
 	GetSkipDNSResolve() bool
 }
+
 

@@ -27,21 +27,21 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/dice"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/common/signal"
-	"github.com/Dimas862/xray-core/common/task"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/dns"
-	"github.com/Dimas862/xray-core/features/policy"
-	"github.com/Dimas862/xray-core/transport"
-	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/signal"
+	"github.com/dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/features/policy"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 // Handler is an outbound connection that silently swallow the entire payload.
@@ -336,4 +336,5 @@ func (h *Handler) createIPCRequest() string {
 
 	return request.String()[:request.Len()]
 }
+
 

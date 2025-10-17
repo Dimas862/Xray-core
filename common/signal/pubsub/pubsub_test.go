@@ -3,7 +3,7 @@ package pubsub_test
 import (
 	"testing"
 
-	. "github.com/Dimas862/xray-core/common/signal/pubsub"
+	. "github.com/dimas862/xray-core/common/signal/pubsub"
 )
 
 func TestPubsub(t *testing.T) {
@@ -32,4 +32,5 @@ func TestPubsub(t *testing.T) {
 
 	service.Cleanup()
 }
+
 

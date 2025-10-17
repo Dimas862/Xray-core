@@ -1,10 +1,10 @@
 package all
 
 import (
-	"github.com/Dimas862/xray-core/main/commands/all/api"
-	"github.com/Dimas862/xray-core/main/commands/all/convert"
-	"github.com/Dimas862/xray-core/main/commands/all/tls"
-	"github.com/Dimas862/xray-core/main/commands/base"
+	"github.com/dimas862/xray-core/main/commands/all/api"
+	"github.com/dimas862/xray-core/main/commands/all/convert"
+	"github.com/dimas862/xray-core/main/commands/all/tls"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 func init() {
@@ -21,4 +21,5 @@ func init() {
 		cmdVLESSEnc,
 	)
 }
+
 

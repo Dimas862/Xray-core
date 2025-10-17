@@ -1,9 +1,9 @@
-package log // import "github.com/Dimas862/xray-core/common/log"
+package log // import "github.com/dimas862/xray-core/common/log"
 
 import (
 	"sync"
 
-	"github.com/Dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/serial"
 )
 
 // Message is the interface for all log messages.
@@ -62,4 +62,5 @@ func (h *syncHandler) Set(handler Handler) {
 
 	h.Handler = handler
 }
+
 

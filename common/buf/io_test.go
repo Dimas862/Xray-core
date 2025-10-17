@@ -5,9 +5,9 @@ import (
 	"io"
 	"testing"
 
-	. "github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/testing/servers/tcp"
+	. "github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/testing/servers/tcp"
 )
 
 func TestWriterCreation(t *testing.T) {
@@ -48,4 +48,5 @@ func TestWriterCreation(t *testing.T) {
 		}
 	}
 }
+
 

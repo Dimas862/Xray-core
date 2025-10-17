@@ -10,10 +10,10 @@ import (
 	"net/http/httptrace"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/signal/done"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/signal/done"
 )
 
 // interface to abstract between use of browser dialer, vs net/http
@@ -290,4 +290,5 @@ func (w *WaitReadCloser) Close() error {
 	close(w.Wait)
 	return nil
 }
+
 

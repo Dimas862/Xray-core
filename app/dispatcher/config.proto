@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.app.dispatcher;
 option csharp_namespace = "Xray.App.Dispatcher";
-option go_package = "github.com/Dimas862/xray-core/app/dispatcher";
+option go_package = "github.com/dimas862/xray-core/app/dispatcher";
 option java_package = "com.xray.app.dispatcher";
 option java_multiple_files = true;
 
@@ -13,4 +13,5 @@ message SessionConfig {
 message Config {
   SessionConfig settings = 1;
 }
+
 

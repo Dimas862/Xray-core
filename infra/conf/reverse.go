@@ -1,7 +1,7 @@
 package conf
 
 import (
-	"github.com/Dimas862/xray-core/app/reverse"
+	"github.com/dimas862/xray-core/app/reverse"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -54,4 +54,5 @@ func (c *ReverseConfig) Build() (proto.Message, error) {
 
 	return config, nil
 }
+
 

@@ -4,7 +4,7 @@ import (
 	"container/list"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/buf"
 )
 
 type SendingWindow struct {
@@ -362,4 +362,5 @@ func (w *SendingWorker) FirstUnacknowledged() uint32 {
 
 	return w.firstUnacknowledged
 }
+
 

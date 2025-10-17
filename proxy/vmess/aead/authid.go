@@ -12,8 +12,8 @@ import (
 	"math"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/antireplay"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/antireplay"
 )
 
 var (
@@ -119,4 +119,5 @@ func (a *AuthIDDecoderHolder) Match(authID [16]byte) (interface{}, error) {
 	}
 	return nil, ErrNotFound
 }
+
 

@@ -12,12 +12,12 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	http_proto "github.com/Dimas862/xray-core/common/protocol/http"
-	"github.com/Dimas862/xray-core/transport/internet"
-	v2tls "github.com/Dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	http_proto "github.com/dimas862/xray-core/common/protocol/http"
+	"github.com/dimas862/xray-core/transport/internet"
+	v2tls "github.com/dimas862/xray-core/transport/internet/tls"
 )
 
 type requestHandler struct {
@@ -162,4 +162,5 @@ func (ln *Listener) Close() error {
 func init() {
 	common.Must(internet.RegisterTransportListener(protocolName, ListenWS))
 }
+
 

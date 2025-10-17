@@ -6,14 +6,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/Dimas862/xray-core/app/router"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/common/strmatcher"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/dns"
-	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/app/router"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/strmatcher"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/features/routing"
 )
 
 // Server is the interface for Name Server.
@@ -300,4 +300,5 @@ func ResolveIpOptionOverride(queryStrategy QueryStrategy, ipOption dns.IPOption)
 		return ipOption
 	}
 }
+
 

@@ -4,13 +4,13 @@ import (
 	"context"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/net/cnc"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/common/signal/done"
-	"github.com/Dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/net/cnc"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/signal/done"
+	"github.com/dimas862/xray-core/transport"
 )
 
 // OutboundListener is a net.Listener for listening gRPC connections.
@@ -119,4 +119,5 @@ func (co *Outbound) SenderSettings() *serial.TypedMessage {
 func (co *Outbound) ProxySettings() *serial.TypedMessage {
 	return nil
 }
+
 

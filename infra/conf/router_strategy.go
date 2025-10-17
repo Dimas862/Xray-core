@@ -4,9 +4,9 @@ import (
 	"google.golang.org/protobuf/proto"
 	"strings"
 
-	"github.com/Dimas862/xray-core/app/observatory/burst"
-	"github.com/Dimas862/xray-core/app/router"
-	"github.com/Dimas862/xray-core/infra/conf/cfgcommon/duration"
+	"github.com/dimas862/xray-core/app/observatory/burst"
+	"github.com/dimas862/xray-core/app/router"
+	"github.com/dimas862/xray-core/infra/conf/cfgcommon/duration"
 )
 
 const (
@@ -100,4 +100,5 @@ func (v *strategyLeastLoadConfig) Build() (proto.Message, error) {
 	}
 	return config, nil
 }
+
 

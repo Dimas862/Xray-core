@@ -5,11 +5,11 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/cmdarg"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/main/confloader"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/cmdarg"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/main/confloader"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -185,4 +185,5 @@ func init() {
 		},
 	}))
 }
+
 

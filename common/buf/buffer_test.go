@@ -6,8 +6,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Dimas862/xray-core/common"
-	. "github.com/Dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common"
+	. "github.com/dimas862/xray-core/common/buf"
 )
 
 func TestBufferClear(t *testing.T) {
@@ -222,4 +222,5 @@ func BenchmarkWriteByte8(b *testing.B) {
 		buffer.Clear()
 	}
 }
+
 

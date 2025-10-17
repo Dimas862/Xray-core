@@ -3,7 +3,7 @@ package cache_test
 import (
 	"testing"
 
-	. "github.com/Dimas862/xray-core/common/cache"
+	. "github.com/dimas862/xray-core/common/cache"
 )
 
 func TestLruReplaceValue(t *testing.T) {
@@ -84,4 +84,5 @@ func TestPeekKeyFromValue(t *testing.T) {
 		t.Error("should get 2", v)
 	}
 }
+
 

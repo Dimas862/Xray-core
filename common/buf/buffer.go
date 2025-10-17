@@ -3,9 +3,9 @@ package buf
 import (
 	"io"
 
-	"github.com/Dimas862/xray-core/common/bytespool"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/bytespool"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 const (
@@ -346,4 +346,5 @@ func (b *Buffer) ReadFullFrom(reader io.Reader, size int32) (int64, error) {
 func (b *Buffer) String() string {
 	return string(b.Bytes())
 }
+
 

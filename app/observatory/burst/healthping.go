@@ -7,9 +7,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Dimas862/xray-core/common/dice"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/features/routing"
 )
 
 // HealthPingSettings holds settings for health Checker
@@ -266,4 +266,5 @@ func (h *HealthPing) checkConnectivity() bool {
 	}
 	return true
 }
+
 

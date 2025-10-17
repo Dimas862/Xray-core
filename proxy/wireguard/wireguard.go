@@ -7,8 +7,8 @@ import (
 	"net/netip"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/log"
 	"golang.zx2c4.com/wireguard/device"
 )
 
@@ -108,4 +108,5 @@ func createIPCRequest(conf *DeviceConfig) string {
 
 	return request.String()[:request.Len()]
 }
+
 

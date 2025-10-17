@@ -6,9 +6,9 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/session"
 )
 
 type version byte
@@ -115,4 +115,5 @@ func SniffHTTP(b []byte, c context.Context) (*SniffHeader, error) {
 
 	return nil, common.ErrNoClue
 }
+
 

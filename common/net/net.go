@@ -1,5 +1,5 @@
 // Package net is a drop-in replacement to Golang's net package, with some more functionalities.
-package net // import "github.com/Dimas862/xray-core/common/net"
+package net // import "github.com/dimas862/xray-core/common/net"
 
 import "time"
 
@@ -12,4 +12,5 @@ const QuicgoH3KeepAlivePeriod = 10 * time.Second
 
 // consistent with chrome
 const ChromeH2KeepAlivePeriod = 45 * time.Second
+
 

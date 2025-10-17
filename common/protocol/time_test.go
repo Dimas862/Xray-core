@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/Dimas862/xray-core/common/protocol"
+	. "github.com/dimas862/xray-core/common/protocol"
 )
 
 func TestGenerateRandomInt64InRange(t *testing.T) {
@@ -19,4 +19,5 @@ func TestGenerateRandomInt64InRange(t *testing.T) {
 		}
 	}
 }
+
 

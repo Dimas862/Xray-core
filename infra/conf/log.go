@@ -3,8 +3,8 @@ package conf
 import (
 	"strings"
 
-	"github.com/Dimas862/xray-core/app/log"
-	clog "github.com/Dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/app/log"
+	clog "github.com/dimas862/xray-core/common/log"
 )
 
 func DefaultLogConfig() *log.Config {
@@ -63,4 +63,5 @@ func (v *LogConfig) Build() *log.Config {
 	config.MaskAddress = v.MaskAddress
 	return config
 }
+
 

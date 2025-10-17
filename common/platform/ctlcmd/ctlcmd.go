@@ -7,9 +7,9 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/platform"
 )
 
 func Run(args []string, input io.Reader) (buf.MultiBuffer, error) {
@@ -48,4 +48,5 @@ func Run(args []string, input io.Reader) (buf.MultiBuffer, error) {
 
 	return outBuffer.MultiBuffer, nil
 }
+
 

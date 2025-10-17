@@ -5,18 +5,18 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/mux"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/common/signal"
-	"github.com/Dimas862/xray-core/common/task"
-	"github.com/Dimas862/xray-core/features/outbound"
-	"github.com/Dimas862/xray-core/transport"
-	"github.com/Dimas862/xray-core/transport/pipe"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/mux"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/signal"
+	"github.com/dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/features/outbound"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/pipe"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -306,4 +306,5 @@ func (w *PortalWorker) IsFull() bool {
 func (w *PortalWorker) Closed() bool {
 	return w.client.Closed()
 }
+
 

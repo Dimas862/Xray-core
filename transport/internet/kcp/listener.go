@@ -6,14 +6,14 @@ import (
 	gotls "crypto/tls"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/transport/internet"
-	"github.com/Dimas862/xray-core/transport/internet/stat"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
-	"github.com/Dimas862/xray-core/transport/internet/udp"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/transport/internet/udp"
 )
 
 type ConnectionID struct {
@@ -195,4 +195,5 @@ func ListenKCP(ctx context.Context, address net.Address, port net.Port, streamSe
 func init() {
 	common.Must(internet.RegisterTransportListener(protocolName, ListenKCP))
 }
+
 

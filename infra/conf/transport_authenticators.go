@@ -3,15 +3,15 @@ package conf
 import (
 	"sort"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/transport/internet/headers/dns"
-	"github.com/Dimas862/xray-core/transport/internet/headers/http"
-	"github.com/Dimas862/xray-core/transport/internet/headers/noop"
-	"github.com/Dimas862/xray-core/transport/internet/headers/srtp"
-	"github.com/Dimas862/xray-core/transport/internet/headers/tls"
-	"github.com/Dimas862/xray-core/transport/internet/headers/utp"
-	"github.com/Dimas862/xray-core/transport/internet/headers/wechat"
-	"github.com/Dimas862/xray-core/transport/internet/headers/wireguard"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/transport/internet/headers/dns"
+	"github.com/dimas862/xray-core/transport/internet/headers/http"
+	"github.com/dimas862/xray-core/transport/internet/headers/noop"
+	"github.com/dimas862/xray-core/transport/internet/headers/srtp"
+	"github.com/dimas862/xray-core/transport/internet/headers/tls"
+	"github.com/dimas862/xray-core/transport/internet/headers/utp"
+	"github.com/dimas862/xray-core/transport/internet/headers/wechat"
+	"github.com/dimas862/xray-core/transport/internet/headers/wireguard"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -235,4 +235,5 @@ func (v *Authenticator) Build() (proto.Message, error) {
 
 	return config, nil
 }
+
 

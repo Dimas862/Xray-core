@@ -8,11 +8,11 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/proxy/trojan"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/proxy/trojan"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -172,4 +172,5 @@ func (c *TrojanServerConfig) Build() (proto.Message, error) {
 
 	return config, nil
 }
+
 

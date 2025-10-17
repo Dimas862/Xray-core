@@ -7,8 +7,8 @@
 package router
 
 import (
-	net "github.com/Dimas862/xray-core/common/net"
-	serial "github.com/Dimas862/xray-core/common/serial"
+	net "github.com/dimas862/xray-core/common/net"
+	serial "github.com/dimas862/xray-core/common/serial"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1294,4 +1294,5 @@ func file_app_router_config_proto_init() {
 	file_app_router_config_proto_goTypes = nil
 	file_app_router_config_proto_depIdxs = nil
 }
+
 

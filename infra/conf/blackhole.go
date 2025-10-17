@@ -3,9 +3,9 @@ package conf
 import (
 	"encoding/json"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/proxy/blackhole"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/proxy/blackhole"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -49,4 +49,5 @@ var configLoader = NewJSONConfigLoader(
 	},
 	"type",
 	"")
+
 

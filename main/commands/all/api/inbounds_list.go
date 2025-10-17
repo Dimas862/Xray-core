@@ -1,8 +1,8 @@
 package api
 
 import (
-	handlerService "github.com/Dimas862/xray-core/app/proxyman/command"
-	"github.com/Dimas862/xray-core/main/commands/base"
+	handlerService "github.com/dimas862/xray-core/app/proxyman/command"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 var cmdListInbounds = &base.Command{
@@ -45,4 +45,5 @@ func executeListInbounds(cmd *base.Command, args []string) {
 	}
 	showJSONResponse(resp)
 }
+
 

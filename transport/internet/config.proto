@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.transport.internet;
 option csharp_namespace = "Xray.Transport.Internet";
-option go_package = "github.com/Dimas862/xray-core/transport/internet";
+option go_package = "github.com/dimas862/xray-core/transport/internet";
 option java_package = "com.xray.transport.internet";
 option java_multiple_files = true;
 
@@ -140,4 +140,5 @@ message HappyEyeballsConfig {
   uint64 try_delayMs = 3;
   uint32 max_concurrent_try = 4;
 }
+
 

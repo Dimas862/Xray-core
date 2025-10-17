@@ -6,10 +6,10 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/platform"
-	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/protocol"
 )
 
 type StringList []string
@@ -374,4 +374,5 @@ func ParseRangeString(str string) (int, int, error) {
 	}
 	return 0, 0, errors.New("invalid range string: ", str)
 }
+
 

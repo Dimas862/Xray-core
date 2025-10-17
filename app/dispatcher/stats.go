@@ -1,9 +1,9 @@
 package dispatcher
 
 import (
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/features/stats"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/features/stats"
 )
 
 type SizeStatWriter struct {
@@ -23,4 +23,5 @@ func (w *SizeStatWriter) Close() error {
 func (w *SizeStatWriter) Interrupt() {
 	common.Interrupt(w.Writer)
 }
+
 

@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/Dimas862/xray-core/app/dns"
-	"github.com/Dimas862/xray-core/common/net"
-	. "github.com/Dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/app/dns"
+	"github.com/dimas862/xray-core/common/net"
+	. "github.com/dimas862/xray-core/infra/conf"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -105,4 +105,5 @@ func TestDNSConfigParsing(t *testing.T) {
 		},
 	})
 }
+
 

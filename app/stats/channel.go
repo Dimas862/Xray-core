@@ -4,8 +4,8 @@ import (
 	"context"
 	"sync"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 // Channel is an implementation of stats.Channel.
@@ -171,4 +171,5 @@ func (c channelMessage) broadcastNonBlocking(subscriber chan interface{}) {
 		go c.broadcast(subscriber)
 	}
 }
+
 

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.common.net;
 option csharp_namespace = "Xray.Common.Net";
-option go_package = "github.com/Dimas862/xray-core/common/net";
+option go_package = "github.com/dimas862/xray-core/common/net";
 option java_package = "com.xray.common.net";
 option java_multiple_files = true;
 
@@ -15,4 +15,5 @@ message Endpoint {
   IPOrDomain address = 2;
   uint32 port = 3;
 }
+
 

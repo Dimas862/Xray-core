@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.app.metrics;
 option csharp_namespace = "Xray.App.Metrics";
-option go_package = "github.com/Dimas862/xray-core/app/metrics";
+option go_package = "github.com/dimas862/xray-core/app/metrics";
 option java_package = "com.xray.app.metrics";
 option java_multiple_files = true;
 
@@ -12,4 +12,5 @@ message Config {
   string tag = 1;
   string listen = 2;
 }
+
 

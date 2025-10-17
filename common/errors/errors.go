@@ -1,17 +1,17 @@
 // Package errors is a drop-in replacement for Golang lib 'errors'.
-package errors // import "github.com/Dimas862/xray-core/common/errors"
+package errors // import "github.com/dimas862/xray-core/common/errors"
 
 import (
 	"context"
 	"runtime"
 	"strings"
 
-	c "github.com/Dimas862/xray-core/common/ctx"
-	"github.com/Dimas862/xray-core/common/log"
-	"github.com/Dimas862/xray-core/common/serial"
+	c "github.com/dimas862/xray-core/common/ctx"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/serial"
 )
 
-const trim = len("github.com/Dimas862/xray-core/")
+const trim = len("github.com/dimas862/xray-core/")
 
 type hasInnerError interface {
 	// Unwrap returns the underlying error of this one.
@@ -225,4 +225,5 @@ func GetSeverity(err error) log.Severity {
 	}
 	return log.Severity_Info
 }
+
 

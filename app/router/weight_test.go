@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/Dimas862/xray-core/app/router"
+	"github.com/dimas862/xray-core/app/router"
 )
 
 func TestWeight(t *testing.T) {
@@ -58,4 +58,5 @@ func TestWeight(t *testing.T) {
 		t.Errorf("expected2: %v, actual2: %v", expected2, actual2)
 	}
 }
+
 

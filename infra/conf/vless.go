@@ -9,14 +9,14 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/common/uuid"
-	"github.com/Dimas862/xray-core/proxy/vless"
-	"github.com/Dimas862/xray-core/proxy/vless/inbound"
-	"github.com/Dimas862/xray-core/proxy/vless/outbound"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/uuid"
+	"github.com/dimas862/xray-core/proxy/vless"
+	"github.com/dimas862/xray-core/proxy/vless/inbound"
+	"github.com/dimas862/xray-core/proxy/vless/outbound"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -334,4 +334,5 @@ func (c *VLessOutboundConfig) Build() (proto.Message, error) {
 
 	return config, nil
 }
+
 

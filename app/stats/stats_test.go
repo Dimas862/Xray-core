@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	. "github.com/Dimas862/xray-core/app/stats"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/features/stats"
+	. "github.com/dimas862/xray-core/app/stats"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/features/stats"
 )
 
 func TestInterface(t *testing.T) {
@@ -84,4 +84,5 @@ func TestStatsChannelRunnable(t *testing.T) {
 		t.Fatalf("unexpected running channel: test.channel.%d", 3)
 	}
 }
+
 

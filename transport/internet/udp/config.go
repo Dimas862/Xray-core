@@ -1,8 +1,8 @@
 package udp
 
 import (
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 func init() {
@@ -10,4 +10,5 @@ func init() {
 		return new(Config)
 	}))
 }
+
 

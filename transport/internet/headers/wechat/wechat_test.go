@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	. "github.com/Dimas862/xray-core/transport/internet/headers/wechat"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	. "github.com/dimas862/xray-core/transport/internet/headers/wechat"
 )
 
 func TestUTPWrite(t *testing.T) {
@@ -22,4 +22,5 @@ func TestUTPWrite(t *testing.T) {
 		t.Error("expected payload size ", video.Size(), " but got ", payload.Len())
 	}
 }
+
 

@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/features/routing"
-	"github.com/Dimas862/xray-core/transport/internet/tagged"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/transport/internet/tagged"
 )
 
 type pingClient struct {
@@ -77,4 +77,5 @@ func (s *pingClient) MeasureDelay(httpMethod string) (time.Duration, error) {
 
 	return time.Since(start), nil
 }
+
 

@@ -9,9 +9,9 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Dimas862/xray-core/common"
-	. "github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/testing/servers/tcp"
+	"github.com/dimas862/xray-core/common"
+	. "github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/testing/servers/tcp"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -70,4 +70,5 @@ func TestReadvReader(t *testing.T) {
 		t.Fatal(r)
 	}
 }
+
 

@@ -6,9 +6,9 @@ import (
 	"os"
 
 	"github.com/xtls/reality/hpke"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/main/commands/base"
-	"github.com/Dimas862/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/main/commands/base"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 	"golang.org/x/crypto/cryptobyte"
 )
 
@@ -91,4 +91,5 @@ func executeECH(cmd *base.Command, args []string) {
 		os.Stdout.WriteString("ECH server keys: \n" + base64.StdEncoding.EncodeToString(keyBuffer) + "\n")
 	}
 }
+
 

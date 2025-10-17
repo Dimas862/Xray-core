@@ -3,9 +3,9 @@ package log
 import (
 	"sync"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
 )
 
 type HandlerCreatorOptions struct {
@@ -58,4 +58,5 @@ func init() {
 		return nil, nil
 	}))
 }
+
 

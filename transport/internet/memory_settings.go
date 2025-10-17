@@ -1,6 +1,6 @@
 package internet
 
-import "github.com/Dimas862/xray-core/common/net"
+import "github.com/dimas862/xray-core/common/net"
 
 // MemoryStreamConfig is a parsed form of StreamConfig. It is used to reduce the number of Protobuf parses.
 type MemoryStreamConfig struct {
@@ -47,4 +47,5 @@ func ToMemoryStreamConfig(s *StreamConfig) (*MemoryStreamConfig, error) {
 
 	return mss, nil
 }
+
 

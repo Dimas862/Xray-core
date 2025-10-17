@@ -7,10 +7,10 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	. "github.com/Dimas862/xray-core/app/dns"
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/net"
-	dns_feature "github.com/Dimas862/xray-core/features/dns"
+	. "github.com/dimas862/xray-core/app/dns"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/net"
+	dns_feature "github.com/dimas862/xray-core/features/dns"
 )
 
 func TestTCPLocalNameServer(t *testing.T) {
@@ -105,4 +105,5 @@ func TestTCPLocalNameServerWithIPv6Override(t *testing.T) {
 		}
 	}
 }
+
 

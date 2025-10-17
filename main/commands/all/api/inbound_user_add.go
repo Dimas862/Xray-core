@@ -4,21 +4,21 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/Dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/protocol"
 
-	handlerService "github.com/Dimas862/xray-core/app/proxyman/command"
-	cserial "github.com/Dimas862/xray-core/common/serial"
+	handlerService "github.com/dimas862/xray-core/app/proxyman/command"
+	cserial "github.com/dimas862/xray-core/common/serial"
 
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/infra/conf"
-	"github.com/Dimas862/xray-core/infra/conf/serial"
-	"github.com/Dimas862/xray-core/proxy/shadowsocks"
-	"github.com/Dimas862/xray-core/proxy/shadowsocks_2022"
-	"github.com/Dimas862/xray-core/proxy/trojan"
-	vlessin "github.com/Dimas862/xray-core/proxy/vless/inbound"
-	vmessin "github.com/Dimas862/xray-core/proxy/vmess/inbound"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/infra/conf/serial"
+	"github.com/dimas862/xray-core/proxy/shadowsocks"
+	"github.com/dimas862/xray-core/proxy/shadowsocks_2022"
+	"github.com/dimas862/xray-core/proxy/trojan"
+	vlessin "github.com/dimas862/xray-core/proxy/vless/inbound"
+	vmessin "github.com/dimas862/xray-core/proxy/vmess/inbound"
 
-	"github.com/Dimas862/xray-core/main/commands/base"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 var cmdAddInboundUsers = &base.Command{
@@ -142,4 +142,5 @@ func executeInboundUserAction(ctx context.Context, client handlerService.Handler
 	}
 	return success
 }
+
 

@@ -7,8 +7,8 @@
 package dns
 
 import (
-	router "github.com/Dimas862/xray-core/app/router"
-	net "github.com/Dimas862/xray-core/common/net"
+	router "github.com/dimas862/xray-core/app/router"
+	net "github.com/dimas862/xray-core/common/net"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -738,4 +738,5 @@ func file_app_dns_config_proto_init() {
 	file_app_dns_config_proto_goTypes = nil
 	file_app_dns_config_proto_depIdxs = nil
 }
+
 

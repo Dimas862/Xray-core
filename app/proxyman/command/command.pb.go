@@ -7,9 +7,9 @@
 package command
 
 import (
-	protocol "github.com/Dimas862/xray-core/common/protocol"
-	serial "github.com/Dimas862/xray-core/common/serial"
-	core "github.com/Dimas862/xray-core/core"
+	protocol "github.com/dimas862/xray-core/common/protocol"
+	serial "github.com/dimas862/xray-core/common/serial"
+	core "github.com/dimas862/xray-core/core"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1237,4 +1237,5 @@ func file_app_proxyman_command_command_proto_init() {
 	file_app_proxyman_command_command_proto_goTypes = nil
 	file_app_proxyman_command_command_proto_depIdxs = nil
 }
+
 

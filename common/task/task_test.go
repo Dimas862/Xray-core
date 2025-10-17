@@ -8,8 +8,8 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/Dimas862/xray-core/common"
-	. "github.com/Dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/common"
+	. "github.com/dimas862/xray-core/common/task"
 )
 
 func TestExecuteParallel(t *testing.T) {
@@ -63,4 +63,5 @@ func BenchmarkExecuteTwo(b *testing.B) {
 		common.Must(Run(context.Background(), noop, noop))
 	}
 }
+
 

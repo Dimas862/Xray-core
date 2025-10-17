@@ -15,7 +15,7 @@ import (
 
 	"github.com/sagernet/sing/common/control"
 	"github.com/vishvananda/netlink"
-	"github.com/Dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 	wgtun "golang.zx2c4.com/wireguard/tun"
 )
 
@@ -262,4 +262,5 @@ func KernelTunSupported() (bool, error) {
 
 	return (data.Effective & (1 << unix.CAP_NET_ADMIN)) != 0, nil
 }
+
 

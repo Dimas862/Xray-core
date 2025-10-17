@@ -3,10 +3,10 @@ package conf
 import (
 	"encoding/json"
 
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/protocol"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/proxy/socks"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/proxy/socks"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -97,4 +97,5 @@ func (v *SocksClientConfig) Build() (proto.Message, error) {
 	}
 	return config, nil
 }
+
 

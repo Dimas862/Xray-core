@@ -3,18 +3,18 @@ package loopback
 import (
 	"context"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/errors"
-	"github.com/Dimas862/xray-core/common/net"
-	"github.com/Dimas862/xray-core/common/net/cnc"
-	"github.com/Dimas862/xray-core/common/retry"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/common/task"
-	"github.com/Dimas862/xray-core/core"
-	"github.com/Dimas862/xray-core/features/routing"
-	"github.com/Dimas862/xray-core/transport"
-	"github.com/Dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/net/cnc"
+	"github.com/dimas862/xray-core/common/retry"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 type Loopback struct {
@@ -122,4 +122,5 @@ func init() {
 		return l, err
 	}))
 }
+
 

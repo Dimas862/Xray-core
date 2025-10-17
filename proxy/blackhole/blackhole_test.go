@@ -4,13 +4,13 @@ import (
 	"context"
 	"testing"
 
-	"github.com/Dimas862/xray-core/common"
-	"github.com/Dimas862/xray-core/common/buf"
-	"github.com/Dimas862/xray-core/common/serial"
-	"github.com/Dimas862/xray-core/common/session"
-	"github.com/Dimas862/xray-core/proxy/blackhole"
-	"github.com/Dimas862/xray-core/transport"
-	"github.com/Dimas862/xray-core/transport/pipe"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/proxy/blackhole"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/pipe"
 )
 
 func TestBlackholeHTTPResponse(t *testing.T) {
@@ -40,4 +40,5 @@ func TestBlackholeHTTPResponse(t *testing.T) {
 		t.Error("expect http response, but nothing")
 	}
 }
+
 
