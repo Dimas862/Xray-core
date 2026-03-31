@@ -447,7 +447,7 @@ func Dial(ctx context.Context, dest net.Destination, streamSettings *internet.Me
 			}
 
 			go func() {
-				err := httpClient.PutPacket(
+				err := httpClient.DeletePacket(
 					ctx,
 					url.String(),
 					&buf.MultiBufferContainer{MultiBuffer: chunk},
