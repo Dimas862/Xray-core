@@ -12,7 +12,6 @@ import (
 	"strconv"
 	"strings"
 	"syscall"
-	"time"
 
 	"github.com/dimas862/xray-core/common/errors"
 	"github.com/dimas862/xray-core/common/net"
