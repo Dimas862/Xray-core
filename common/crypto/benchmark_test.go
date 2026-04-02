@@ -4,7 +4,7 @@ import (
 	"crypto/cipher"
 	"testing"
 
-	. "github.com/xtls/xray-core/common/crypto"
+	. "github.com/dimas862/xray-core/common/crypto"
 )
 
 const benchSize = 1024 * 1024
@@ -48,3 +48,4 @@ func BenchmarkAESDecryption(b *testing.B) {
 
 	benchmarkStream(b, c)
 }
+

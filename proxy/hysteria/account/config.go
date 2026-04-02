@@ -3,8 +3,8 @@ package account
 import (
 	"sync"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/protocol"
 
 	"google.golang.org/protobuf/proto"
 )
@@ -127,3 +127,4 @@ func (v *Validator) GetCount() int64 {
 
 	return int64(len(v.users))
 }
+

@@ -3,7 +3,7 @@ package ctx
 import (
 	"context"
 
-	"github.com/xtls/xray-core/proxy/hysteria/account"
+	"github.com/dimas862/xray-core/proxy/hysteria/account"
 )
 
 type key int
@@ -33,3 +33,4 @@ func ValidatorFromContext(ctx context.Context) *account.Validator {
 	v, _ := ctx.Value(validator).(*account.Validator)
 	return v
 }
+

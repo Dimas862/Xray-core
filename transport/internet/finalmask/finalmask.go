@@ -5,7 +5,7 @@ import (
 	"net"
 	"sync"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 type Udpmask interface {
@@ -274,3 +274,4 @@ func UnwrapTcpMask(conn net.Conn) net.Conn {
 		}
 	}
 }
+

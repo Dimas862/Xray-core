@@ -8,8 +8,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/transport/internet/finalmask"
+	"github.com/dimas862/xray-core/common/crypto"
+	"github.com/dimas862/xray-core/transport/internet/finalmask"
 )
 
 const (
@@ -303,3 +303,4 @@ func trySetWriteBuffer(pc net.PacketConn, bytes int) error {
 	}
 	return nil
 }
+

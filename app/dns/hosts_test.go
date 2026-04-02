@@ -5,11 +5,11 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	. "github.com/xtls/xray-core/app/dns"
-	"github.com/xtls/xray-core/app/router"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/features/dns"
+	. "github.com/dimas862/xray-core/app/dns"
+	"github.com/dimas862/xray-core/app/router"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/features/dns"
 )
 
 func TestStaticHosts(t *testing.T) {
@@ -186,3 +186,4 @@ func TestStaticHostsFromCache(t *testing.T) {
 		}
 	}
 }
+

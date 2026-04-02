@@ -6,9 +6,9 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/xtls/xray-core/app/stats"
-	. "github.com/xtls/xray-core/app/stats/command"
-	"github.com/xtls/xray-core/common"
+	"github.com/dimas862/xray-core/app/stats"
+	. "github.com/dimas862/xray-core/app/stats/command"
+	"github.com/dimas862/xray-core/common"
 )
 
 func TestGetStats(t *testing.T) {
@@ -89,3 +89,4 @@ func TestQueryStats(t *testing.T) {
 		t.Error(r)
 	}
 }
+

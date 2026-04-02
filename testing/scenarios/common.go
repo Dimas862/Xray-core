@@ -14,16 +14,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/app/dispatcher"
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/retry"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/common/units"
-	core "github.com/xtls/xray-core/core"
+	"github.com/dimas862/xray-core/app/dispatcher"
+	"github.com/dimas862/xray-core/app/proxyman"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/retry"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/units"
+	core "github.com/dimas862/xray-core/core"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -267,3 +267,4 @@ func WaitConnAvailableWithTest(t *testing.T, testFunc func() error) bool {
 	}
 	return true
 }
+

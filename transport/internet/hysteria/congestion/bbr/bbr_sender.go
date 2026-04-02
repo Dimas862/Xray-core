@@ -11,7 +11,7 @@ import (
 	"github.com/apernet/quic-go/congestion"
 	"github.com/apernet/quic-go/monotime"
 
-	"github.com/xtls/xray-core/transport/internet/hysteria/congestion/common"
+	"github.com/dimas862/xray-core/transport/internet/hysteria/congestion/common"
 )
 
 // BbrSender implements BBR congestion control algorithm.  BBR aims to estimate
@@ -979,3 +979,4 @@ func formatSpeed(bw Bandwidth) string {
 	}
 	return fmt.Sprintf("%.2f %s", bwf, units[unitIndex])
 }
+

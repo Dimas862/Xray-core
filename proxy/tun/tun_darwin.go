@@ -12,8 +12,8 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/platform"
 	"golang.org/x/sys/unix"
 	"gvisor.dev/gvisor/pkg/buffer"
 	"gvisor.dev/gvisor/pkg/tcpip"
@@ -352,3 +352,4 @@ func ioctlPtr(fd int, req uint, arg unsafe.Pointer) error {
 	}
 	return nil
 }
+

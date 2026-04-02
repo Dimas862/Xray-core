@@ -14,7 +14,7 @@ import (
 	"runtime"
 	"runtime/debug"
 
-	"github.com/xtls/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/serial"
 )
 
 var (
@@ -70,3 +70,4 @@ func VersionStatement() []string {
 		intro,
 	}
 }
+

@@ -3,9 +3,9 @@ package all
 import (
 	"os"
 
-	"github.com/xtls/xray-core/common/platform"
-	"github.com/xtls/xray-core/infra/conf/serial"
-	"github.com/xtls/xray-core/main/commands/base"
+	"github.com/dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/infra/conf/serial"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 var cmdBuildMphCache = &base.Command{
@@ -50,3 +50,4 @@ func executeBuildMphCache(cmd *base.Command, args []string) {
 		base.Fatalf("failed to build MPH cache: %v", err)
 	}
 }
+

@@ -1,9 +1,9 @@
 package conf
 
 import (
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/proxy/dokodemo"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/proxy/dokodemo"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -33,3 +33,4 @@ func (v *DokodemoConfig) Build() (proto.Message, error) {
 	config.UserLevel = v.UserLevel
 	return config, nil
 }
+

@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common/crypto"
+	"github.com/dimas862/xray-core/common/crypto"
 )
 
 type noiseConn struct {
@@ -94,3 +94,4 @@ func (c *noiseConn) Close() error {
 	})
 	return c.PacketConn.Close()
 }
+

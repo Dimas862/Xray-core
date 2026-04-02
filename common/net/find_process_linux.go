@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 func FindProcess(dest Destination) (PID int, Name string, AbsolutePath string, err error) {
@@ -174,3 +174,4 @@ func getAbsPath(pid string) (string, error) {
 	path := fmt.Sprintf("/proc/%s/exe", pid)
 	return os.Readlink(path)
 }
+

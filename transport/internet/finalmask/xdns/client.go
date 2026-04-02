@@ -12,9 +12,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/transport/internet/finalmask"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/transport/internet/finalmask"
 )
 
 const (
@@ -360,3 +360,4 @@ func dnsResponsePayload(resp *Message, domain Name) []byte {
 
 	return payload
 }
+

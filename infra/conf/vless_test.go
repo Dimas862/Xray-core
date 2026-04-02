@@ -3,13 +3,13 @@ package conf_test
 import (
 	"testing"
 
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/serial"
-	. "github.com/xtls/xray-core/infra/conf"
-	"github.com/xtls/xray-core/proxy/vless"
-	"github.com/xtls/xray-core/proxy/vless/inbound"
-	"github.com/xtls/xray-core/proxy/vless/outbound"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
+	. "github.com/dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/proxy/vless"
+	"github.com/dimas862/xray-core/proxy/vless/inbound"
+	"github.com/dimas862/xray-core/proxy/vless/outbound"
 )
 
 func TestVLessOutbound(t *testing.T) {
@@ -157,3 +157,4 @@ func TestVLessInbound(t *testing.T) {
 		},
 	})
 }
+

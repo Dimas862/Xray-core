@@ -7,11 +7,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/signal/pubsub"
-	"github.com/xtls/xray-core/common/task"
-	dns_feature "github.com/xtls/xray-core/features/dns"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/signal/pubsub"
+	"github.com/dimas862/xray-core/common/task"
+	dns_feature "github.com/dimas862/xray-core/features/dns"
 
 	"golang.org/x/net/dns/dnsmessage"
 	"golang.org/x/sync/singleflight"
@@ -337,3 +337,4 @@ func closeSubscribers(sub4 *pubsub.Subscriber, sub6 *pubsub.Subscriber) {
 		sub6.Close()
 	}
 }
+

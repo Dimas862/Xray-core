@@ -63,7 +63,7 @@ const file_transport_internet_finalmask_header_wireguard_config_proto_rawDesc = 
 	"\n" +
 	":transport/internet/finalmask/header/wireguard/config.proto\x122xray.transport.internet.finalmask.header.wireguard\"\b\n" +
 	"\x06ConfigB\xb8\x01\n" +
-	"6com.xray.transport.internet.finalmask.header.wireguardP\x01ZGgithub.com/xtls/xray-core/transport/internet/finalmask/header/wireguard\xaa\x022Xray.Transport.Internet.Finalmask.Header.Wireguardb\x06proto3"
+	"6com.xray.transport.internet.finalmask.header.wireguardP\x01ZGgithub.com/dimas862/xray-core/transport/internet/finalmask/header/wireguard\xaa\x022Xray.Transport.Internet.Finalmask.Header.Wireguardb\x06proto3"
 
 var (
 	file_transport_internet_finalmask_header_wireguard_config_proto_rawDescOnce sync.Once
@@ -112,3 +112,4 @@ func file_transport_internet_finalmask_header_wireguard_config_proto_init() {
 	file_transport_internet_finalmask_header_wireguard_config_proto_goTypes = nil
 	file_transport_internet_finalmask_header_wireguard_config_proto_depIdxs = nil
 }
+

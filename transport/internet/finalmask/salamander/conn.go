@@ -3,7 +3,7 @@ package salamander
 import (
 	"net"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 type salamanderConn struct {
@@ -44,3 +44,4 @@ func (c *salamanderConn) WriteTo(p []byte, addr net.Addr) (n int, err error) {
 
 	return len(p), nil
 }
+

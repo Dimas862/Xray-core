@@ -6,26 +6,26 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	c "github.com/xtls/xray-core/common/ctx"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/common/signal/done"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/features/routing"
-	"github.com/xtls/xray-core/features/stats"
-	"github.com/xtls/xray-core/proxy"
-	"github.com/xtls/xray-core/proxy/hysteria/account"
-	hyCtx "github.com/xtls/xray-core/proxy/hysteria/ctx"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/stat"
-	"github.com/xtls/xray-core/transport/internet/tcp"
-	"github.com/xtls/xray-core/transport/internet/udp"
-	"github.com/xtls/xray-core/transport/pipe"
+	"github.com/dimas862/xray-core/app/proxyman"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	c "github.com/dimas862/xray-core/common/ctx"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/common/signal/done"
+	"github.com/dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/features/stats"
+	"github.com/dimas862/xray-core/proxy"
+	"github.com/dimas862/xray-core/proxy/hysteria/account"
+	hyCtx "github.com/dimas862/xray-core/proxy/hysteria/ctx"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/tcp"
+	"github.com/dimas862/xray-core/transport/internet/udp"
+	"github.com/dimas862/xray-core/transport/pipe"
 )
 
 type worker interface {
@@ -586,3 +586,4 @@ func IsLocal(ip net.IP) bool {
 	}
 	return false
 }
+

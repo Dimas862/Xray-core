@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/xtls/xray-core/common/cmdarg"
-	creflect "github.com/xtls/xray-core/common/reflect"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/main/commands/base"
+	"github.com/dimas862/xray-core/common/cmdarg"
+	creflect "github.com/dimas862/xray-core/common/reflect"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/main/commands/base"
 
 	"google.golang.org/protobuf/proto"
 )
@@ -105,3 +105,4 @@ func executeConvertConfigsToProtobuf(cmd *base.Command, args []string) {
 		}
 	}
 }
+

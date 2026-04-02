@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"net"
 
-	"github.com/xtls/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/dice"
 )
 
 type wechat struct {
@@ -62,3 +62,4 @@ func (c *wechatConn) WriteTo(p []byte, addr net.Addr) (n int, err error) {
 
 	return len(p), nil
 }
+

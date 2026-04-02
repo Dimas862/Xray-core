@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"net"
 
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/crypto"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 type udpCustomClient struct {
@@ -181,3 +181,4 @@ func (c *udpCustomServerConn) WriteTo(p []byte, addr net.Addr) (n int, err error
 
 	return len(p), nil
 }
+

@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 type testLogger struct {
@@ -30,3 +30,4 @@ func TestLogRecord(t *testing.T) {
 		t.Error(diff)
 	}
 }
+

@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/finalmask"
-	"github.com/xtls/xray-core/transport/internet/hysteria/udphop"
+	"github.com/dimas862/xray-core/common/crypto"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/finalmask"
+	"github.com/dimas862/xray-core/transport/internet/hysteria/udphop"
 	"golang.org/x/net/icmp"
 	"golang.org/x/net/ipv4"
 	"golang.org/x/net/ipv6"
@@ -352,3 +352,4 @@ func (c *xicmpConnClient) SetReadDeadline(t time.Time) error {
 func (c *xicmpConnClient) SetWriteDeadline(t time.Time) error {
 	return c.icmpConn.SetWriteDeadline(t)
 }
+

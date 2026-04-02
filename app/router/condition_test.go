@@ -4,16 +4,16 @@ import (
 	"strconv"
 	"testing"
 
-	. "github.com/xtls/xray-core/app/router"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/platform/filesystem"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/protocol/http"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/features/routing"
-	routing_session "github.com/xtls/xray-core/features/routing/session"
+	. "github.com/dimas862/xray-core/app/router"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/platform/filesystem"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/protocol/http"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/features/routing"
+	routing_session "github.com/dimas862/xray-core/features/routing/session"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -458,3 +458,4 @@ func BenchmarkMultiGeoIPMatcher(b *testing.B) {
 		_ = matcher.Apply(ctx)
 	}
 }
+

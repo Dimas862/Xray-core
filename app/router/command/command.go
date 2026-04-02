@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/routing"
-	"github.com/xtls/xray-core/features/stats"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/features/stats"
 	"google.golang.org/grpc"
 )
 
@@ -159,3 +159,4 @@ func init() {
 		return &service{v: s}, nil
 	}))
 }
+

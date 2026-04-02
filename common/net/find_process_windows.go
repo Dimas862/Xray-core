@@ -12,7 +12,7 @@ import (
 
 	"golang.org/x/sys/windows"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 const (
@@ -241,3 +241,4 @@ func getExecPathFromPID(pid uint32) (string, error) {
 	}
 	return syscall.UTF16ToString(buf[:size]), nil
 }
+

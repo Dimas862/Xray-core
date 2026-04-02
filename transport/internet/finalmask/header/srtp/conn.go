@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"net"
 
-	"github.com/xtls/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/dice"
 )
 
 type srtp struct {
@@ -56,3 +56,4 @@ func (c *srtpConn) WriteTo(p []byte, addr net.Addr) (n int, err error) {
 
 	return len(p), nil
 }
+

@@ -4,10 +4,10 @@ import (
 	"encoding/binary"
 	"sync"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/serial"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/serial"
 	"golang.org/x/net/dns/dnsmessage"
 )
 
@@ -142,3 +142,4 @@ func (w *TCPWriter) WriteMessage(b *buf.Buffer) error {
 	mb = append(mb, size, b)
 	return w.WriteMultiBuffer(mb)
 }
+

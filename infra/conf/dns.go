@@ -9,10 +9,10 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/xtls/xray-core/app/dns"
-	"github.com/xtls/xray-core/app/router"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/dimas862/xray-core/app/dns"
+	"github.com/dimas862/xray-core/app/router"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 type NameServerConfig struct {
@@ -574,3 +574,4 @@ func readSystemHosts() (map[string][][]byte, error) {
 	}
 	return hostsMap, nil
 }
+

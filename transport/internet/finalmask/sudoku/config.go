@@ -3,7 +3,7 @@ package sudoku
 import (
 	"net"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 func (c *Config) TCP() {
@@ -55,3 +55,4 @@ func (c *Config) WrapPacketConnServer(raw net.PacketConn, level int, levelCount 
 	}
 	return NewUDPConn(raw, c)
 }
+

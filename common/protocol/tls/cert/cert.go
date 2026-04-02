@@ -13,8 +13,8 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 type Certificate struct {
@@ -183,3 +183,4 @@ func Generate(parent *Certificate, opts ...Option) (*Certificate, error) {
 		PrivateKey:  privateKey,
 	}, nil
 }
+

@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/crypto"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 type tcpCustomClient struct {
@@ -244,3 +244,4 @@ func writeSequence(w io.Writer, sequence *TCPSequence) bool {
 	}
 	return true
 }
+

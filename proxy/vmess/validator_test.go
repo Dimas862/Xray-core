@@ -3,10 +3,10 @@ package vmess_test
 import (
 	"testing"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/uuid"
-	. "github.com/xtls/xray-core/proxy/vmess"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/uuid"
+	. "github.com/dimas862/xray-core/proxy/vmess"
 )
 
 func toAccount(a *Account) protocol.Account {
@@ -32,3 +32,4 @@ func BenchmarkUserValidator(b *testing.B) {
 		common.Close(v)
 	}
 }
+

@@ -3,7 +3,7 @@ package stat
 import (
 	"net"
 
-	"github.com/xtls/xray-core/features/stats"
+	"github.com/dimas862/xray-core/features/stats"
 )
 
 type Connection interface {
@@ -42,3 +42,4 @@ func TryUnwrapStatsConn(conn net.Conn) net.Conn {
 	}
 	return conn
 }
+

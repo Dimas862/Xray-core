@@ -7,8 +7,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
 
 	"go4.org/netipx"
 )
@@ -960,3 +960,4 @@ func BuildOptimizedGeoIPMatcher(geoips ...*GeoIP) (GeoIPMatcher, error) {
 		return &HeuristicMultiGeoIPMatcher{matchers: subs}, nil
 	}
 }
+

@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/xtls/xray-core/common"
-	. "github.com/xtls/xray-core/common/uuid"
+	"github.com/dimas862/xray-core/common"
+	. "github.com/dimas862/xray-core/common/uuid"
 )
 
 func TestParseBytes(t *testing.T) {
@@ -85,3 +85,4 @@ func TestEquals(t *testing.T) {
 		t.Error("nil uuid equals non-nil uuid")
 	}
 }
+

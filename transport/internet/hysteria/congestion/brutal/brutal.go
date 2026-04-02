@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/xtls/xray-core/transport/internet/hysteria/congestion/common"
+	"github.com/dimas862/xray-core/transport/internet/hysteria/congestion/common"
 
 	"github.com/apernet/quic-go/congestion"
 	"github.com/apernet/quic-go/monotime"
@@ -184,3 +184,4 @@ func (b *BrutalSender) debugPrint(format string, a ...any) {
 		time.Now().Format("15:04:05"),
 		fmt.Sprintf(format, a...))
 }
+

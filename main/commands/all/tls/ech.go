@@ -9,9 +9,9 @@ import (
 	"io"
 	"os"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/main/commands/base"
-	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/main/commands/base"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 	"golang.org/x/crypto/cryptobyte"
 )
 
@@ -177,3 +177,4 @@ func generateECHKeySet(configID uint8, domain string, kem uint16) (EchConfig, []
 	config.PublicKey = privKey.PublicKey().Bytes()
 	return config, priv, nil
 }
+

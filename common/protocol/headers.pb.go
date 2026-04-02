@@ -138,7 +138,7 @@ const file_common_protocol_headers_proto_rawDesc = "" +
 	"\x11CHACHA20_POLY1305\x10\x04\x12\b\n" +
 	"\x04NONE\x10\x05\x12\b\n" +
 	"\x04ZERO\x10\x06B^\n" +
-	"\x18com.xray.common.protocolP\x01Z)github.com/xtls/xray-core/common/protocol\xaa\x02\x14Xray.Common.Protocolb\x06proto3"
+	"\x18com.xray.common.protocolP\x01Z)github.com/dimas862/xray-core/common/protocol\xaa\x02\x14Xray.Common.Protocolb\x06proto3"
 
 var (
 	file_common_protocol_headers_proto_rawDescOnce sync.Once
@@ -191,3 +191,4 @@ func file_common_protocol_headers_proto_init() {
 	file_common_protocol_headers_proto_goTypes = nil
 	file_common_protocol_headers_proto_depIdxs = nil
 }
+

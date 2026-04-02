@@ -6,7 +6,7 @@ import (
 	"net"
 	"sync"
 
-	"github.com/xtls/xray-core/transport/internet/finalmask"
+	"github.com/dimas862/xray-core/transport/internet/finalmask"
 )
 
 const ioBufferSize = 32 * 1024
@@ -210,3 +210,4 @@ func writeAll(conn net.Conn, b []byte) error {
 	}
 	return nil
 }
+

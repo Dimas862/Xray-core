@@ -1,7 +1,7 @@
 package protocol
 
 import (
-	"github.com/xtls/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 type ServerSpec struct {
@@ -28,3 +28,4 @@ func NewServerSpecFromPB(spec *ServerEndpoint) (*ServerSpec, error) {
 	}
 	return NewServerSpec(dest, dUser), nil
 }
+

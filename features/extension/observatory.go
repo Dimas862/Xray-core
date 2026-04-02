@@ -3,7 +3,7 @@ package extension
 import (
 	"context"
 
-	"github.com/xtls/xray-core/features"
+	"github.com/dimas862/xray-core/features"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -21,3 +21,4 @@ type BurstObservatory interface {
 func ObservatoryType() interface{} {
 	return (*Observatory)(nil)
 }
+

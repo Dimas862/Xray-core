@@ -6,8 +6,8 @@ import (
 	"context"
 	"strconv"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/platform"
 	"golang.org/x/sys/unix"
 	"gvisor.dev/gvisor/pkg/tcpip/link/fdbased"
 	"gvisor.dev/gvisor/pkg/tcpip/stack"
@@ -56,3 +56,4 @@ func (t *AndroidTun) newEndpoint() (stack.LinkEndpoint, error) {
 		RXChecksumOffload: true,
 	})
 }
+

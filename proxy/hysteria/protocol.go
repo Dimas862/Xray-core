@@ -7,7 +7,7 @@ import (
 	"io"
 
 	"github.com/apernet/quic-go/quicvarint"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 const (
@@ -247,3 +247,4 @@ func varintPut(b []byte, i uint64) int {
 	}
 	panic(fmt.Sprintf("%#x doesn't fit into 62 bits", i))
 }
+

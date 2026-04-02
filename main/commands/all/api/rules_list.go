@@ -1,8 +1,8 @@
 package api
 
 import (
-	routerService "github.com/xtls/xray-core/app/router/command"
-	"github.com/xtls/xray-core/main/commands/base"
+	routerService "github.com/dimas862/xray-core/app/router/command"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 var cmdListRules = &base.Command{
@@ -41,3 +41,4 @@ func executeListRules(cmd *base.Command, args []string) {
 	}
 	showJSONResponse(resp)
 }
+

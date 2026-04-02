@@ -1,8 +1,8 @@
 package kcp
 
 import (
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 // GetMTUValue returns the value of MTU settings.
@@ -82,3 +82,4 @@ func init() {
 		return new(Config)
 	}))
 }
+

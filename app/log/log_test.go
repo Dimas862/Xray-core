@@ -6,10 +6,10 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	"github.com/xtls/xray-core/app/log"
-	"github.com/xtls/xray-core/common"
-	clog "github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/testing/mocks"
+	"github.com/dimas862/xray-core/app/log"
+	"github.com/dimas862/xray-core/common"
+	clog "github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/testing/mocks"
 )
 
 func TestCustomLogHandler(t *testing.T) {
@@ -87,3 +87,4 @@ func TestMaskAddress(t *testing.T) {
 		t.Fatal("expected '11:45:14:19::/64', but actually", maskedAddr.String())
 	}
 }
+

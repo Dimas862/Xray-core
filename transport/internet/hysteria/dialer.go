@@ -14,18 +14,18 @@ import (
 
 	"github.com/apernet/quic-go"
 	"github.com/apernet/quic-go/http3"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/net/cnc"
-	"github.com/xtls/xray-core/common/task"
-	hyCtx "github.com/xtls/xray-core/proxy/hysteria/ctx"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/finalmask"
-	"github.com/xtls/xray-core/transport/internet/hysteria/congestion"
-	"github.com/xtls/xray-core/transport/internet/hysteria/udphop"
-	"github.com/xtls/xray-core/transport/internet/stat"
-	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/net/cnc"
+	"github.com/dimas862/xray-core/common/task"
+	hyCtx "github.com/dimas862/xray-core/proxy/hysteria/ctx"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/finalmask"
+	"github.com/dimas862/xray-core/transport/internet/hysteria/congestion"
+	"github.com/dimas862/xray-core/transport/internet/hysteria/udphop"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 )
 
 type udpSessionManagerClient struct {
@@ -486,3 +486,4 @@ func init() {
 func init() {
 	common.Must(internet.RegisterTransportDialer(protocolName, Dial))
 }
+

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.app.dns;
 option csharp_namespace = "Xray.App.Dns";
-option go_package = "github.com/xtls/xray-core/app/dns";
+option go_package = "github.com/dimas862/xray-core/app/dns";
 option java_package = "com.xray.app.dns";
 option java_multiple_files = true;
 
@@ -93,3 +93,4 @@ message Config {
 
   bool enableParallelQuery = 14;
 }
+

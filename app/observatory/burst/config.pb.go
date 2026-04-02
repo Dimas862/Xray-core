@@ -183,7 +183,7 @@ const file_app_observatory_burst_config_proto_rawDesc = "" +
 	"\n" +
 	"httpMethod\x18\x06 \x01(\tR\n" +
 	"httpMethodBp\n" +
-	"\x1ecom.xray.app.observatory.burstP\x01Z/github.com/xtls/xray-core/app/observatory/burst\xaa\x02\x1aXray.App.Observatory.Burstb\x06proto3"
+	"\x1ecom.xray.app.observatory.burstP\x01Z/github.com/dimas862/xray-core/app/observatory/burst\xaa\x02\x1aXray.App.Observatory.Burstb\x06proto3"
 
 var (
 	file_app_observatory_burst_config_proto_rawDescOnce sync.Once
@@ -234,3 +234,4 @@ func file_app_observatory_burst_config_proto_init() {
 	file_app_observatory_burst_config_proto_goTypes = nil
 	file_app_observatory_burst_config_proto_depIdxs = nil
 }
+

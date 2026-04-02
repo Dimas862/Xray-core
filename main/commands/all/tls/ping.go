@@ -12,9 +12,9 @@ import (
 
 	utls "github.com/refraction-networking/utls"
 
-	"github.com/xtls/xray-core/common/utils"
-	"github.com/xtls/xray-core/main/commands/base"
-	. "github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common/utils"
+	"github.com/dimas862/xray-core/main/commands/base"
+	. "github.com/dimas862/xray-core/transport/internet/tls"
 )
 
 // cmdPing is the tls ping command
@@ -165,3 +165,4 @@ func printTLSConnDetail(tabWriter *tabwriter.Writer, tlsConn *utls.UConn) {
 		fmt.Fprintf(tabWriter, "TLS Post-Quantum key exchange:  false (RSA Exchange)\n")
 	}
 }
+

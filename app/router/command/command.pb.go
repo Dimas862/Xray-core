@@ -7,8 +7,8 @@
 package command
 
 import (
-	net "github.com/xtls/xray-core/common/net"
-	serial "github.com/xtls/xray-core/common/serial"
+	net "github.com/dimas862/xray-core/common/net"
+	serial "github.com/dimas862/xray-core/common/serial"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1042,7 +1042,7 @@ const file_app_router_command_command_proto_rawDesc = "" +
 	"\n" +
 	"RemoveRule\x12*.xray.app.router.command.RemoveRuleRequest\x1a+.xray.app.router.command.RemoveRuleResponse\"\x00\x12a\n" +
 	"\bListRule\x12(.xray.app.router.command.ListRuleRequest\x1a).xray.app.router.command.ListRuleResponse\"\x00Bg\n" +
-	"\x1bcom.xray.app.router.commandP\x01Z,github.com/xtls/xray-core/app/router/command\xaa\x02\x17Xray.App.Router.Commandb\x06proto3"
+	"\x1bcom.xray.app.router.commandP\x01Z,github.com/dimas862/xray-core/app/router/command\xaa\x02\x17Xray.App.Router.Commandb\x06proto3"
 
 var (
 	file_app_router_command_command_proto_rawDescOnce sync.Once
@@ -1133,3 +1133,4 @@ func file_app_router_command_command_proto_init() {
 	file_app_router_command_command_proto_goTypes = nil
 	file_app_router_command_command_proto_depIdxs = nil
 }
+

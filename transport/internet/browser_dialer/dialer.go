@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/platform"
-	"github.com/xtls/xray-core/common/uuid"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/uuid"
 )
 
 //go:embed dialer.html
@@ -194,3 +194,4 @@ func CheckOK(conn *websocket.Conn) error {
 
 	return nil
 }
+

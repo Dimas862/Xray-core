@@ -129,7 +129,7 @@ const file_app_stats_config_proto_rawDesc = "" +
 	"\n" +
 	"BufferSize\x18\x03 \x01(\x05R\n" +
 	"BufferSizeBL\n" +
-	"\x12com.xray.app.statsP\x01Z#github.com/xtls/xray-core/app/stats\xaa\x02\x0eXray.App.Statsb\x06proto3"
+	"\x12com.xray.app.statsP\x01Z#github.com/dimas862/xray-core/app/stats\xaa\x02\x0eXray.App.Statsb\x06proto3"
 
 var (
 	file_app_stats_config_proto_rawDescOnce sync.Once
@@ -179,3 +179,4 @@ func file_app_stats_config_proto_init() {
 	file_app_stats_config_proto_goTypes = nil
 	file_app_stats_config_proto_depIdxs = nil
 }
+

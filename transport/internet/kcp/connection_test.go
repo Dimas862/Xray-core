@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/common/buf"
-	. "github.com/xtls/xray-core/transport/internet/kcp"
+	"github.com/dimas862/xray-core/common/buf"
+	. "github.com/dimas862/xray-core/transport/internet/kcp"
 )
 
 type NoOpCloser int
@@ -34,3 +34,4 @@ func TestConnectionInterface(t *testing.T) {
 	_ = (buf.Reader)(new(Connection))
 	_ = (buf.Writer)(new(Connection))
 }
+

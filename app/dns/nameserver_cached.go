@@ -5,11 +5,11 @@ import (
 	go_errors "errors"
 	"time"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/signal/pubsub"
-	"github.com/xtls/xray-core/features/dns"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/signal/pubsub"
+	"github.com/dimas862/xray-core/features/dns"
 )
 
 type CachedNameserver interface {
@@ -171,3 +171,4 @@ func merge(option dns.IPOption, rec4 *IPRecord, rec6 *IPRecord, errs ...error) (
 	}
 	return nil, rTTL, errors.Combine(errs...)
 }
+

@@ -1,7 +1,7 @@
 package conf
 
 import (
-	"github.com/xtls/xray-core/proxy/tun"
+	"github.com/dimas862/xray-core/proxy/tun"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -28,3 +28,4 @@ func (v *TunConfig) Build() (proto.Message, error) {
 
 	return config, nil
 }
+

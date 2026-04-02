@@ -6,22 +6,22 @@ import (
 	"io"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/log"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	udp_proto "github.com/xtls/xray-core/common/protocol/udp"
-	"github.com/xtls/xray-core/common/session"
-	"github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/policy"
-	"github.com/xtls/xray-core/features/routing"
-	"github.com/xtls/xray-core/proxy"
-	"github.com/xtls/xray-core/proxy/http"
-	"github.com/xtls/xray-core/transport"
-	"github.com/xtls/xray-core/transport/internet/stat"
-	"github.com/xtls/xray-core/transport/internet/udp"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/log"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	udp_proto "github.com/dimas862/xray-core/common/protocol/udp"
+	"github.com/dimas862/xray-core/common/session"
+	"github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/features/policy"
+	"github.com/dimas862/xray-core/features/routing"
+	"github.com/dimas862/xray-core/proxy"
+	"github.com/dimas862/xray-core/proxy/http"
+	"github.com/dimas862/xray-core/transport"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/udp"
 )
 
 // Server is a SOCKS 5 proxy server
@@ -278,3 +278,4 @@ func init() {
 		return NewServer(ctx, config.(*ServerConfig))
 	}))
 }
+

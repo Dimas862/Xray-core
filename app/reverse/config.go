@@ -4,7 +4,7 @@ import (
 	"crypto/rand"
 	"io"
 
-	"github.com/xtls/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/dice"
 )
 
 func (c *Control) FillInRandom() {
@@ -13,3 +13,4 @@ func (c *Control) FillInRandom() {
 	c.Random = make([]byte, randomLength)
 	io.ReadFull(rand.Reader, c.Random)
 }
+

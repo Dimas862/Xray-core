@@ -10,10 +10,10 @@ import (
 	"golang.zx2c4.com/wireguard/conn"
 	"golang.zx2c4.com/wireguard/device"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/features/dns"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/features/dns"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 type netReadInfo struct {
@@ -260,3 +260,4 @@ func toNetIpAddr(addr net.Address) netip.Addr {
 		return netip.AddrFrom16(arr)
 	}
 }
+

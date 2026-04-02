@@ -11,8 +11,8 @@ import (
 
 	"github.com/pires/go-proxyproto"
 	"github.com/sagernet/sing/common/control"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 var effectiveListener = DefaultListener{}
@@ -194,3 +194,4 @@ func RegisterListenerController(controller control.Func) error {
 	effectiveListener.controllers = append(effectiveListener.controllers, controller)
 	return nil
 }
+

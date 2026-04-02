@@ -6,11 +6,11 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/platform"
-	"github.com/xtls/xray-core/common/platform/filesystem"
-	"github.com/xtls/xray-core/features/outbound"
-	"github.com/xtls/xray-core/features/routing"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/platform/filesystem"
+	"github.com/dimas862/xray-core/features/outbound"
+	"github.com/dimas862/xray-core/features/routing"
 )
 
 type Rule struct {
@@ -206,3 +206,4 @@ func GetDomainMatcherWithRuleTag(domainMatcherPath string, ruleTag string) (*Dom
 	}, nil
 
 }
+

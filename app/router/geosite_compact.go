@@ -6,7 +6,7 @@ import (
 	"io"
 	"runtime"
 
-	"github.com/xtls/xray-core/common/strmatcher"
+	"github.com/dimas862/xray-core/common/strmatcher"
 )
 
 type geoSiteListGob struct {
@@ -98,3 +98,4 @@ func LoadGeoSiteHosts(r io.Reader) (map[string][]string, error) {
 	}
 	return data.Hosts, nil
 }
+

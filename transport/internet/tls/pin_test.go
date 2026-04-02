@@ -8,8 +8,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/protocol/tls/cert"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/protocol/tls/cert"
 )
 
 func TestCalculateCertHash(t *testing.T) {
@@ -151,3 +151,4 @@ func TestVerifyPeerCACert(t *testing.T) {
 		t.Fatal("expected to fail verifying leaf cert with incorrect pinned CA hash, but got no error")
 	}
 }
+

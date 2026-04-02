@@ -4,8 +4,8 @@ import (
 	"io"
 	"sync"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/net"
 )
 
 // sub-handler specifically for udp connections under main handler
@@ -132,3 +132,4 @@ func (c *udpConn) WriteMultiBuffer(mb buf.MultiBuffer) error {
 
 	return nil
 }
+

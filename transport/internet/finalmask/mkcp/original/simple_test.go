@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/xtls/xray-core/transport/internet/finalmask/mkcp/original"
+	"github.com/dimas862/xray-core/transport/internet/finalmask/mkcp/original"
 )
 
 func TestSimpleSealInPlace(t *testing.T) {
@@ -33,3 +33,4 @@ func TestOriginalBounce(t *testing.T) {
 		assert.NotEqual(t, err, nil)
 	}
 }
+

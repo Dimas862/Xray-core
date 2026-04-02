@@ -9,16 +9,16 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/xtls/xray-core/app/dispatcher"
-	"github.com/xtls/xray-core/app/proxyman"
-	"github.com/xtls/xray-core/app/router"
-	"github.com/xtls/xray-core/app/stats"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/platform"
-	"github.com/xtls/xray-core/common/serial"
-	core "github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/app/dispatcher"
+	"github.com/dimas862/xray-core/app/proxyman"
+	"github.com/dimas862/xray-core/app/router"
+	"github.com/dimas862/xray-core/app/stats"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/platform"
+	"github.com/dimas862/xray-core/common/serial"
+	core "github.com/dimas862/xray-core/core"
+	"github.com/dimas862/xray-core/transport/internet"
 )
 
 var (
@@ -804,3 +804,4 @@ func ParseSendThough(Addr *string) *Address {
 	addr.Address = net.ParseAddress(strings.Split(*Addr, "/")[0])
 	return &addr
 }
+

@@ -1,11 +1,11 @@
 package conf
 
 import (
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/proxy/hysteria"
-	"github.com/xtls/xray-core/proxy/hysteria/account"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/proxy/hysteria"
+	"github.com/dimas862/xray-core/proxy/hysteria/account"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -59,3 +59,4 @@ func (c *HysteriaServerConfig) Build() (proto.Message, error) {
 
 	return config, nil
 }
+

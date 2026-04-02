@@ -1,9 +1,9 @@
 package routing
 
 import (
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/features"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/features"
 )
 
 // Router is a feature to choose an outbound tag for the given request.
@@ -80,3 +80,4 @@ func (DefaultRouter) Start() error {
 func (DefaultRouter) Close() error {
 	return nil
 }
+

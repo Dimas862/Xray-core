@@ -15,15 +15,15 @@ import (
 	"github.com/apernet/quic-go"
 	"github.com/apernet/quic-go/http3"
 	"github.com/apernet/quic-go/quicvarint"
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/proxy/hysteria/account"
-	hyCtx "github.com/xtls/xray-core/proxy/hysteria/ctx"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/hysteria/congestion"
-	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/proxy/hysteria/account"
+	hyCtx "github.com/dimas862/xray-core/proxy/hysteria/ctx"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/hysteria/congestion"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 )
 
 type udpSessionManagerServer struct {
@@ -449,3 +449,4 @@ func Listen(ctx context.Context, address net.Address, port net.Port, streamSetti
 func init() {
 	common.Must(internet.RegisterTransportListener(protocolName, Listen))
 }
+

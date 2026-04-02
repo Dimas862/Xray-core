@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"net"
 
-	"github.com/xtls/xray-core/common/dice"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/errors"
 )
 
 func packDomainName(s string, msg []byte) (off1 int, err error) {
@@ -136,3 +136,4 @@ func (c *dnsConn) WriteTo(p []byte, addr net.Addr) (n int, err error) {
 
 	return len(p), nil
 }
+

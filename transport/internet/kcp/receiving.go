@@ -3,7 +3,7 @@ package kcp
 import (
 	"sync"
 
-	"github.com/xtls/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/buf"
 )
 
 type ReceivingWindow struct {
@@ -259,3 +259,4 @@ func (w *ReceivingWorker) UpdateNecessary() bool {
 
 	return len(w.acklist.numbers) > 0
 }
+

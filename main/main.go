@@ -4,8 +4,8 @@ import (
 	"flag"
 	"os"
 
-	"github.com/xtls/xray-core/main/commands/base"
-	_ "github.com/xtls/xray-core/main/distro/all"
+	"github.com/dimas862/xray-core/main/commands/base"
+	_ "github.com/dimas862/xray-core/main/distro/all"
 )
 
 func main() {
@@ -59,3 +59,4 @@ type null struct{}
 func (n *null) Write(p []byte) (int, error) {
 	return len(p), nil
 }
+

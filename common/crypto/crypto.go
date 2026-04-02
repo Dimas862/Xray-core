@@ -1,11 +1,11 @@
 // Package crypto provides common crypto libraries for Xray.
-package crypto // import "github.com/xtls/xray-core/common/crypto"
+package crypto // import "github.com/dimas862/xray-core/common/crypto"
 
 import (
 	"crypto/rand"
 	"math/big"
 
-	"github.com/xtls/xray-core/common"
+	"github.com/dimas862/xray-core/common"
 )
 
 // [,)
@@ -36,3 +36,4 @@ func RandBytesBetween(b []byte, from, to byte) {
 		b[i] = from + b[i]%(to-from+1)
 	}
 }
+

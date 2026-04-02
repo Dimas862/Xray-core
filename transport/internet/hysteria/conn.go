@@ -8,8 +8,8 @@ import (
 
 	"github.com/apernet/quic-go"
 	"github.com/apernet/quic-go/quicvarint"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
 )
 
 type interConn struct {
@@ -159,3 +159,4 @@ func (i *InterUdpConn) SetReadDeadline(t time.Time) error {
 func (i *InterUdpConn) SetWriteDeadline(t time.Time) error {
 	return nil
 }
+

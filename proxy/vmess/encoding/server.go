@@ -9,17 +9,17 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/bitmask"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/common/drain"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/task"
-	"github.com/xtls/xray-core/proxy/vmess"
-	vmessaead "github.com/xtls/xray-core/proxy/vmess/aead"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/bitmask"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/crypto"
+	"github.com/dimas862/xray-core/common/drain"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/dimas862/xray-core/common/task"
+	"github.com/dimas862/xray-core/proxy/vmess"
+	vmessaead "github.com/dimas862/xray-core/proxy/vmess/aead"
 	"golang.org/x/crypto/chacha20poly1305"
 )
 
@@ -445,3 +445,4 @@ func (s *ServerSession) EncodeResponseBody(request *protocol.RequestHeader, writ
 		return nil, errors.New("invalid option: Security")
 	}
 }
+

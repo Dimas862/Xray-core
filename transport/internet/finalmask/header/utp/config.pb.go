@@ -63,7 +63,7 @@ const file_transport_internet_finalmask_header_utp_config_proto_rawDesc = "" +
 	"\n" +
 	"4transport/internet/finalmask/header/utp/config.proto\x12,xray.transport.internet.finalmask.header.utp\"\b\n" +
 	"\x06ConfigB\xa6\x01\n" +
-	"0com.xray.transport.internet.finalmask.header.utpP\x01ZAgithub.com/xtls/xray-core/transport/internet/finalmask/header/utp\xaa\x02,Xray.Transport.Internet.Finalmask.Header.Utpb\x06proto3"
+	"0com.xray.transport.internet.finalmask.header.utpP\x01ZAgithub.com/dimas862/xray-core/transport/internet/finalmask/header/utp\xaa\x02,Xray.Transport.Internet.Finalmask.Header.Utpb\x06proto3"
 
 var (
 	file_transport_internet_finalmask_header_utp_config_proto_rawDescOnce sync.Once
@@ -112,3 +112,4 @@ func file_transport_internet_finalmask_header_utp_config_proto_init() {
 	file_transport_internet_finalmask_header_utp_config_proto_goTypes = nil
 	file_transport_internet_finalmask_header_utp_config_proto_depIdxs = nil
 }
+

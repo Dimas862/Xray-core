@@ -434,7 +434,7 @@ const file_transport_internet_headers_http_config_proto_rawDesc = "" +
 	"\x06Config\x12M\n" +
 	"\arequest\x18\x01 \x01(\v23.xray.transport.internet.headers.http.RequestConfigR\arequest\x12P\n" +
 	"\bresponse\x18\x02 \x01(\v24.xray.transport.internet.headers.http.ResponseConfigR\bresponseB\x8e\x01\n" +
-	"(com.xray.transport.internet.headers.httpP\x01Z9github.com/xtls/xray-core/transport/internet/headers/http\xaa\x02$Xray.Transport.Internet.Headers.Httpb\x06proto3"
+	"(com.xray.transport.internet.headers.httpP\x01Z9github.com/dimas862/xray-core/transport/internet/headers/http\xaa\x02$Xray.Transport.Internet.Headers.Httpb\x06proto3"
 
 var (
 	file_transport_internet_headers_http_config_proto_rawDescOnce sync.Once
@@ -497,3 +497,4 @@ func file_transport_internet_headers_http_config_proto_init() {
 	file_transport_internet_headers_http_config_proto_goTypes = nil
 	file_transport_internet_headers_http_config_proto_depIdxs = nil
 }
+

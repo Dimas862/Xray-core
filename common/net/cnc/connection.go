@@ -4,10 +4,10 @@ import (
 	"io"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/signal/done"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/buf"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/signal/done"
 )
 
 type ConnectionOption func(*Connection)
@@ -158,3 +158,4 @@ func (c *Connection) SetReadDeadline(t time.Time) error {
 func (c *Connection) SetWriteDeadline(t time.Time) error {
 	return nil
 }
+

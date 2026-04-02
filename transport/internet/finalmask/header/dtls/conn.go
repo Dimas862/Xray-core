@@ -3,7 +3,7 @@ package dtls
 import (
 	"net"
 
-	"github.com/xtls/xray-core/common/dice"
+	"github.com/dimas862/xray-core/common/dice"
 )
 
 type dtls struct {
@@ -72,3 +72,4 @@ func (c *dtlsConn) WriteTo(p []byte, addr net.Addr) (n int, err error) {
 
 	return len(p), nil
 }
+

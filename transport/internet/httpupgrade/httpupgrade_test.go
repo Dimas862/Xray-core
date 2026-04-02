@@ -6,14 +6,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol/tls/cert"
-	"github.com/xtls/xray-core/testing/servers/tcp"
-	"github.com/xtls/xray-core/transport/internet"
-	. "github.com/xtls/xray-core/transport/internet/httpupgrade"
-	"github.com/xtls/xray-core/transport/internet/stat"
-	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/protocol/tls/cert"
+	"github.com/dimas862/xray-core/testing/servers/tcp"
+	"github.com/dimas862/xray-core/transport/internet"
+	. "github.com/dimas862/xray-core/transport/internet/httpupgrade"
+	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/dimas862/xray-core/transport/internet/tls"
 )
 
 func Test_listenHTTPUpgradeAndDial(t *testing.T) {
@@ -212,3 +212,4 @@ func Test_listenHTTPUpgradeAndDial_TLS(t *testing.T) {
 		t.Error("end: ", end, " start: ", start)
 	}
 }
+

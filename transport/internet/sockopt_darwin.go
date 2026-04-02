@@ -9,8 +9,8 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/common/net"
 	"golang.org/x/sys/unix"
 )
 
@@ -327,3 +327,4 @@ func setReusePort(fd uintptr) error {
 	}
 	return nil
 }
+

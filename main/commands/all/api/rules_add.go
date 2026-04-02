@@ -3,11 +3,11 @@ package api
 import (
 	"fmt"
 
-	routerService "github.com/xtls/xray-core/app/router/command"
-	cserial "github.com/xtls/xray-core/common/serial"
-	"github.com/xtls/xray-core/infra/conf"
-	"github.com/xtls/xray-core/infra/conf/serial"
-	"github.com/xtls/xray-core/main/commands/base"
+	routerService "github.com/dimas862/xray-core/app/router/command"
+	cserial "github.com/dimas862/xray-core/common/serial"
+	"github.com/dimas862/xray-core/infra/conf"
+	"github.com/dimas862/xray-core/infra/conf/serial"
+	"github.com/dimas862/xray-core/main/commands/base"
 )
 
 var cmdAddRules = &base.Command{
@@ -98,3 +98,4 @@ func executeAddRules(cmd *base.Command, args []string) {
 	}
 
 }
+

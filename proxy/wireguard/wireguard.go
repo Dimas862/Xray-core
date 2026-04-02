@@ -7,7 +7,7 @@ import (
 	"net/netip"
 	"strings"
 
-	"github.com/xtls/xray-core/common"
+	"github.com/dimas862/xray-core/common"
 )
 
 func init() {
@@ -91,3 +91,4 @@ func createIPCRequest(conf *DeviceConfig) string {
 
 	return request.String()[:request.Len()]
 }
+

@@ -3,9 +3,9 @@ package hysteria
 import (
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/transport/internet"
-	"github.com/xtls/xray-core/transport/internet/hysteria/padding"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/dimas862/xray-core/transport/internet/hysteria/padding"
 )
 
 const (
@@ -51,3 +51,4 @@ func init() {
 		return new(Config)
 	}))
 }
+

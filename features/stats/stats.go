@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/features"
+	"github.com/dimas862/xray-core/common"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/features"
 )
 
 // Counter is the interface for stats counters.
@@ -205,3 +205,4 @@ func (NoopManager) Start() error { return nil }
 
 // Close implements common.Closable.
 func (NoopManager) Close() error { return nil }
+

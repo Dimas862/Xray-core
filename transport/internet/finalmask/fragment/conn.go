@@ -4,7 +4,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/xtls/xray-core/common/crypto"
+	"github.com/dimas862/xray-core/common/crypto"
 )
 
 type fragmentConn struct {
@@ -123,3 +123,4 @@ func (c *fragmentConn) Write(p []byte) (n int, err error) {
 		}
 	}
 }
+

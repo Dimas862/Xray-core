@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/xtls/xray-core/transport/internet/finalmask/salamander"
+	"github.com/dimas862/xray-core/transport/internet/finalmask/salamander"
 )
 
 const (
@@ -79,3 +79,4 @@ func TestSalamanderBounce(t *testing.T) {
 		assert.Equal(t, 0, n)
 	}
 }
+

@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/transport/internet/finalmask"
+	"github.com/dimas862/xray-core/common/errors"
+	"github.com/dimas862/xray-core/transport/internet/finalmask"
 )
 
 const (
@@ -555,3 +555,4 @@ func computeMaxEncodedPayload(limit int) int {
 
 	return low
 }
+
