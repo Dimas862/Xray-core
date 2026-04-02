@@ -6,9 +6,9 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/testing/mocks"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/testing/mocks"
 )
 
 func TestReadError(t *testing.T) {
@@ -68,5 +68,3 @@ func BenchmarkCopy(b *testing.B) {
 		_ = buf.Copy(reader, writer)
 	}
 }
-
-

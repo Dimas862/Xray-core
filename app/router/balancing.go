@@ -4,12 +4,12 @@ import (
 	"context"
 	sync "sync"
 
-	"github.com/dimas862/xray-core/app/observatory"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/extension"
-	"github.com/dimas862/xray-core/features/outbound"
+	"github.com/xtls/xray-core/app/observatory"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/extension"
+	"github.com/xtls/xray-core/features/outbound"
 )
 
 type BalancingStrategy interface {
@@ -165,5 +165,3 @@ func (r *Router) GetOverrideTarget(tag string) (string, error) {
 	}
 	return "", errors.New("cannot find tag")
 }
-
-

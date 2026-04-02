@@ -4,7 +4,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/dimas862/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/errors"
 )
 
 // ConfigCreator is a function to create an object by a config.
@@ -31,5 +31,3 @@ func CreateObject(ctx context.Context, config interface{}) (interface{}, error) 
 	}
 	return creator(ctx, config)
 }
-
-

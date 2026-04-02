@@ -7,49 +7,46 @@ import (
 	"hash/crc64"
 	"time"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/platform"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/retry"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/common/signal"
-	"github.com/dimas862/xray-core/common/task"
-	"github.com/dimas862/xray-core/common/xudp"
-	core "github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/policy"
-	"github.com/dimas862/xray-core/proxy/vmess"
-	"github.com/dimas862/xray-core/proxy/vmess/encoding"
-	"github.com/dimas862/xray-core/transport"
-	"github.com/dimas862/xray-core/transport/internet"
-	"github.com/dimas862/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/platform"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/retry"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/common/signal"
+	"github.com/xtls/xray-core/common/task"
+	"github.com/xtls/xray-core/common/xudp"
+	core "github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/policy"
+	"github.com/xtls/xray-core/proxy/vmess"
+	"github.com/xtls/xray-core/proxy/vmess/encoding"
+	"github.com/xtls/xray-core/transport"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/stat"
 )
 
 // Handler is an outbound connection handler for VMess protocol.
 type Handler struct {
-	serverList    *protocol.ServerList
-	serverPicker  protocol.ServerPicker
+	server        *protocol.ServerSpec
 	policyManager policy.Manager
 	cone          bool
 }
 
 // New creates a new VMess outbound handler.
 func New(ctx context.Context, config *Config) (*Handler, error) {
-	serverList := protocol.NewServerList()
-	for _, rec := range config.Receiver {
-		s, err := protocol.NewServerSpecFromPB(rec)
-		if err != nil {
-			return nil, errors.New("failed to parse server spec").Base(err)
-		}
-		serverList.AddServer(s)
+	if config.Receiver == nil {
+		return nil, errors.New(`no vnext found`)
+	}
+	server, err := protocol.NewServerSpecFromPB(config.Receiver)
+	if err != nil {
+		return nil, errors.New("failed to get server spec").Base(err)
 	}
 
 	v := core.MustFromContext(ctx)
 	handler := &Handler{
-		serverList:    serverList,
-		serverPicker:  protocol.NewRoundRobinServerPicker(serverList),
+		server:        server,
 		policyManager: v.GetFeature(policy.ManagerType()).(policy.Manager),
 		cone:          ctx.Value("cone").(bool),
 	}
@@ -67,11 +64,11 @@ func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer inte
 	ob.Name = "vmess"
 	ob.CanSpliceCopy = 3
 
-	var rec *protocol.ServerSpec
+	rec := h.server
 	var conn stat.Connection
+
 	err := retry.ExponentialBackoff(5, 200).On(func() error {
-		rec = h.serverPicker.PickServer()
-		rawConn, err := dialer.Dial(ctx, rec.Destination())
+		rawConn, err := dialer.Dial(ctx, rec.Destination)
 		if err != nil {
 			return err
 		}
@@ -85,7 +82,7 @@ func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer inte
 	defer conn.Close()
 
 	target := ob.Target
-	errors.LogInfo(ctx, "tunneling request to ", target, " via ", rec.Destination().NetAddr())
+	errors.LogInfo(ctx, "tunneling request to ", target, " via ", rec.Destination.NetAddr())
 
 	command := protocol.RequestCommandTCP
 	if target.Network == net.Network_UDP {
@@ -95,7 +92,7 @@ func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer inte
 		command = protocol.RequestCommandMux
 	}
 
-	user := rec.PickUser()
+	user := rec.User
 	request := &protocol.RequestHeader{
 		Version: encoding.Version,
 		User:    user,
@@ -202,7 +199,7 @@ func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer inte
 		if err != nil {
 			return errors.New("failed to read header").Base(err)
 		}
-		h.handleCommand(rec.Destination(), header.Command)
+		h.handleCommand(rec.Destination, header.Command)
 
 		bodyReader, err := session.DecodeResponseBody(request, reader)
 		if err != nil {
@@ -247,5 +244,3 @@ func init() {
 		enablePadding = true
 	}
 }
-
-

@@ -7,16 +7,16 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/dimas862/xray-core/app/metrics"
-	"github.com/dimas862/xray-core/app/proxyman"
-	"github.com/dimas862/xray-core/app/router"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/proxy/dokodemo"
-	"github.com/dimas862/xray-core/proxy/freedom"
-	"github.com/dimas862/xray-core/testing/servers/tcp"
+	"github.com/xtls/xray-core/app/metrics"
+	"github.com/xtls/xray-core/app/proxyman"
+	"github.com/xtls/xray-core/app/router"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/proxy/dokodemo"
+	"github.com/xtls/xray-core/proxy/freedom"
+	"github.com/xtls/xray-core/testing/servers/tcp"
 )
 
 const expectedMessage = "goroutine profile: total"
@@ -105,5 +105,3 @@ func TestMetrics(t *testing.T) {
 		t.Error("unexpected response body from expvars handler")
 	}
 }
-
-

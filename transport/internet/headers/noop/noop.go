@@ -4,7 +4,7 @@ import (
 	"context"
 	"net"
 
-	"github.com/dimas862/xray-core/common"
+	"github.com/xtls/xray-core/common"
 )
 
 type NoOpHeader struct{}
@@ -38,5 +38,3 @@ func init() {
 	common.Must(common.RegisterConfig((*Config)(nil), NewNoOpHeader))
 	common.Must(common.RegisterConfig((*ConnectionConfig)(nil), NewNoOpConnectionHeader))
 }
-
-

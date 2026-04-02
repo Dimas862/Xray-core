@@ -3,14 +3,14 @@ package command
 import (
 	"context"
 
-	"github.com/dimas862/xray-core/app/commander"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/inbound"
-	"github.com/dimas862/xray-core/features/outbound"
-	"github.com/dimas862/xray-core/proxy"
+	"github.com/xtls/xray-core/app/commander"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/inbound"
+	"github.com/xtls/xray-core/features/outbound"
+	"github.com/xtls/xray-core/proxy"
 	grpc "google.golang.org/grpc"
 )
 
@@ -232,5 +232,3 @@ func init() {
 		return &service{v: s}, nil
 	}))
 }
-
-

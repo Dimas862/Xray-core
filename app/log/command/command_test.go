@@ -4,15 +4,15 @@ import (
 	"context"
 	"testing"
 
-	"github.com/dimas862/xray-core/app/dispatcher"
-	"github.com/dimas862/xray-core/app/log"
-	. "github.com/dimas862/xray-core/app/log/command"
-	"github.com/dimas862/xray-core/app/proxyman"
-	_ "github.com/dimas862/xray-core/app/proxyman/inbound"
-	_ "github.com/dimas862/xray-core/app/proxyman/outbound"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/core"
+	"github.com/xtls/xray-core/app/dispatcher"
+	"github.com/xtls/xray-core/app/log"
+	. "github.com/xtls/xray-core/app/log/command"
+	"github.com/xtls/xray-core/app/proxyman"
+	_ "github.com/xtls/xray-core/app/proxyman/inbound"
+	_ "github.com/xtls/xray-core/app/proxyman/outbound"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/core"
 )
 
 func TestLoggerRestart(t *testing.T) {
@@ -32,5 +32,3 @@ func TestLoggerRestart(t *testing.T) {
 	}
 	common.Must2(server.RestartLogger(context.Background(), &RestartLoggerRequest{}))
 }
-
-

@@ -6,9 +6,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/dimas862/xray-core/common/platform"
-	"github.com/dimas862/xray-core/common/signal/done"
-	"github.com/dimas862/xray-core/common/signal/semaphore"
+	"github.com/xtls/xray-core/common/platform"
+	"github.com/xtls/xray-core/common/signal/done"
+	"github.com/xtls/xray-core/common/signal/semaphore"
 )
 
 // Writer is the interface for writing logs.
@@ -36,7 +36,7 @@ type serverityLogger struct {
 func NewLogger(logWriterCreator WriterCreator) Handler {
 	return &generalLogger{
 		creator: logWriterCreator,
-		buffer:  make(chan Message, 16),
+		buffer:  make(chan Message, 128),
 		access:  semaphore.New(1),
 		done:    done.New(),
 	}
@@ -46,7 +46,7 @@ func ReplaceWithSeverityLogger(serverity Severity) {
 	w := CreateStdoutLogWriter()
 	g := &generalLogger{
 		creator: w,
-		buffer:  make(chan Message, 16),
+		buffer:  make(chan Message, 128),
 		access:  semaphore.New(1),
 		done:    done.New(),
 	}
@@ -182,5 +182,3 @@ func CreateFileLogWriter(path string) (WriterCreator, error) {
 func init() {
 	RegisterHandler(NewLogger(CreateStdoutLogWriter()))
 }
-
-

@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/protocol"
 	"lukechampine.com/blake3"
 )
 
@@ -208,5 +208,3 @@ func (i *ClientInstance) Handshake(conn net.Conn) (*CommonConn, error) {
 	}
 	return c, nil
 }
-
-

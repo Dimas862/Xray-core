@@ -1,9 +1,9 @@
 package internet
 
 import (
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/serial"
 )
 
 type ConfigCreator func() interface{}
@@ -90,7 +90,7 @@ func (c *StreamConfig) GetEffectiveSecuritySettings() (interface{}, error) {
 }
 
 func (c *StreamConfig) HasSecuritySettings() bool {
-	return len(c.SecurityType) > 0
+	return len(c.SecuritySettings) > 0
 }
 
 func (c *ProxyConfig) HasTag() bool {
@@ -130,7 +130,7 @@ func (s DomainStrategy) FallbackIP6() bool {
 }
 
 func (s DomainStrategy) GetDynamicStrategy(addrFamily net.AddressFamily) DomainStrategy {
-	if  addrFamily.IsDomain(){
+	if addrFamily.IsDomain() {
 		return s
 	}
 	switch s {
@@ -150,5 +150,3 @@ func (s DomainStrategy) GetDynamicStrategy(addrFamily net.AddressFamily) DomainS
 	}
 	return s
 }
-
-

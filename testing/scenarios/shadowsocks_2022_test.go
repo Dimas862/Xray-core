@@ -7,18 +7,18 @@ import (
 	"time"
 
 	"github.com/sagernet/sing-shadowsocks/shadowaead_2022"
-	"github.com/dimas862/xray-core/app/log"
-	"github.com/dimas862/xray-core/app/proxyman"
-	"github.com/dimas862/xray-core/common"
-	clog "github.com/dimas862/xray-core/common/log"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/proxy/dokodemo"
-	"github.com/dimas862/xray-core/proxy/freedom"
-	"github.com/dimas862/xray-core/proxy/shadowsocks_2022"
-	"github.com/dimas862/xray-core/testing/servers/tcp"
-	"github.com/dimas862/xray-core/testing/servers/udp"
+	"github.com/xtls/xray-core/app/log"
+	"github.com/xtls/xray-core/app/proxyman"
+	"github.com/xtls/xray-core/common"
+	clog "github.com/xtls/xray-core/common/log"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/proxy/dokodemo"
+	"github.com/xtls/xray-core/proxy/freedom"
+	"github.com/xtls/xray-core/proxy/shadowsocks_2022"
+	"github.com/xtls/xray-core/testing/servers/tcp"
+	"github.com/xtls/xray-core/testing/servers/udp"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -215,5 +215,3 @@ func testShadowsocks2022Udp(t *testing.T, method string, password string) {
 		t.Error(err)
 	}
 }
-
-

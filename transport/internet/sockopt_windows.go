@@ -10,7 +10,7 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/dimas862/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/errors"
 )
 
 const (
@@ -192,5 +192,3 @@ func setReuseAddr(fd uintptr) error {
 func setReusePort(fd uintptr) error {
 	return nil
 }
-
-

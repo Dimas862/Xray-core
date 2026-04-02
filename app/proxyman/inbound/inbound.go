@@ -4,14 +4,14 @@ import (
 	"context"
 	"sync"
 
-	"github.com/dimas862/xray-core/app/proxyman"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/inbound"
+	"github.com/xtls/xray-core/app/proxyman"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/inbound"
 )
 
 // Manager manages all inbound handlers.
@@ -178,15 +178,7 @@ func NewHandler(ctx context.Context, config *core.InboundHandlerConfig) (inbound
 		ctx = session.ContextWithAllowedNetwork(ctx, net.Network_UDP)
 	}
 
-	allocStrategy := receiverSettings.AllocationStrategy
-	if allocStrategy == nil || allocStrategy.Type == proxyman.AllocationStrategy_Always {
-		return NewAlwaysOnInboundHandler(ctx, tag, receiverSettings, proxySettings)
-	}
-
-	if allocStrategy.Type == proxyman.AllocationStrategy_Random {
-		return NewDynamicInboundHandler(ctx, tag, receiverSettings, proxySettings)
-	}
-	return nil, errors.New("unknown allocation strategy: ", receiverSettings.AllocationStrategy.Type).AtError()
+	return NewAlwaysOnInboundHandler(ctx, tag, receiverSettings, proxySettings)
 }
 
 func init() {
@@ -197,5 +189,3 @@ func init() {
 		return NewHandler(ctx, config.(*core.InboundHandlerConfig))
 	}))
 }
-
-

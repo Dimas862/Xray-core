@@ -4,8 +4,8 @@ import (
 	"io"
 	"sync"
 
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/retry"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/retry"
 )
 
 type SegmentWriter interface {
@@ -51,5 +51,3 @@ func (w *RetryableWriter) Write(seg Segment) error {
 		return w.writer.Write(seg)
 	})
 }
-
-

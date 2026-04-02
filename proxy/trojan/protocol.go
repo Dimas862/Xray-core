@@ -4,10 +4,10 @@ import (
 	"encoding/binary"
 	"io"
 
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
 )
 
 var (
@@ -260,5 +260,3 @@ func (r *PacketReader) ReadMultiBuffer() (buf.MultiBuffer, error) {
 
 	return mb, nil
 }
-
-

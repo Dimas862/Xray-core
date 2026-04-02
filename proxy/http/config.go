@@ -3,7 +3,7 @@ package http
 import (
 	"google.golang.org/protobuf/proto"
 
-	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/protocol"
 )
 
 func (a *Account) Equals(another protocol.Account) bool {
@@ -32,5 +32,3 @@ func (sc *ServerConfig) HasAccount(username, password string) bool {
 	}
 	return p == password
 }
-
-

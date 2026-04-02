@@ -5,8 +5,8 @@ import (
 	"encoding/hex"
 	"strings"
 
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/proxy/wireguard"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/proxy/wireguard"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -130,7 +130,7 @@ func ParseWireGuardKey(str string) (string, error) {
 		return "", errors.New("key must not be empty")
 	}
 
-	if len(str)%2 == 0 {
+	if len(str) == 64 {
 		_, err = hex.DecodeString(str)
 		if err == nil {
 			return str, nil
@@ -150,5 +150,3 @@ func ParseWireGuardKey(str string) (string, error) {
 
 	return "", errors.New("failed to deserialize key").Base(err)
 }
-
-

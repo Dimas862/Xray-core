@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	. "github.com/dimas862/xray-core/proxy/blackhole"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	. "github.com/xtls/xray-core/proxy/blackhole"
 )
 
 func TestHTTPResponse(t *testing.T) {
@@ -24,5 +24,3 @@ func TestHTTPResponse(t *testing.T) {
 		t.Error("expected status code 403, but got ", response.StatusCode)
 	}
 }
-
-

@@ -4,14 +4,14 @@ import (
 	"context"
 	"testing"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/mux"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/features/routing"
-	"github.com/dimas862/xray-core/transport"
-	"github.com/dimas862/xray-core/transport/pipe"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/mux"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/features/routing"
+	"github.com/xtls/xray-core/transport"
+	"github.com/xtls/xray-core/transport/pipe"
 )
 
 func newLinkPair() (*transport.Link, *transport.Link) {
@@ -122,5 +122,3 @@ func TestRegressionOutboundLeak(t *testing.T) {
 		t.Error("outbound target got leaked: ", outbounds[0].Target.String())
 	}
 }
-
-

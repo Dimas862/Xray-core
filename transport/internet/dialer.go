@@ -3,20 +3,19 @@ package internet
 import (
 	"context"
 	"fmt"
-	gonet "net"
 	"strings"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/dice"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/net/cnc"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/features/dns"
-	"github.com/dimas862/xray-core/features/outbound"
-	"github.com/dimas862/xray-core/transport"
-	"github.com/dimas862/xray-core/transport/internet/stat"
-	"github.com/dimas862/xray-core/transport/pipe"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/dice"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/net/cnc"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/features/dns"
+	"github.com/xtls/xray-core/features/outbound"
+	"github.com/xtls/xray-core/transport"
+	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/transport/pipe"
 )
 
 // Dialer is the interface for dialing outbound connections.
@@ -183,7 +182,7 @@ func checkAddressPortStrategy(ctx context.Context, dest net.Destination, sockopt
 		if len(parts) != 3 {
 			return nil, errors.New("invalid address format", dest.Address.String())
 		}
-		_, srvRecords, err := gonet.DefaultResolver.LookupSRV(context.Background(), parts[0][1:], parts[1][1:], parts[2])
+		_, srvRecords, err := net.DefaultResolver.LookupSRV(context.Background(), parts[0][1:], parts[1][1:], parts[2])
 		if err != nil {
 			return nil, errors.New("failed to lookup SRV record").Base(err)
 		}
@@ -198,7 +197,7 @@ func checkAddressPortStrategy(ctx context.Context, dest net.Destination, sockopt
 	}
 	if OverrideBy == "txt" {
 		errors.LogDebug(ctx, "query TXT record for "+dest.Address.String())
-		txtRecords, err := gonet.DefaultResolver.LookupTXT(ctx, dest.Address.String())
+		txtRecords, err := net.DefaultResolver.LookupTXT(ctx, dest.Address.String())
 		if err != nil {
 			errors.LogError(ctx, "failed to lookup SRV record: "+err.Error())
 			return nil, errors.New("failed to lookup SRV record").Base(err)
@@ -287,5 +286,3 @@ func InitSystemDialer(dc dns.Client, om outbound.Manager) {
 	dnsClient = dc
 	obm = om
 }
-
-

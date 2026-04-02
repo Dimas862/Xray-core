@@ -7,13 +7,13 @@ import (
 	"time"
 
 	goreality "github.com/xtls/reality"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/transport/internet"
-	"github.com/dimas862/xray-core/transport/internet/reality"
-	"github.com/dimas862/xray-core/transport/internet/stat"
-	"github.com/dimas862/xray-core/transport/internet/tls"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/reality"
+	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/transport/internet/tls"
 )
 
 // Listener is an internet.Listener that listens for TCP connections.
@@ -64,6 +64,10 @@ func ListenTCP(ctx context.Context, address net.Address, port net.Port, streamSe
 		errors.LogInfo(ctx, "listening TCP on ", address, ":", port)
 	}
 
+	if streamSettings.TcpmaskManager != nil {
+		listener, _ = streamSettings.TcpmaskManager.WrapListener(listener)
+	}
+
 	if streamSettings.SocketSettings != nil && streamSettings.SocketSettings.AcceptProxyProtocol {
 		errors.LogWarning(ctx, "accepting PROXY protocol")
 	}
@@ -108,6 +112,7 @@ func (v *Listener) keepAccepting() {
 			}
 			continue
 		}
+
 		go func() {
 			if v.tlsConfig != nil {
 				conn = tls.Server(conn, v.tlsConfig)
@@ -138,5 +143,3 @@ func (v *Listener) Close() error {
 func init() {
 	common.Must(internet.RegisterTransportListener(protocolName, ListenTCP))
 }
-
-

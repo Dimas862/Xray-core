@@ -3,11 +3,11 @@ package router
 import (
 	"context"
 
-	"github.com/dimas862/xray-core/app/observatory"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/extension"
+	"github.com/xtls/xray-core/app/observatory"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/extension"
 )
 
 type LeastPingStrategy struct {
@@ -65,5 +65,3 @@ func (o outboundList) contains(name string) bool {
 	}
 	return false
 }
-
-

@@ -4,7 +4,7 @@ import (
 	"crypto/cipher"
 	"io"
 
-	"github.com/dimas862/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/buf"
 )
 
 type CryptionReader struct {
@@ -62,5 +62,3 @@ func (w *CryptionWriter) WriteMultiBuffer(mb buf.MultiBuffer) error {
 
 	return w.bufWriter.WriteMultiBuffer(mb)
 }
-
-

@@ -1,5 +1,5 @@
-//go:build !wasm
-// +build !wasm
+//go:build !wasm && !openbsd
+// +build !wasm,!openbsd
 
 package buf
 
@@ -7,8 +7,8 @@ import (
 	"io"
 	"syscall"
 
-	"github.com/dimas862/xray-core/common/platform"
-	"github.com/dimas862/xray-core/features/stats"
+	"github.com/xtls/xray-core/common/platform"
+	"github.com/xtls/xray-core/features/stats"
 )
 
 type allocStrategy struct {
@@ -153,5 +153,3 @@ func init() {
 		useReadv = true
 	}
 }
-
-

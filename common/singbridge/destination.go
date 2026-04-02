@@ -3,7 +3,7 @@ package singbridge
 import (
 	M "github.com/sagernet/sing/common/metadata"
 	N "github.com/sagernet/sing/common/network"
-	"github.com/dimas862/xray-core/common/net"
+	"github.com/xtls/xray-core/common/net"
 )
 
 func ToNetwork(network string) net.Network {
@@ -50,5 +50,3 @@ func ToSocksaddr(destination net.Destination) M.Socksaddr {
 	addr.Port = uint16(destination.Port)
 	return addr
 }
-
-

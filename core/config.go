@@ -5,11 +5,11 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/cmdarg"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/main/confloader"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/cmdarg"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/main/confloader"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -64,7 +64,11 @@ func GetMergedConfig(args cmdarg.Arg) (string, error) {
 	var files []*ConfigSource
 	supported := []string{"json", "yaml", "toml"}
 	for _, file := range args {
-		format := getFormat(file)
+		format := "json"
+		if file != "stdin:" {
+			format = GetFormat(file)
+		}
+
 		if slices.Contains(supported, format) {
 			files = append(files, &ConfigSource{
 				Name:   file,
@@ -98,7 +102,7 @@ func getExtension(filename string) string {
 	return filename[idx+1:]
 }
 
-func getFormat(filename string) string {
+func GetFormat(filename string) string {
 	return GetFormatByExtension(getExtension(filename))
 }
 
@@ -112,7 +116,7 @@ func LoadConfig(formatName string, input interface{}) (*Config, error) {
 
 			if formatName == "auto" {
 				if file != "stdin:" {
-					f = getFormat(file)
+					f = GetFormat(file)
 				} else {
 					f = "json"
 				}
@@ -185,5 +189,3 @@ func init() {
 		},
 	}))
 }
-
-

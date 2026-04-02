@@ -1,7 +1,7 @@
 package conf
 
 import (
-	"github.com/dimas862/xray-core/transport/internet/grpc"
+	"github.com/xtls/xray-core/transport/internet/grpc"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -39,5 +39,3 @@ func (g *GRPCConfig) Build() (proto.Message, error) {
 		UserAgent:           g.UserAgent,
 	}, nil
 }
-
-

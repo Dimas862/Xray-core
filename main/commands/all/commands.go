@@ -1,10 +1,10 @@
 package all
 
 import (
-	"github.com/dimas862/xray-core/main/commands/all/api"
-	"github.com/dimas862/xray-core/main/commands/all/convert"
-	"github.com/dimas862/xray-core/main/commands/all/tls"
-	"github.com/dimas862/xray-core/main/commands/base"
+	"github.com/xtls/xray-core/main/commands/all/api"
+	"github.com/xtls/xray-core/main/commands/all/convert"
+	"github.com/xtls/xray-core/main/commands/all/tls"
+	"github.com/xtls/xray-core/main/commands/base"
 )
 
 func init() {
@@ -19,7 +19,6 @@ func init() {
 		cmdMLDSA65,
 		cmdMLKEM768,
 		cmdVLESSEnc,
+		cmdBuildMphCache,
 	)
 }
-
-

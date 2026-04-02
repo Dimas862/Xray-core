@@ -3,7 +3,7 @@ package extension
 import (
 	"context"
 
-	"github.com/dimas862/xray-core/features"
+	"github.com/xtls/xray-core/features"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -13,8 +13,11 @@ type Observatory interface {
 	GetObservation(ctx context.Context) (proto.Message, error)
 }
 
+type BurstObservatory interface {
+	Observatory
+	Check(tag []string)
+}
+
 func ObservatoryType() interface{} {
 	return (*Observatory)(nil)
 }
-
-

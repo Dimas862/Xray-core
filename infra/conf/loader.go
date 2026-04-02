@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/dimas862/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/errors"
 )
 
 type ConfigCreator func() interface{}
@@ -83,5 +83,3 @@ func (v *JSONConfigLoader) Load(raw []byte) (interface{}, string, error) {
 	}
 	return config, id, nil
 }
-
-

@@ -5,8 +5,8 @@ import (
 	"encoding/binary"
 	"hash/fnv"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/crypto"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/crypto"
 	"golang.org/x/crypto/sha3"
 )
 
@@ -97,5 +97,3 @@ type AEADSizeParser struct {
 func NewAEADSizeParser(auth *crypto.AEADAuthenticator) *AEADSizeParser {
 	return &AEADSizeParser{crypto.AEADChunkSizeParser{Auth: auth}}
 }
-
-

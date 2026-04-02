@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"io"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
 )
 
 // ChunkSizeDecoder is a utility class to decode size value from bytes.
@@ -158,5 +158,3 @@ func (w *ChunkStreamWriter) WriteMultiBuffer(mb buf.MultiBuffer) error {
 
 	return w.writer.WriteMultiBuffer(mb2Write)
 }
-
-

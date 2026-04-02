@@ -4,7 +4,7 @@ import (
 	"context"
 	"strings"
 
-	"github.com/dimas862/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/serial"
 )
 
 type logKey int
@@ -68,5 +68,3 @@ func AccessMessageFromContext(ctx context.Context) *AccessMessage {
 	}
 	return nil
 }
-
-

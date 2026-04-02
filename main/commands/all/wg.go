@@ -1,7 +1,7 @@
 package all
 
 import (
-	"github.com/dimas862/xray-core/main/commands/base"
+	"github.com/xtls/xray-core/main/commands/base"
 )
 
 var cmdWG = &base.Command{
@@ -25,5 +25,3 @@ var input_wireguard = cmdWG.Flag.String("i", "", "")
 func executeWG(cmd *base.Command, args []string) {
 	Curve25519Genkey(true, *input_wireguard)
 }
-
-

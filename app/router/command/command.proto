@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package xray.app.router.command;
 option csharp_namespace = "Xray.App.Router.Command";
-option go_package = "github.com/dimas862/xray-core/app/router/command";
+option go_package = "github.com/xtls/xray-core/app/router/command";
 option java_package = "com.xray.app.router.command";
 option java_multiple_files = true;
 
@@ -104,6 +104,17 @@ message RemoveRuleRequest {
 
 message RemoveRuleResponse {}
 
+message ListRuleRequest {}
+
+message ListRuleItem {
+  string tag = 1;
+  string ruleTag = 2;
+}
+
+message ListRuleResponse{
+  repeated ListRuleItem rules = 1;
+}
+
 service RoutingService {
   rpc SubscribeRoutingStats(SubscribeRoutingStatsRequest)
       returns (stream RoutingContext) {}
@@ -114,8 +125,8 @@ service RoutingService {
   
   rpc AddRule(AddRuleRequest) returns (AddRuleResponse) {}
   rpc RemoveRule(RemoveRuleRequest) returns (RemoveRuleResponse) {}
+
+  rpc ListRule(ListRuleRequest) returns (ListRuleResponse) {}
 }
 
 message Config {}
-
-

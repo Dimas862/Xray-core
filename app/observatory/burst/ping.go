@@ -6,9 +6,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/features/routing"
-	"github.com/dimas862/xray-core/transport/internet/tagged"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/utils"
+	"github.com/xtls/xray-core/features/routing"
+	"github.com/xtls/xray-core/transport/internet/tagged"
 )
 
 type pingClient struct {
@@ -61,6 +62,7 @@ func (s *pingClient) MeasureDelay(httpMethod string) (time.Duration, error) {
 	if err != nil {
 		return rttFailed, err
 	}
+	utils.TryDefaultHeadersWith(req.Header, "nav")
 
 	start := time.Now()
 	resp, err := s.httpClient.Do(req)
@@ -77,5 +79,3 @@ func (s *pingClient) MeasureDelay(httpMethod string) (time.Duration, error) {
 
 	return time.Since(start), nil
 }
-
-

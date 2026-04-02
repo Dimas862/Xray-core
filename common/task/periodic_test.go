@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dimas862/xray-core/common"
-	. "github.com/dimas862/xray-core/common/task"
+	"github.com/xtls/xray-core/common"
+	. "github.com/xtls/xray-core/common/task"
 )
 
 func TestPeriodicTaskStop(t *testing.T) {
@@ -34,5 +34,3 @@ func TestPeriodicTaskStop(t *testing.T) {
 	}
 	common.Must(task.Close())
 }
-
-

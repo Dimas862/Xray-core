@@ -3,13 +3,12 @@ package encoding
 import (
 	"context"
 	"io"
-	"net"
 
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	xnet "github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/net/cnc"
-	"github.com/dimas862/xray-core/common/signal/done"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/net/cnc"
+	"github.com/xtls/xray-core/common/signal/done"
 	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/peer"
 )
@@ -55,7 +54,7 @@ func NewHunkConn(hc HunkConn, cancel context.CancelFunc) net.Conn {
 	if ok {
 		header := md.Get("x-real-ip")
 		if len(header) > 0 {
-			realip := xnet.ParseAddress(header[0])
+			realip := net.ParseAddress(header[0])
 			if realip.Family().IsIP() {
 				rAddr = &net.TCPAddr{
 					IP:   realip.IP(),
@@ -151,5 +150,3 @@ func (h *HunkReaderWriter) Close() error {
 
 	return h.done.Close()
 }
-
-

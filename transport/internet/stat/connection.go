@@ -3,7 +3,7 @@ package stat
 import (
 	"net"
 
-	"github.com/dimas862/xray-core/features/stats"
+	"github.com/xtls/xray-core/features/stats"
 )
 
 type Connection interface {
@@ -33,4 +33,12 @@ func (c *CounterConnection) Write(b []byte) (int, error) {
 	return nBytes, err
 }
 
-
+func TryUnwrapStatsConn(conn net.Conn) net.Conn {
+	if conn == nil {
+		return conn
+	}
+	if conn, ok := conn.(*CounterConnection); ok {
+		return conn.Connection
+	}
+	return conn
+}

@@ -3,7 +3,7 @@ package udp
 import (
 	"fmt"
 
-	"github.com/dimas862/xray-core/common/net"
+	"github.com/xtls/xray-core/common/net"
 )
 
 type Server struct {
@@ -52,5 +52,3 @@ func (server *Server) Close() error {
 	server.accepting = false
 	return server.conn.Close()
 }
-
-

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	. "github.com/dimas862/xray-core/common"
+	. "github.com/xtls/xray-core/common"
 )
 
 func TestMust(t *testing.T) {
@@ -42,5 +42,3 @@ func TestMust(t *testing.T) {
 		}
 	}
 }
-
-

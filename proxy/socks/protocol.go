@@ -4,11 +4,11 @@ import (
 	"encoding/binary"
 	"io"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
 )
 
 const (
@@ -353,6 +353,11 @@ func EncodeUDPPacket(request *protocol.RequestHeader, data []byte) (*buf.Buffer,
 		b.Release()
 		return nil, err
 	}
+	// if data is too large, return an empty buffer (drop too big data)
+	if b.Available() < int32(len(data)) {
+		b.Clear()
+		return b, nil
+	}
 	common.Must2(b.Write(data))
 	return b, nil
 }
@@ -508,5 +513,3 @@ func ClientHandshake(request *protocol.RequestHeader, reader io.Reader, writer i
 
 	return nil, nil
 }
-
-

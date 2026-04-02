@@ -3,8 +3,8 @@ package protocol_test
 import (
 	"testing"
 
-	. "github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/uuid"
+	. "github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/uuid"
 )
 
 func TestIdEquals(t *testing.T) {
@@ -19,5 +19,3 @@ func TestIdEquals(t *testing.T) {
 		t.Error(id1.String(), " != ", id2.String())
 	}
 }
-
-

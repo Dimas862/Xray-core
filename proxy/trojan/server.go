@@ -7,24 +7,24 @@ import (
 	"strings"
 	"time"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/log"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	udp_proto "github.com/dimas862/xray-core/common/protocol/udp"
-	"github.com/dimas862/xray-core/common/retry"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/common/signal"
-	"github.com/dimas862/xray-core/common/task"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/policy"
-	"github.com/dimas862/xray-core/features/routing"
-	"github.com/dimas862/xray-core/transport/internet/reality"
-	"github.com/dimas862/xray-core/transport/internet/stat"
-	"github.com/dimas862/xray-core/transport/internet/tls"
-	"github.com/dimas862/xray-core/transport/internet/udp"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/log"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	udp_proto "github.com/xtls/xray-core/common/protocol/udp"
+	"github.com/xtls/xray-core/common/retry"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/common/signal"
+	"github.com/xtls/xray-core/common/task"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/policy"
+	"github.com/xtls/xray-core/features/routing"
+	"github.com/xtls/xray-core/transport/internet/reality"
+	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/xtls/xray-core/transport/internet/udp"
 )
 
 func init() {
@@ -147,11 +147,7 @@ func (s *Server) Network() []net.Network {
 
 // Process implements proxy.Inbound.Process().
 func (s *Server) Process(ctx context.Context, network net.Network, conn stat.Connection, dispatcher routing.Dispatcher) error {
-	iConn := conn
-	statConn, ok := iConn.(*stat.CounterConnection)
-	if ok {
-		iConn = statConn.Connection
-	}
+	iConn := stat.TryUnwrapStatsConn(conn)
 
 	sessionPolicy := s.policyManager.ForLevel(0)
 	if err := conn.SetReadDeadline(time.Now().Add(sessionPolicy.Timeouts.Handshake)); err != nil {
@@ -552,5 +548,3 @@ func (s *Server) fallback(ctx context.Context, err error, sessionPolicy policy.S
 
 	return nil
 }
-
-

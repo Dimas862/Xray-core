@@ -3,9 +3,9 @@ package vless
 import (
 	"google.golang.org/protobuf/proto"
 
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/uuid"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/uuid"
 )
 
 // AsAccount implements protocol.Account.AsAccount().
@@ -22,6 +22,8 @@ func (a *Account) AsAccount() (protocol.Account, error) {
 		Seconds:    a.Seconds,
 		Padding:    a.Padding,
 		Reverse:    a.Reverse,
+		Testpre:    a.Testpre,
+		Testseed:   a.Testseed,
 	}, nil
 }
 
@@ -38,6 +40,9 @@ type MemoryAccount struct {
 	Padding    string
 
 	Reverse *Reverse
+
+	Testpre  uint32
+	Testseed []uint32
 }
 
 // Equals implements protocol.Account.Equals().
@@ -58,7 +63,7 @@ func (a *MemoryAccount) ToProto() proto.Message {
 		Seconds:    a.Seconds,
 		Padding:    a.Padding,
 		Reverse:    a.Reverse,
+		Testpre:    a.Testpre,
+		Testseed:   a.Testseed,
 	}
 }
-
-

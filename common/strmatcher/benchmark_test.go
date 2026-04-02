@@ -4,8 +4,8 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/dimas862/xray-core/common"
-	. "github.com/dimas862/xray-core/common/strmatcher"
+	"github.com/xtls/xray-core/common"
+	. "github.com/xtls/xray-core/common/strmatcher"
 )
 
 func BenchmarkACAutomaton(b *testing.B) {
@@ -60,5 +60,3 @@ func BenchmarkMarchGroup(b *testing.B) {
 		_ = g.Match("0.example.com")
 	}
 }
-
-

@@ -1,9 +1,9 @@
 package routing
 
 import (
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/features"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/features"
 )
 
 // Router is a feature to choose an outbound tag for the given request.
@@ -16,6 +16,7 @@ type Router interface {
 	PickRoute(ctx Context) (Route, error)
 	AddRule(config *serial.TypedMessage, shouldAppend bool) error
 	RemoveRule(tag string) error
+	ListRule() []Route
 }
 
 // Route is the routing result of Router feature.
@@ -65,6 +66,11 @@ func (DefaultRouter) RemoveRule(tag string) error {
 	return common.ErrNoClue
 }
 
+// ListRule implements Router.
+func (DefaultRouter) ListRule() []Route {
+	return nil
+}
+
 // Start implements common.Runnable.
 func (DefaultRouter) Start() error {
 	return nil
@@ -74,5 +80,3 @@ func (DefaultRouter) Start() error {
 func (DefaultRouter) Close() error {
 	return nil
 }
-
-

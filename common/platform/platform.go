@@ -1,4 +1,4 @@
-package platform // import "github.com/dimas862/xray-core/common/platform"
+package platform // import "github.com/xtls/xray-core/common/platform"
 
 import (
 	"os"
@@ -8,10 +8,8 @@ import (
 )
 
 const (
-	PluginLocation  = "xray.location.plugin"
 	ConfigLocation  = "xray.location.config"
 	ConfdirLocation = "xray.location.confdir"
-	ToolLocation    = "xray.location.tool"
 	AssetLocation   = "xray.location.asset"
 	CertLocation    = "xray.location.cert"
 
@@ -24,6 +22,10 @@ const (
 	BrowserDialerAddress = "xray.browser.dialer"
 	XUDPLog              = "xray.xudp.show"
 	XUDPBaseKey          = "xray.xudp.basekey"
+
+	TunFdKey = "xray.tun.fd"
+
+	MphCachePath = "xray.mph.cache"
 )
 
 type EnvFlag struct {
@@ -79,17 +81,6 @@ func getExecutableDir() string {
 	return filepath.Dir(exec)
 }
 
-func getExecutableSubDir(dir string) func() string {
-	return func() string {
-		return filepath.Join(getExecutableDir(), dir)
-	}
-}
-
-func GetPluginDirectory() string {
-	pluginDir := NewEnvFlag(PluginLocation).GetValue(getExecutableSubDir("plugins"))
-	return pluginDir
-}
-
 func GetConfigurationPath() string {
 	configPath := NewEnvFlag(ConfigLocation).GetValue(getExecutableDir)
 	return filepath.Join(configPath, "config.json")
@@ -100,5 +91,3 @@ func GetConfDirPath() string {
 	configPath := NewEnvFlag(ConfdirLocation).GetValue(func() string { return "" })
 	return configPath
 }
-
-

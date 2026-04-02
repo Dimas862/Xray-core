@@ -3,7 +3,7 @@ package policy
 import (
 	"time"
 
-	"github.com/dimas862/xray-core/features/policy"
+	"github.com/xtls/xray-core/features/policy"
 )
 
 // Duration converts Second to time.Duration.
@@ -92,5 +92,3 @@ func (p *SystemPolicy) ToCorePolicy() policy.System {
 		},
 	}
 }
-
-

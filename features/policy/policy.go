@@ -5,8 +5,8 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/dimas862/xray-core/common/platform"
-	"github.com/dimas862/xray-core/features"
+	"github.com/xtls/xray-core/common/platform"
+	"github.com/xtls/xray-core/features"
 )
 
 // Timeout contains limits for connection timeout.
@@ -148,5 +148,3 @@ func BufferPolicyFromContext(ctx context.Context) Buffer {
 	}
 	return pPolicy.(Buffer)
 }
-
-

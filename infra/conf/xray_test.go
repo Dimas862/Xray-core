@@ -6,22 +6,22 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/dimas862/xray-core/app/dispatcher"
-	"github.com/dimas862/xray-core/app/log"
-	"github.com/dimas862/xray-core/app/proxyman"
-	"github.com/dimas862/xray-core/app/router"
-	"github.com/dimas862/xray-core/common"
-	clog "github.com/dimas862/xray-core/common/log"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/serial"
-	core "github.com/dimas862/xray-core/core"
-	. "github.com/dimas862/xray-core/infra/conf"
-	"github.com/dimas862/xray-core/proxy/vmess"
-	"github.com/dimas862/xray-core/proxy/vmess/inbound"
-	"github.com/dimas862/xray-core/transport/internet"
-	"github.com/dimas862/xray-core/transport/internet/tls"
-	"github.com/dimas862/xray-core/transport/internet/websocket"
+	"github.com/xtls/xray-core/app/dispatcher"
+	"github.com/xtls/xray-core/app/log"
+	"github.com/xtls/xray-core/app/proxyman"
+	"github.com/xtls/xray-core/app/router"
+	"github.com/xtls/xray-core/common"
+	clog "github.com/xtls/xray-core/common/log"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/serial"
+	core "github.com/xtls/xray-core/core"
+	. "github.com/xtls/xray-core/infra/conf"
+	"github.com/xtls/xray-core/proxy/vmess"
+	"github.com/xtls/xray-core/proxy/vmess/inbound"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/xtls/xray-core/transport/internet/websocket"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -58,10 +58,6 @@ func TestXrayConfig(t *testing.T) {
 					},
 					"protocol": "vmess",
 					"port": "443-500",
-					"allocate": {
-						"strategy": "random",
-						"concurrency": 3
-					},
 					"settings": {
 						"clients": [
 							{
@@ -123,12 +119,6 @@ func TestXrayConfig(t *testing.T) {
 								From: 443,
 								To:   500,
 							}}},
-							AllocationStrategy: &proxyman.AllocationStrategy{
-								Type: proxyman.AllocationStrategy_Random,
-								Concurrency: &proxyman.AllocationStrategy_AllocationStrategyConcurrency{
-									Value: 3,
-								},
-							},
 							StreamSettings: &internet.StreamConfig{
 								ProtocolName: "websocket",
 								TransportSettings: []*internet.TransportConfig{
@@ -298,5 +288,3 @@ func TestConfig_Override(t *testing.T) {
 		})
 	}
 }
-
-

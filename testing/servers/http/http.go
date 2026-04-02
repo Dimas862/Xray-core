@@ -3,7 +3,7 @@ package tcp
 import (
 	"net/http"
 
-	"github.com/dimas862/xray-core/common/net"
+	"github.com/xtls/xray-core/common/net"
 )
 
 type Server struct {
@@ -38,5 +38,3 @@ func (s *Server) Start() (net.Destination, error) {
 func (s *Server) Close() error {
 	return s.server.Close()
 }
-
-

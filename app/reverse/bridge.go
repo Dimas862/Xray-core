@@ -4,16 +4,15 @@ import (
 	"context"
 	"time"
 
-	"github.com/dimas862/xray-core/app/dispatcher"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/mux"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/common/signal"
-	"github.com/dimas862/xray-core/common/task"
-	"github.com/dimas862/xray-core/features/routing"
-	"github.com/dimas862/xray-core/transport"
-	"github.com/dimas862/xray-core/transport/pipe"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/mux"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/common/signal"
+	"github.com/xtls/xray-core/common/task"
+	"github.com/xtls/xray-core/features/routing"
+	"github.com/xtls/xray-core/transport"
+	"github.com/xtls/xray-core/transport/pipe"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -198,9 +197,11 @@ func (w *BridgeWorker) handleInternalConn(link *transport.Link) {
 
 func (w *BridgeWorker) Dispatch(ctx context.Context, dest net.Destination) (*transport.Link, error) {
 	if !isInternalDomain(dest) {
-		ctx = session.ContextWithInbound(ctx, &session.Inbound{
-			Tag: w.Tag,
-		})
+		if session.InboundFromContext(ctx) == nil {
+			ctx = session.ContextWithInbound(ctx, &session.Inbound{
+				Tag: w.Tag,
+			})
+		}
 		return w.Dispatcher.Dispatch(ctx, dest)
 	}
 
@@ -221,16 +222,14 @@ func (w *BridgeWorker) Dispatch(ctx context.Context, dest net.Destination) (*tra
 
 func (w *BridgeWorker) DispatchLink(ctx context.Context, dest net.Destination, link *transport.Link) error {
 	if !isInternalDomain(dest) {
-		ctx = session.ContextWithInbound(ctx, &session.Inbound{
-			Tag: w.Tag,
-		})
+		if session.InboundFromContext(ctx) == nil {
+			ctx = session.ContextWithInbound(ctx, &session.Inbound{
+				Tag: w.Tag,
+			})
+		}
 		return w.Dispatcher.DispatchLink(ctx, dest, link)
 	}
-
-	link = w.Dispatcher.(*dispatcher.DefaultDispatcher).WrapLink(ctx, link)
 	w.handleInternalConn(link)
 
 	return nil
 }
-
-

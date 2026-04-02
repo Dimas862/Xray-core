@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	. "github.com/dimas862/xray-core/common"
+	. "github.com/xtls/xray-core/common"
 )
 
 type TConfig struct {
@@ -39,5 +39,3 @@ func TestObjectCreation(t *testing.T) {
 		t.Error("expect non-nil error, but got nil")
 	}
 }
-
-

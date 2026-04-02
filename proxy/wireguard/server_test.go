@@ -6,8 +6,8 @@ import (
 	"runtime/debug"
 	"testing"
 
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/proxy/wireguard"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/proxy/wireguard"
 )
 
 // TestWireGuardServerInitializationError verifies that an error during TUN initialization
@@ -50,5 +50,3 @@ func TestWireGuardServerInitializationError(t *testing.T) {
 	// Check that an error is returned
 	assert.ErrorContains(t, err, "failed to set private_key: hex string does not fit the slice")
 }
-
-

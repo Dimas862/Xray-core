@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	. "github.com/dimas862/xray-core/common/log"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	. "github.com/xtls/xray-core/common/log"
 )
 
 func TestFileLogger(t *testing.T) {
@@ -37,5 +37,3 @@ func TestFileLogger(t *testing.T) {
 		t.Fatal("Expect log text contains 'Test Log', but actually: ", string(b))
 	}
 }
-
-

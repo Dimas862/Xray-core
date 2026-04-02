@@ -1,7 +1,7 @@
 package tls
 
 import (
-	"github.com/dimas862/xray-core/main/commands/base"
+	"github.com/xtls/xray-core/main/commands/base"
 )
 
 // CmdTLS holds all tls sub commands
@@ -13,9 +13,7 @@ var CmdTLS = &base.Command{
 	Commands: []*base.Command{
 		cmdCert,
 		cmdPing,
-		cmdCertChainHash,
+		cmdHash,
 		cmdECH,
 	},
 }
-
-

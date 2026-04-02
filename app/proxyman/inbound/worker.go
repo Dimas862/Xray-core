@@ -2,29 +2,30 @@ package inbound
 
 import (
 	"context"
-	gonet "net"
 	"sync"
 	"sync/atomic"
 	"time"
 
-	"github.com/dimas862/xray-core/app/proxyman"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	c "github.com/dimas862/xray-core/common/ctx"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/common/signal/done"
-	"github.com/dimas862/xray-core/common/task"
-	"github.com/dimas862/xray-core/features/routing"
-	"github.com/dimas862/xray-core/features/stats"
-	"github.com/dimas862/xray-core/proxy"
-	"github.com/dimas862/xray-core/transport/internet"
-	"github.com/dimas862/xray-core/transport/internet/stat"
-	"github.com/dimas862/xray-core/transport/internet/tcp"
-	"github.com/dimas862/xray-core/transport/internet/udp"
-	"github.com/dimas862/xray-core/transport/pipe"
+	"github.com/xtls/xray-core/app/proxyman"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	c "github.com/xtls/xray-core/common/ctx"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/common/signal/done"
+	"github.com/xtls/xray-core/common/task"
+	"github.com/xtls/xray-core/features/routing"
+	"github.com/xtls/xray-core/features/stats"
+	"github.com/xtls/xray-core/proxy"
+	"github.com/xtls/xray-core/proxy/hysteria/account"
+	hyCtx "github.com/xtls/xray-core/proxy/hysteria/ctx"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/transport/internet/tcp"
+	"github.com/xtls/xray-core/transport/internet/udp"
+	"github.com/xtls/xray-core/transport/pipe"
 )
 
 type worker interface {
@@ -139,6 +140,13 @@ func (w *tcpWorker) Proxy() proxy.Inbound {
 
 func (w *tcpWorker) Start() error {
 	ctx := context.Background()
+
+	type HysteriaInboundValidator interface{ HysteriaInboundValidator() *account.Validator }
+	if v, ok := w.proxy.(HysteriaInboundValidator); ok {
+		ctx = hyCtx.ContextWithRequireDatagram(ctx, true)
+		ctx = hyCtx.ContextWithValidator(ctx, v.HysteriaInboundValidator())
+	}
+
 	hub, err := internet.ListenTCP(ctx, w.address, w.port, w.stream, func(conn stat.Connection) {
 		go w.callback(conn)
 	})
@@ -565,12 +573,12 @@ func (w *dsWorker) Close() error {
 }
 
 func IsLocal(ip net.IP) bool {
-	addrs, err := gonet.InterfaceAddrs()
+	addrs, err := net.InterfaceAddrs()
 	if err != nil {
 		return false
 	}
 	for _, addr := range addrs {
-		if ipnet, ok := addr.(*gonet.IPNet); ok {
+		if ipnet, ok := addr.(*net.IPNet); ok {
 			if ipnet.IP.Equal(ip) {
 				return true
 			}
@@ -578,5 +586,3 @@ func IsLocal(ip net.IP) bool {
 	}
 	return false
 }
-
-

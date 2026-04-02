@@ -4,7 +4,7 @@ import (
 	"crypto/aes"
 	"crypto/cipher"
 
-	"github.com/dimas862/xray-core/common"
+	"github.com/xtls/xray-core/common"
 )
 
 // NewAesDecryptionStream creates a new AES encryption stream based on given key and IV.
@@ -36,5 +36,3 @@ func NewAesGcm(key []byte) cipher.AEAD {
 	aead := common.Must2(cipher.NewGCM(block))
 	return aead
 }
-
-

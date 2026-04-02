@@ -3,8 +3,8 @@ package command
 import (
 	"strings"
 
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/features/routing"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/features/routing"
 )
 
 // routingContext is an wrapper of protobuf RoutingContext as implementation of routing.Context and routing.Route.
@@ -117,5 +117,3 @@ func mapIPsToBytes(ips []net.IP) [][]byte {
 	}
 	return bytes
 }
-
-

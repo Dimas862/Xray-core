@@ -6,14 +6,14 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/transport/internet"
-	"github.com/dimas862/xray-core/transport/internet/reality"
-	"github.com/dimas862/xray-core/transport/internet/stat"
-	"github.com/dimas862/xray-core/transport/internet/tls"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/reality"
+	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/transport/internet/tls"
 )
 
 // Dial dials a new TCP connection to the given destination.
@@ -22,6 +22,15 @@ func Dial(ctx context.Context, dest net.Destination, streamSettings *internet.Me
 	conn, err := internet.DialSystem(ctx, dest, streamSettings.SocketSettings)
 	if err != nil {
 		return nil, err
+	}
+
+	if streamSettings.TcpmaskManager != nil {
+		newConn, err := streamSettings.TcpmaskManager.WrapConnClient(conn)
+		if err != nil {
+			conn.Close()
+			return nil, errors.New("mask err").Base(err)
+		}
+		conn = newConn
 	}
 
 	if config := tls.ConfigFromStreamSettings(streamSettings); config != nil {
@@ -35,23 +44,23 @@ func Dial(ctx context.Context, dest net.Destination, streamSettings *internet.Me
 		}
 
 		isFromMitmVerify := false
-		if r, ok := tlsConfig.Rand.(*tls.RandCarrier); ok && len(r.VerifyPeerCertInNames) > 0 {
-			for i, name := range r.VerifyPeerCertInNames {
+		if r, ok := tlsConfig.Rand.(*tls.RandCarrier); ok && len(r.VerifyPeerCertByName) > 0 {
+			for i, name := range r.VerifyPeerCertByName {
 				if tls.IsFromMitm(name) {
 					isFromMitmVerify = true
-					r.VerifyPeerCertInNames[0], r.VerifyPeerCertInNames[i] = r.VerifyPeerCertInNames[i], r.VerifyPeerCertInNames[0]
-					r.VerifyPeerCertInNames = r.VerifyPeerCertInNames[1:]
+					r.VerifyPeerCertByName[0], r.VerifyPeerCertByName[i] = r.VerifyPeerCertByName[i], r.VerifyPeerCertByName[0]
+					r.VerifyPeerCertByName = r.VerifyPeerCertByName[1:]
 					after := mitmServerName
 					for {
 						if len(after) > 0 {
-							r.VerifyPeerCertInNames = append(r.VerifyPeerCertInNames, after)
+							r.VerifyPeerCertByName = append(r.VerifyPeerCertByName, after)
 						}
 						_, after, _ = strings.Cut(after, ".")
 						if !strings.Contains(after, ".") {
 							break
 						}
 					}
-					slices.Reverse(r.VerifyPeerCertInNames)
+					slices.Reverse(r.VerifyPeerCertByName)
 					break
 				}
 			}
@@ -110,5 +119,3 @@ func Dial(ctx context.Context, dest net.Destination, streamSettings *internet.Me
 func init() {
 	common.Must(internet.RegisterTransportDialer(protocolName, Dial))
 }
-
-

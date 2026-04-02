@@ -3,7 +3,7 @@ package serial_test
 import (
 	"testing"
 
-	. "github.com/dimas862/xray-core/common/serial"
+	. "github.com/xtls/xray-core/common/serial"
 )
 
 func TestGetInstance(t *testing.T) {
@@ -22,5 +22,3 @@ func TestConvertingNilMessage(t *testing.T) {
 		t.Error("expect nil, but actually not")
 	}
 }
-
-

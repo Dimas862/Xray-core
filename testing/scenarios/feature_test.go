@@ -8,30 +8,30 @@ import (
 	"testing"
 	"time"
 
-	"github.com/dimas862/xray-core/app/dispatcher"
-	"github.com/dimas862/xray-core/app/log"
-	"github.com/dimas862/xray-core/app/proxyman"
-	_ "github.com/dimas862/xray-core/app/proxyman/inbound"
-	_ "github.com/dimas862/xray-core/app/proxyman/outbound"
-	"github.com/dimas862/xray-core/app/router"
-	"github.com/dimas862/xray-core/common"
-	clog "github.com/dimas862/xray-core/common/log"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/common/uuid"
-	core "github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/proxy/blackhole"
-	"github.com/dimas862/xray-core/proxy/dokodemo"
-	"github.com/dimas862/xray-core/proxy/freedom"
-	v2http "github.com/dimas862/xray-core/proxy/http"
-	"github.com/dimas862/xray-core/proxy/socks"
-	"github.com/dimas862/xray-core/proxy/vmess"
-	"github.com/dimas862/xray-core/proxy/vmess/inbound"
-	"github.com/dimas862/xray-core/proxy/vmess/outbound"
-	"github.com/dimas862/xray-core/testing/servers/tcp"
-	"github.com/dimas862/xray-core/testing/servers/udp"
-	"github.com/dimas862/xray-core/transport/internet"
+	"github.com/xtls/xray-core/app/dispatcher"
+	"github.com/xtls/xray-core/app/log"
+	"github.com/xtls/xray-core/app/proxyman"
+	_ "github.com/xtls/xray-core/app/proxyman/inbound"
+	_ "github.com/xtls/xray-core/app/proxyman/outbound"
+	"github.com/xtls/xray-core/app/router"
+	"github.com/xtls/xray-core/common"
+	clog "github.com/xtls/xray-core/common/log"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/uuid"
+	core "github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/proxy/blackhole"
+	"github.com/xtls/xray-core/proxy/dokodemo"
+	"github.com/xtls/xray-core/proxy/freedom"
+	v2http "github.com/xtls/xray-core/proxy/http"
+	"github.com/xtls/xray-core/proxy/socks"
+	"github.com/xtls/xray-core/proxy/vmess"
+	"github.com/xtls/xray-core/proxy/vmess/inbound"
+	"github.com/xtls/xray-core/proxy/vmess/outbound"
+	"github.com/xtls/xray-core/testing/servers/tcp"
+	"github.com/xtls/xray-core/testing/servers/udp"
+	"github.com/xtls/xray-core/transport/internet"
 	xproxy "golang.org/x/net/proxy"
 )
 
@@ -170,17 +170,13 @@ func TestProxy(t *testing.T) {
 		Outbound: []*core.OutboundHandlerConfig{
 			{
 				ProxySettings: serial.ToTypedMessage(&outbound.Config{
-					Receiver: []*protocol.ServerEndpoint{
-						{
-							Address: net.NewIPOrDomain(net.LocalHostIP),
-							Port:    uint32(serverPort),
-							User: []*protocol.User{
-								{
-									Account: serial.ToTypedMessage(&vmess.Account{
-										Id: serverUserID.String(),
-									}),
-								},
-							},
+					Receiver: &protocol.ServerEndpoint{
+						Address: net.NewIPOrDomain(net.LocalHostIP),
+						Port:    uint32(serverPort),
+						User:    &protocol.User{
+							Account: serial.ToTypedMessage(&vmess.Account{
+								Id: serverUserID.String(),
+							}),
 						},
 					},
 				}),
@@ -193,17 +189,13 @@ func TestProxy(t *testing.T) {
 			{
 				Tag: "proxy",
 				ProxySettings: serial.ToTypedMessage(&outbound.Config{
-					Receiver: []*protocol.ServerEndpoint{
-						{
-							Address: net.NewIPOrDomain(net.LocalHostIP),
-							Port:    uint32(proxyPort),
-							User: []*protocol.User{
-								{
-									Account: serial.ToTypedMessage(&vmess.Account{
-										Id: proxyUserID.String(),
-									}),
-								},
-							},
+					Receiver: &protocol.ServerEndpoint{
+						Address: net.NewIPOrDomain(net.LocalHostIP),
+						Port:    uint32(proxyPort),
+						User:    &protocol.User{
+							Account: serial.ToTypedMessage(&vmess.Account{
+								Id: proxyUserID.String(),
+							}),
 						},
 					},
 				}),
@@ -308,17 +300,13 @@ func TestProxyOverKCP(t *testing.T) {
 		Outbound: []*core.OutboundHandlerConfig{
 			{
 				ProxySettings: serial.ToTypedMessage(&outbound.Config{
-					Receiver: []*protocol.ServerEndpoint{
-						{
-							Address: net.NewIPOrDomain(net.LocalHostIP),
-							Port:    uint32(serverPort),
-							User: []*protocol.User{
-								{
-									Account: serial.ToTypedMessage(&vmess.Account{
-										Id: serverUserID.String(),
-									}),
-								},
-							},
+					Receiver: &protocol.ServerEndpoint{
+						Address: net.NewIPOrDomain(net.LocalHostIP),
+						Port:    uint32(serverPort),
+						User:    &protocol.User{
+							Account: serial.ToTypedMessage(&vmess.Account{
+								Id: serverUserID.String(),
+							}),
 						},
 					},
 				}),
@@ -334,17 +322,13 @@ func TestProxyOverKCP(t *testing.T) {
 			{
 				Tag: "proxy",
 				ProxySettings: serial.ToTypedMessage(&outbound.Config{
-					Receiver: []*protocol.ServerEndpoint{
-						{
-							Address: net.NewIPOrDomain(net.LocalHostIP),
-							Port:    uint32(proxyPort),
-							User: []*protocol.User{
-								{
-									Account: serial.ToTypedMessage(&vmess.Account{
-										Id: proxyUserID.String(),
-									}),
-								},
-							},
+					Receiver: &protocol.ServerEndpoint{
+						Address: net.NewIPOrDomain(net.LocalHostIP),
+						Port:    uint32(proxyPort),
+						User:    &protocol.User{
+							Account: serial.ToTypedMessage(&vmess.Account{
+								Id: proxyUserID.String(),
+							}),
 						},
 					},
 				}),
@@ -685,20 +669,16 @@ func TestDialXray(t *testing.T) {
 		Outbound: []*core.OutboundHandlerConfig{
 			{
 				ProxySettings: serial.ToTypedMessage(&outbound.Config{
-					Receiver: []*protocol.ServerEndpoint{
-						{
-							Address: net.NewIPOrDomain(net.LocalHostIP),
-							Port:    uint32(serverPort),
-							User: []*protocol.User{
-								{
-									Account: serial.ToTypedMessage(&vmess.Account{
-										Id: userID.String(),
-										SecuritySettings: &protocol.SecurityConfig{
-											Type: protocol.SecurityType_AES128_GCM,
-										},
-									}),
+					Receiver: &protocol.ServerEndpoint{
+						Address: net.NewIPOrDomain(net.LocalHostIP),
+						Port:    uint32(serverPort),
+						User: &protocol.User{
+							Account: serial.ToTypedMessage(&vmess.Account{
+								Id: userID.String(),
+								SecuritySettings: &protocol.SecurityConfig{
+									Type: protocol.SecurityType_AES128_GCM,
 								},
-							},
+							}),
 						},
 					},
 				}),
@@ -721,5 +701,3 @@ func TestDialXray(t *testing.T) {
 		t.Error(err)
 	}
 }
-
-

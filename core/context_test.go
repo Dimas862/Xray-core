@@ -5,7 +5,7 @@ import (
 	"testing"
 	_ "unsafe"
 
-	. "github.com/dimas862/xray-core/core"
+	. "github.com/xtls/xray-core/core"
 )
 
 func TestFromContextPanic(t *testing.T) {
@@ -18,5 +18,3 @@ func TestFromContextPanic(t *testing.T) {
 
 	MustFromContext(context.Background())
 }
-
-

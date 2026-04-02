@@ -1,6 +1,6 @@
 package observatory
 
-import "github.com/dimas862/xray-core/common/errors"
+import "github.com/xtls/xray-core/common/errors"
 
 type errorCollector struct {
 	errors *errors.Error
@@ -24,5 +24,3 @@ func (e *errorCollector) UnderlyingError() error {
 	}
 	return e.errors
 }
-
-

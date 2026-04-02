@@ -5,13 +5,13 @@ import (
 	"time"
 
 	goreality "github.com/xtls/reality"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/transport/internet"
-	"github.com/dimas862/xray-core/transport/internet/grpc/encoding"
-	"github.com/dimas862/xray-core/transport/internet/reality"
-	"github.com/dimas862/xray-core/transport/internet/tls"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/grpc/encoding"
+	"github.com/xtls/xray-core/transport/internet/reality"
+	"github.com/xtls/xray-core/transport/internet/tls"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/keepalive"
@@ -120,6 +120,10 @@ func Listen(ctx context.Context, address net.Address, port net.Port, settings *i
 			}
 		}
 
+		if settings.TcpmaskManager != nil {
+			streamListener, _ = settings.TcpmaskManager.WrapListener(streamListener)
+		}
+
 		errors.LogDebug(ctx, "gRPC listen for service name `"+grpcSettings.getServiceName()+"` tun `"+grpcSettings.getTunStreamName()+"` multi tun `"+grpcSettings.getTunMultiStreamName()+"`")
 		encoding.RegisterGRPCServiceServerX(s, listener, grpcSettings.getServiceName(), grpcSettings.getTunStreamName(), grpcSettings.getTunMultiStreamName())
 
@@ -137,5 +141,3 @@ func Listen(ctx context.Context, address net.Address, port net.Port, settings *i
 func init() {
 	common.Must(internet.RegisterTransportListener(protocolName, Listen))
 }
-
-

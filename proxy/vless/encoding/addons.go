@@ -5,12 +5,12 @@ import (
 	"io"
 	"net"
 
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/proxy"
-	"github.com/dimas862/xray-core/proxy/vless"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/proxy"
+	"github.com/xtls/xray-core/proxy/vless"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -68,7 +68,7 @@ func EncodeBodyAddons(writer buf.Writer, request *protocol.RequestHeader, reques
 		return NewMultiLengthPacketWriter(writer)
 	}
 	if requestAddons.Flow == vless.XRV {
-		return proxy.NewVisionWriter(writer, state, isUplink, context, conn, ob)
+		return proxy.NewVisionWriter(writer, state, isUplink, context, conn, ob, request.User.Account.(*vless.MemoryAccount).Testseed)
 	}
 	return writer
 }
@@ -189,5 +189,3 @@ func (r *LengthPacketReader) ReadMultiBuffer() (buf.MultiBuffer, error) {
 	}
 	return mb, nil
 }
-
-

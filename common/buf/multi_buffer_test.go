@@ -8,8 +8,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/dimas862/xray-core/common"
-	. "github.com/dimas862/xray-core/common/buf"
+	"github.com/xtls/xray-core/common"
+	. "github.com/xtls/xray-core/common/buf"
 )
 
 func TestMultiBufferRead(t *testing.T) {
@@ -210,5 +210,3 @@ func BenchmarkSplitBytes(b *testing.B) {
 		mb, _ = SplitBytes(mb, raw)
 	}
 }
-
-

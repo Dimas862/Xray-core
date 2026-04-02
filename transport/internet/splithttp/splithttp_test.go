@@ -12,16 +12,16 @@ import (
 	"time"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol/tls/cert"
-	"github.com/dimas862/xray-core/testing/servers/tcp"
-	"github.com/dimas862/xray-core/testing/servers/udp"
-	"github.com/dimas862/xray-core/transport/internet"
-	. "github.com/dimas862/xray-core/transport/internet/splithttp"
-	"github.com/dimas862/xray-core/transport/internet/stat"
-	"github.com/dimas862/xray-core/transport/internet/tls"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol/tls/cert"
+	"github.com/xtls/xray-core/testing/servers/tcp"
+	"github.com/xtls/xray-core/testing/servers/udp"
+	"github.com/xtls/xray-core/transport/internet"
+	. "github.com/xtls/xray-core/transport/internet/splithttp"
+	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/transport/internet/tls"
 )
 
 func Test_ListenXHAndDial(t *testing.T) {
@@ -132,6 +132,8 @@ func Test_ListenXHAndDial_TLS(t *testing.T) {
 
 	start := time.Now()
 
+	ct, ctHash := cert.MustGenerate(nil, cert.CommonName("localhost"))
+
 	streamSettings := &internet.MemoryStreamConfig{
 		ProtocolName: "splithttp",
 		ProtocolSettings: &Config{
@@ -139,8 +141,8 @@ func Test_ListenXHAndDial_TLS(t *testing.T) {
 		},
 		SecurityType: "tls",
 		SecuritySettings: &tls.Config{
-			AllowInsecure: true,
-			Certificate:   []*tls.Certificate{tls.ParseCertificate(cert.MustGenerate(nil, cert.CommonName("localhost")))},
+			Certificate:          []*tls.Certificate{tls.ParseCertificate(ct)},
+			PinnedPeerCertSha256: [][]byte{ctHash[:]},
 		},
 	}
 	listen, err := ListenXH(context.Background(), net.LocalHostIP, listenPort, streamSettings, func(conn stat.Connection) {
@@ -228,6 +230,8 @@ func Test_ListenXHAndDial_QUIC(t *testing.T) {
 
 	start := time.Now()
 
+	ct, ctHash := cert.MustGenerate(nil, cert.CommonName("localhost"))
+
 	streamSettings := &internet.MemoryStreamConfig{
 		ProtocolName: "splithttp",
 		ProtocolSettings: &Config{
@@ -235,9 +239,9 @@ func Test_ListenXHAndDial_QUIC(t *testing.T) {
 		},
 		SecurityType: "tls",
 		SecuritySettings: &tls.Config{
-			AllowInsecure: true,
-			Certificate:   []*tls.Certificate{tls.ParseCertificate(cert.MustGenerate(nil, cert.CommonName("localhost")))},
-			NextProtocol:  []string{"h3"},
+			Certificate:          []*tls.Certificate{tls.ParseCertificate(ct)},
+			PinnedPeerCertSha256: [][]byte{ctHash[:]},
+			NextProtocol:         []string{"h3"},
 		},
 	}
 
@@ -458,5 +462,3 @@ func Test_maxUpload(t *testing.T) {
 
 	common.Must(listen.Close())
 }
-
-

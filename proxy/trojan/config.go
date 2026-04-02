@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/protocol"
 )
 
 // MemoryAccount is an account type converted from Account.
@@ -55,5 +55,3 @@ func hexString(data []byte) string {
 	}
 	return str
 }
-
-

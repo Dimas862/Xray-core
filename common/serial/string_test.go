@@ -5,7 +5,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	. "github.com/dimas862/xray-core/common/serial"
+	. "github.com/xtls/xray-core/common/serial"
 )
 
 func TestToString(t *testing.T) {
@@ -56,5 +56,3 @@ func BenchmarkConcat(b *testing.B) {
 		_ = Concat(input...)
 	}
 }
-
-

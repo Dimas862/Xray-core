@@ -6,12 +6,12 @@ import (
 	"net"
 	"strings"
 
-	"github.com/dimas862/xray-core/common/errors"
-	v2net "github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/proxy/freedom"
+	"github.com/xtls/xray-core/common/errors"
+	v2net "github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/proxy/freedom"
+	"github.com/xtls/xray-core/transport/internet"
 	"google.golang.org/protobuf/proto"
-	"github.com/dimas862/xray-core/transport/internet"
 )
 
 type FreedomConfig struct {
@@ -220,5 +220,3 @@ func ParseNoise(noise *Noise) (*freedom.Noise, error) {
 	}
 	return NConfig, nil
 }
-
-

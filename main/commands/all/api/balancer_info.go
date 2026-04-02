@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	routerService "github.com/dimas862/xray-core/app/router/command"
-	"github.com/dimas862/xray-core/main/commands/base"
+	routerService "github.com/xtls/xray-core/app/router/command"
+	"github.com/xtls/xray-core/main/commands/base"
 )
 
 // TODO: support "-json" flag for json output
@@ -106,5 +106,3 @@ func writeRow(sb *strings.Builder, indent, index int, values, formats []string) 
 	}
 	sb.WriteByte('\n')
 }
-
-

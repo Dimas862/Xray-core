@@ -5,19 +5,18 @@ import (
 	"io"
 	"time"
 
-	"github.com/dimas862/xray-core/app/dispatcher"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/log"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/common/signal/done"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/routing"
-	"github.com/dimas862/xray-core/transport"
-	"github.com/dimas862/xray-core/transport/pipe"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/log"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/common/signal/done"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/routing"
+	"github.com/xtls/xray-core/transport"
+	"github.com/xtls/xray-core/transport/pipe"
 )
 
 type Server struct {
@@ -64,7 +63,6 @@ func (s *Server) DispatchLink(ctx context.Context, dest net.Destination, link *t
 	if dest.Address != muxCoolAddress {
 		return s.dispatcher.DispatchLink(ctx, dest, link)
 	}
-	link = s.dispatcher.(*dispatcher.DefaultDispatcher).WrapLink(ctx, link)
 	worker, err := NewServerWorker(ctx, s.dispatcher, link)
 	if err != nil {
 		return err
@@ -166,6 +164,14 @@ func (w *ServerWorker) handleStatusKeepAlive(meta *FrameMetadata, reader *buf.Bu
 
 func (w *ServerWorker) handleStatusNew(ctx context.Context, meta *FrameMetadata, reader *buf.BufferedReader) error {
 	ctx = session.SubContextFromMuxInbound(ctx)
+	if meta.Inbound != nil && meta.Inbound.Source.IsValid() && meta.Inbound.Local.IsValid() {
+		if inbound := session.InboundFromContext(ctx); inbound != nil {
+			newInbound := *inbound
+			newInbound.Source = meta.Inbound.Source
+			newInbound.Local = meta.Inbound.Local
+			ctx = session.ContextWithInbound(ctx, &newInbound)
+		}
+	}
 	errors.LogInfo(ctx, "received request for ", meta.Target)
 	{
 		msg := &log.AccessMessage{
@@ -329,7 +335,7 @@ func (w *ServerWorker) handleStatusEnd(meta *FrameMetadata, reader *buf.Buffered
 
 func (w *ServerWorker) handleFrame(ctx context.Context, reader *buf.BufferedReader) error {
 	var meta FrameMetadata
-	err := meta.Unmarshal(reader)
+	err := meta.Unmarshal(reader, session.IsReverseMuxFromContext(ctx))
 	if err != nil {
 		return errors.New("failed to read metadata").Base(err)
 	}
@@ -340,7 +346,7 @@ func (w *ServerWorker) handleFrame(ctx context.Context, reader *buf.BufferedRead
 	case SessionStatusEnd:
 		err = w.handleStatusEnd(&meta, reader)
 	case SessionStatusNew:
-		err = w.handleStatusNew(ctx, &meta, reader)
+		err = w.handleStatusNew(session.ContextWithIsReverseMux(ctx, false), &meta, reader)
 	case SessionStatusKeep:
 		err = w.handleStatusKeep(&meta, reader)
 	default:
@@ -376,5 +382,3 @@ func (w *ServerWorker) run(ctx context.Context) {
 		}
 	}
 }
-
-

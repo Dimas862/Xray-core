@@ -6,30 +6,29 @@ import (
 	goerrors "errors"
 	"io"
 	"math/big"
-	gonet "net"
 	"os"
 
-	"github.com/dimas862/xray-core/common/dice"
+	"github.com/xtls/xray-core/common/dice"
 
-	"github.com/dimas862/xray-core/app/proxyman"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/mux"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/net/cnc"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/outbound"
-	"github.com/dimas862/xray-core/features/policy"
-	"github.com/dimas862/xray-core/features/stats"
-	"github.com/dimas862/xray-core/proxy"
-	"github.com/dimas862/xray-core/transport"
-	"github.com/dimas862/xray-core/transport/internet"
-	"github.com/dimas862/xray-core/transport/internet/stat"
-	"github.com/dimas862/xray-core/transport/internet/tls"
-	"github.com/dimas862/xray-core/transport/pipe"
+	"github.com/xtls/xray-core/app/proxyman"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/mux"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/net/cnc"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/outbound"
+	"github.com/xtls/xray-core/features/policy"
+	"github.com/xtls/xray-core/features/stats"
+	"github.com/xtls/xray-core/proxy"
+	"github.com/xtls/xray-core/transport"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/xtls/xray-core/transport/pipe"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -108,7 +107,7 @@ func NewHandler(ctx context.Context, config *core.OutboundHandlerConfig) (outbou
 	}
 	h.proxyConfig = proxyConfig
 
-	ctx = session.ContextWithHandler(ctx, h)
+	ctx = session.ContextWithFullHandler(ctx, h)
 
 	rawProxyHandler, err := common.CreateObject(ctx, proxyConfig)
 	if err != nil {
@@ -317,8 +316,12 @@ func (h *Handler) Dial(ctx context.Context, dest net.Destination) (stat.Connecti
 	conn, err := internet.Dial(ctx, dest, h.streamSettings)
 	conn = h.getStatCouterConnection(conn)
 	outbounds := session.OutboundsFromContext(ctx)
-	ob := outbounds[len(outbounds)-1]
-	ob.Conn = conn
+	if outbounds != nil {
+		ob := outbounds[len(outbounds)-1]
+		ob.Conn = conn
+	} else {
+		// for Vision's pre-connect
+	}
 	return conn, err
 }
 
@@ -394,7 +397,7 @@ func (h *Handler) ProxySettings() *serial.TypedMessage {
 
 func ParseRandomIP(addr net.Address, prefix string) net.Address {
 
-	_, ipnet, _ := gonet.ParseCIDR(addr.IP().String() + "/" + prefix)
+	_, ipnet, _ := net.ParseCIDR(addr.IP().String() + "/" + prefix)
 
 	ones, bits := ipnet.Mask.Size()
 	subnetSize := new(big.Int).Lsh(big.NewInt(1), uint(bits-ones))
@@ -408,7 +411,5 @@ func ParseRandomIP(addr net.Address, prefix string) net.Address {
 	padded := make([]byte, len(ipnet.IP))
 	copy(padded[len(padded)-len(rndBytes):], rndBytes)
 
-	return net.ParseAddress(gonet.IP(padded).String())
+	return net.ParseAddress(net.IP(padded).String())
 }
-
-

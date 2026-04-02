@@ -4,20 +4,19 @@ import (
 	"context"
 	"math"
 	"math/big"
-	gonet "net"
 	"sync"
 	"time"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/cache"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/features/dns"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/cache"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/features/dns"
 )
 
 type Holder struct {
 	domainToIP cache.Lru
-	ipRange    *gonet.IPNet
+	ipRange    *net.IPNet
 	mu         *sync.Mutex
 
 	config *FakeDnsPool
@@ -79,10 +78,10 @@ func (fkdns *Holder) initializeFromConfig() error {
 }
 
 func (fkdns *Holder) initialize(ipPoolCidr string, lruSize int) error {
-	var ipRange *gonet.IPNet
+	var ipRange *net.IPNet
 	var err error
 
-	if _, ipRange, err = gonet.ParseCIDR(ipPoolCidr); err != nil {
+	if _, ipRange, err = net.ParseCIDR(ipPoolCidr); err != nil {
 		return errors.New("Unable to parse CIDR for Fake DNS IP assignment").Base(err).AtError()
 	}
 
@@ -249,5 +248,3 @@ func init() {
 		return f, nil
 	}))
 }
-
-

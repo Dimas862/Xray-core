@@ -2,7 +2,6 @@ package internet
 
 import (
 	"context"
-	gonet "net"
 	"os"
 	"runtime"
 	"strconv"
@@ -12,8 +11,8 @@ import (
 
 	"github.com/pires/go-proxyproto"
 	"github.com/sagernet/sing/common/control"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
 )
 
 var effectiveListener = DefaultListener{}
@@ -95,7 +94,7 @@ func (dl *DefaultListener) Listen(ctx context.Context, addr net.Addr, sockopt *S
 			if sockopt.TcpKeepAliveIdle*sockopt.TcpKeepAliveInterval < 0 {
 				return nil, errors.New("invalid TcpKeepAliveIdle or TcpKeepAliveInterval value: ", sockopt.TcpKeepAliveIdle, " ", sockopt.TcpKeepAliveInterval)
 			}
-			lc.KeepAliveConfig = gonet.KeepAliveConfig{
+			lc.KeepAliveConfig = net.KeepAliveConfig{
 				Enable:   false,
 				Idle:     -1,
 				Interval: -1,
@@ -195,5 +194,3 @@ func RegisterListenerController(controller control.Func) error {
 	effectiveListener.controllers = append(effectiveListener.controllers, controller)
 	return nil
 }
-
-

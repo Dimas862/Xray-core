@@ -7,36 +7,38 @@ import (
 	"encoding/base64"
 	"reflect"
 	"strings"
+	"sync"
 	"time"
 	"unsafe"
 
 	utls "github.com/refraction-networking/utls"
-	proxyman "github.com/dimas862/xray-core/app/proxyman/outbound"
-	"github.com/dimas862/xray-core/app/reverse"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/mux"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/retry"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/common/signal"
-	"github.com/dimas862/xray-core/common/task"
-	"github.com/dimas862/xray-core/common/xudp"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/policy"
-	"github.com/dimas862/xray-core/features/routing"
-	"github.com/dimas862/xray-core/proxy"
-	"github.com/dimas862/xray-core/proxy/vless"
-	"github.com/dimas862/xray-core/proxy/vless/encoding"
-	"github.com/dimas862/xray-core/proxy/vless/encryption"
-	"github.com/dimas862/xray-core/transport"
-	"github.com/dimas862/xray-core/transport/internet"
-	"github.com/dimas862/xray-core/transport/internet/reality"
-	"github.com/dimas862/xray-core/transport/internet/stat"
-	"github.com/dimas862/xray-core/transport/internet/tls"
-	"github.com/dimas862/xray-core/transport/pipe"
+	proxyman "github.com/xtls/xray-core/app/proxyman/outbound"
+	"github.com/xtls/xray-core/app/reverse"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	xctx "github.com/xtls/xray-core/common/ctx"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/mux"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/retry"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/common/signal"
+	"github.com/xtls/xray-core/common/task"
+	"github.com/xtls/xray-core/common/xudp"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/policy"
+	"github.com/xtls/xray-core/features/routing"
+	"github.com/xtls/xray-core/proxy"
+	"github.com/xtls/xray-core/proxy/vless"
+	"github.com/xtls/xray-core/proxy/vless/encoding"
+	"github.com/xtls/xray-core/proxy/vless/encryption"
+	"github.com/xtls/xray-core/transport"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/reality"
+	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/transport/internet/tls"
+	"github.com/xtls/xray-core/transport/pipe"
 )
 
 func init() {
@@ -47,34 +49,40 @@ func init() {
 
 // Handler is an outbound connection handler for VLess protocol.
 type Handler struct {
-	serverList    *protocol.ServerList
-	serverPicker  protocol.ServerPicker
+	server        *protocol.ServerSpec
 	policyManager policy.Manager
 	cone          bool
 	encryption    *encryption.ClientInstance
 	reverse       *Reverse
+
+	testpre  uint32
+	initpre  sync.Once
+	preConns chan *ConnExpire
+}
+
+type ConnExpire struct {
+	Conn   stat.Connection
+	Expire time.Time
 }
 
 // New creates a new VLess outbound handler.
 func New(ctx context.Context, config *Config) (*Handler, error) {
-	serverList := protocol.NewServerList()
-	for _, rec := range config.Vnext {
-		s, err := protocol.NewServerSpecFromPB(rec)
-		if err != nil {
-			return nil, errors.New("failed to parse server spec").Base(err).AtError()
-		}
-		serverList.AddServer(s)
+	if config.Vnext == nil {
+		return nil, errors.New(`no vnext found`)
+	}
+	server, err := protocol.NewServerSpecFromPB(config.Vnext)
+	if err != nil {
+		return nil, errors.New("failed to get server spec").Base(err).AtError()
 	}
 
 	v := core.MustFromContext(ctx)
 	handler := &Handler{
-		serverList:    serverList,
-		serverPicker:  protocol.NewRoundRobinServerPicker(serverList),
+		server:        server,
 		policyManager: v.GetFeature(policy.ManagerType()).(policy.Manager),
 		cone:          ctx.Value("cone").(bool),
 	}
 
-	a := handler.serverPicker.PickServer().PickUser().Account.(*vless.MemoryAccount)
+	a := handler.server.User.Account.(*vless.MemoryAccount)
 	if a.Encryption != "" && a.Encryption != "none" {
 		s := strings.Split(a.Encryption, ".")
 		var nfsPKeysBytes [][]byte
@@ -89,10 +97,25 @@ func New(ctx context.Context, config *Config) (*Handler, error) {
 	}
 
 	if a.Reverse != nil {
+		rvsCtx := session.ContextWithInbound(ctx, &session.Inbound{
+			Tag:  a.Reverse.Tag,
+			User: handler.server.User, // TODO: email
+		})
+		if sc := a.Reverse.Sniffing; sc != nil && sc.Enabled {
+			rvsCtx = session.ContextWithContent(rvsCtx, &session.Content{
+				SniffingRequest: session.SniffingRequest{
+					Enabled:                        sc.Enabled,
+					OverrideDestinationForProtocol: sc.DestinationOverride,
+					ExcludeForDomain:               sc.DomainsExcluded,
+					MetadataOnly:                   sc.MetadataOnly,
+					RouteOnly:                      sc.RouteOnly,
+				},
+			})
+		}
 		handler.reverse = &Reverse{
 			tag:        a.Reverse.Tag,
 			dispatcher: v.GetFeature(routing.DispatcherType()).(routing.Dispatcher),
-			ctx:        ctx,
+			ctx:        rvsCtx,
 			handler:    handler,
 		}
 		handler.reverse.monitorTask = &task.Periodic{
@@ -105,11 +128,16 @@ func New(ctx context.Context, config *Config) (*Handler, error) {
 		}()
 	}
 
+	handler.testpre = a.Testpre
+
 	return handler, nil
 }
 
 // Close implements common.Closable.Close().
 func (h *Handler) Close() error {
+	if h.preConns != nil {
+		close(h.preConns)
+	}
 	if h.reverse != nil {
 		return h.reverse.Close()
 	}
@@ -125,27 +153,60 @@ func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer inte
 	}
 	ob.Name = "vless"
 
-	var rec *protocol.ServerSpec
+	rec := h.server
 	var conn stat.Connection
-	if err := retry.ExponentialBackoff(5, 200).On(func() error {
-		rec = h.serverPicker.PickServer()
-		var err error
-		conn, err = dialer.Dial(ctx, rec.Destination())
-		if err != nil {
-			return err
+
+	if h.testpre > 0 && h.reverse == nil {
+		h.initpre.Do(func() {
+			h.preConns = make(chan *ConnExpire)
+			for range h.testpre { // TODO: randomize
+				go func() {
+					defer func() { recover() }()
+					ctx := xctx.ContextWithID(context.Background(), session.NewID())
+					for {
+						conn, err := dialer.Dial(ctx, rec.Destination)
+						if err != nil {
+							errors.LogWarningInner(ctx, err, "pre-connect failed")
+							continue
+						}
+						h.preConns <- &ConnExpire{Conn: conn, Expire: time.Now().Add(time.Minute * 2)} // TODO: customize & randomize
+						time.Sleep(time.Millisecond * 200)                                             // TODO: customize & randomize
+					}
+				}()
+			}
+		})
+		for {
+			connTime := <-h.preConns
+			if connTime == nil {
+				return errors.New("closed handler").AtWarning()
+			}
+			if time.Now().Before(connTime.Expire) {
+				conn = connTime.Conn
+				break
+			}
+			connTime.Conn.Close()
 		}
-		return nil
-	}); err != nil {
-		return errors.New("failed to find an available destination").Base(err).AtWarning()
+	}
+
+	if conn == nil {
+		if err := retry.ExponentialBackoff(5, 200).On(func() error {
+			var err error
+			conn, err = dialer.Dial(ctx, rec.Destination)
+			if err != nil {
+				return err
+			}
+			return nil
+		}); err != nil {
+			return errors.New("failed to find an available destination").Base(err).AtWarning()
+		}
 	}
 	defer conn.Close()
 
-	iConn := conn
-	if statConn, ok := iConn.(*stat.CounterConnection); ok {
-		iConn = statConn.Connection
-	}
+	ob.Conn = conn // for Vision's pre-connect
+
+	iConn := stat.TryUnwrapStatsConn(conn)
 	target := ob.Target
-	errors.LogInfo(ctx, "tunneling request to ", target, " via ", rec.Destination().NetAddr())
+	errors.LogInfo(ctx, "tunneling request to ", target, " via ", rec.Destination.NetAddr())
 
 	if h.encryption != nil {
 		var err error
@@ -172,7 +233,7 @@ func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer inte
 
 	request := &protocol.RequestHeader{
 		Version: encoding.Version,
-		User:    rec.PickUser(),
+		User:    rec.User,
 		Command: command,
 		Address: target.Address,
 		Port:    target.Port,
@@ -201,7 +262,7 @@ func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer inte
 			}
 		case protocol.RequestCommandMux:
 			fallthrough // let server break Mux connections that contain TCP requests
-		case protocol.RequestCommandTCP:
+		case protocol.RequestCommandTCP, protocol.RequestCommandRvs:
 			var t reflect.Type
 			var p uintptr
 			if commonConn, ok := conn.(*encryption.CommonConn); ok {
@@ -226,6 +287,8 @@ func (h *Handler) Process(ctx context.Context, link *transport.Link, dialer inte
 			r, _ := t.FieldByName("rawInput")
 			input = (*bytes.Reader)(unsafe.Pointer(p + i.Offset))
 			rawInput = (*bytes.Buffer)(unsafe.Pointer(p + r.Offset))
+		default:
+			panic("unknown VLESS request command")
 		}
 	default:
 		ob.CanSpliceCopy = 3
@@ -398,7 +461,7 @@ func (r *Reverse) monitor() error {
 			Tag:        r.tag,
 			Dispatcher: r.dispatcher,
 		}
-		worker, err := mux.NewServerWorker(r.ctx, w, link1)
+		worker, err := mux.NewServerWorker(session.ContextWithIsReverseMux(r.ctx, true), w, link1)
 		if err != nil {
 			errors.LogWarningInner(r.ctx, err, "failed to create mux server worker")
 			return nil
@@ -409,7 +472,7 @@ func (r *Reverse) monitor() error {
 			ctx := session.ContextWithOutbounds(r.ctx, []*session.Outbound{{
 				Target: net.Destination{Address: net.DomainAddress("v1.rvs.cool")},
 			}})
-			r.handler.Process(ctx, link2, session.HandlerFromContext(ctx).(*proxyman.Handler))
+			r.handler.Process(ctx, link2, session.FullHandlerFromContext(ctx).(*proxyman.Handler))
 			common.Interrupt(reader1)
 			common.Interrupt(reader2)
 		}()
@@ -424,5 +487,3 @@ func (r *Reverse) Start() error {
 func (r *Reverse) Close() error {
 	return r.monitorTask.Close()
 }
-
-

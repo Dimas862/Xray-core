@@ -4,9 +4,9 @@ import (
 	"google.golang.org/protobuf/proto"
 	"strings"
 
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/uuid"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/uuid"
 )
 
 // MemoryAccount is an in-memory form of VMess account.
@@ -65,5 +65,3 @@ func (a *Account) AsAccount() (protocol.Account, error) {
 		NoTerminationSignal:           NoTerminationSignal,
 	}, nil
 }
-
-

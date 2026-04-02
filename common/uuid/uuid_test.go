@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/dimas862/xray-core/common"
-	. "github.com/dimas862/xray-core/common/uuid"
+	"github.com/xtls/xray-core/common"
+	. "github.com/xtls/xray-core/common/uuid"
 )
 
 func TestParseBytes(t *testing.T) {
@@ -41,6 +41,11 @@ func TestParseString(t *testing.T) {
 	}
 
 	_, err = ParseString("2418d087-648k-4990-86e8-19dca1d006d3")
+	if err == nil {
+		t.Fatal("Expect error but nil")
+	}
+
+	_, err = ParseString("2418d087-648d-4990-86e8-19dca1d0")
 	if err == nil {
 		t.Fatal("Expect error but nil")
 	}
@@ -80,5 +85,3 @@ func TestEquals(t *testing.T) {
 		t.Error("nil uuid equals non-nil uuid")
 	}
 }
-
-

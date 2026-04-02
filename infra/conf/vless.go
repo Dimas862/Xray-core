@@ -9,14 +9,14 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/common/uuid"
-	"github.com/dimas862/xray-core/proxy/vless"
-	"github.com/dimas862/xray-core/proxy/vless/inbound"
-	"github.com/dimas862/xray-core/proxy/vless/outbound"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/uuid"
+	"github.com/xtls/xray-core/proxy/vless"
+	"github.com/xtls/xray-core/proxy/vless/inbound"
+	"github.com/xtls/xray-core/proxy/vless/outbound"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -34,6 +34,7 @@ type VLessInboundConfig struct {
 	Decryption string                  `json:"decryption"`
 	Fallbacks  []*VLessInboundFallback `json:"fallbacks"`
 	Flow       string                  `json:"flow"`
+	Testseed   []uint32                `json:"testseed"`
 }
 
 // Build implements Buildable
@@ -41,9 +42,7 @@ func (c *VLessInboundConfig) Build() (proto.Message, error) {
 	config := new(inbound.Config)
 	config.Clients = make([]*protocol.User, len(c.Clients))
 	switch c.Flow {
-	case vless.None:
-		c.Flow = ""
-	case "", vless.XRV:
+	case vless.XRV, "":
 	default:
 		return nil, errors.New(`VLESS "settings.flow" doesn't support "` + c.Flow + `" in this version`)
 	}
@@ -66,19 +65,26 @@ func (c *VLessInboundConfig) Build() (proto.Message, error) {
 		switch account.Flow {
 		case "":
 			account.Flow = c.Flow
-		case vless.None:
-			account.Flow = ""
 		case vless.XRV:
 		default:
 			return nil, errors.New(`VLESS clients: "flow" doesn't support "` + account.Flow + `" in this version`)
+		}
+
+		if len(account.Testseed) < 4 {
+			account.Testseed = c.Testseed
 		}
 
 		if account.Encryption != "" {
 			return nil, errors.New(`VLESS clients: "encryption" should not be in inbound settings`)
 		}
 
-		if account.Reverse != nil && account.Reverse.Tag == "" {
-			return nil, errors.New(`VLESS clients: "tag" can't be empty for "reverse"`)
+		if account.Reverse != nil {
+			if account.Reverse.Tag == "" {
+				return nil, errors.New(`VLESS clients: "tag" can't be empty for "reverse"`)
+			}
+			if account.Reverse.Sniffing != nil { // may not be reached: error json unmarshal
+				return nil, errors.New(`VLESS clients: inbound's "reverse" can't have "sniffing"`)
+			}
 		}
 
 		user.Account = serial.ToTypedMessage(account)
@@ -196,6 +202,28 @@ func (c *VLessInboundConfig) Build() (proto.Message, error) {
 	return config, nil
 }
 
+type VLessReverseConfig struct {
+	Tag      string          `json:"tag"`
+	Sniffing *SniffingConfig `json:"sniffing"`
+}
+
+func (c *VLessReverseConfig) Build() (*vless.Reverse, error) {
+	if c.Tag == "" {
+		return nil, errors.New(`VLESS reverse: "tag" can't be empty`)
+	}
+	r := &vless.Reverse{
+		Tag: c.Tag,
+	}
+	if c.Sniffing != nil {
+		sc, err := c.Sniffing.Build()
+		if err != nil {
+			return nil, errors.New(`VLESS reverse: invalid "sniffing" config`).Base(err)
+		}
+		r.Sniffing = sc
+	}
+	return r, nil
+}
+
 type VLessOutboundVnext struct {
 	Address *Address          `json:"address"`
 	Port    uint16            `json:"port"`
@@ -211,7 +239,9 @@ type VLessOutboundConfig struct {
 	Flow       string                `json:"flow"`
 	Seed       string                `json:"seed"`
 	Encryption string                `json:"encryption"`
-	Reverse    *vless.Reverse        `json:"reverse"`
+	Reverse    *VLessReverseConfig   `json:"reverse"`
+	Testpre    uint32                `json:"testpre"`
+	Testseed   []uint32              `json:"testseed"`
 	Vnext      []*VLessOutboundVnext `json:"vnext"`
 }
 
@@ -228,22 +258,20 @@ func (c *VLessOutboundConfig) Build() (proto.Message, error) {
 		}
 	}
 	if len(c.Vnext) != 1 {
-		return nil, errors.New(`VLESS settings: "vnext" should have one and only one member`)
+		return nil, errors.New(`VLESS settings: "vnext" should have one and only one member. Multiple endpoints in "vnext" should use multiple VLESS outbounds and routing balancer instead`)
 	}
-	config.Vnext = make([]*protocol.ServerEndpoint, len(c.Vnext))
-	for idx, rec := range c.Vnext {
+	for _, rec := range c.Vnext {
 		if rec.Address == nil {
 			return nil, errors.New(`VLESS vnext: "address" is not set`)
 		}
 		if len(rec.Users) != 1 {
-			return nil, errors.New(`VLESS vnext: "users" should have one and only one member`)
+			return nil, errors.New(`VLESS vnext: "users" should have one and only one member. Multiple members in "users" should use multiple VLESS outbounds and routing balancer instead`)
 		}
 		spec := &protocol.ServerEndpoint{
 			Address: rec.Address.Build(),
 			Port:    uint32(rec.Port),
-			User:    make([]*protocol.User, len(rec.Users)),
 		}
-		for idx, rawUser := range rec.Users {
+		for _, rawUser := range rec.Users {
 			user := new(protocol.User)
 			if c.Address != nil {
 				user.Level = c.Level
@@ -259,10 +287,21 @@ func (c *VLessOutboundConfig) Build() (proto.Message, error) {
 				account.Flow = c.Flow
 				//account.Seed = c.Seed
 				account.Encryption = c.Encryption
-				account.Reverse = c.Reverse
+				if c.Reverse != nil {
+					rvs, err := c.Reverse.Build()
+					if err != nil {
+						return nil, err
+					}
+					account.Reverse = rvs
+				}
+				account.Testpre = c.Testpre
+				account.Testseed = c.Testseed
 			} else {
 				if err := json.Unmarshal(rawUser, account); err != nil {
 					return nil, errors.New(`VLESS users: invalid user`).Base(err)
+				}
+				if account.Reverse != nil { // may not be reached: error json unmarshal
+					return nil, errors.New(`VLESS users: please use simplified outbound's config style to use "reverse"`)
 				}
 			}
 
@@ -273,7 +312,8 @@ func (c *VLessOutboundConfig) Build() (proto.Message, error) {
 			account.Id = u.String()
 
 			switch account.Flow {
-			case "", vless.XRV, vless.XRV + "-udp443":
+			case "":
+			case vless.XRV, vless.XRV + "-udp443":
 			default:
 				return nil, errors.New(`VLESS users: "flow" doesn't support "` + account.Flow + `" in this version`)
 			}
@@ -322,17 +362,13 @@ func (c *VLessOutboundConfig) Build() (proto.Message, error) {
 				return nil, errors.New(`VLESS users: unsupported "encryption": ` + account.Encryption)
 			}
 
-			if account.Reverse != nil && account.Reverse.Tag == "" {
-				return nil, errors.New(`VLESS clients: "tag" can't be empty for "reverse"`)
-			}
-
 			user.Account = serial.ToTypedMessage(account)
-			spec.User[idx] = user
+			spec.User = user
+			break
 		}
-		config.Vnext[idx] = spec
+		config.Vnext = spec
+		break
 	}
 
 	return config, nil
 }
-
-

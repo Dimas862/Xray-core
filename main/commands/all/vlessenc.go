@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/dimas862/xray-core/main/commands/base"
+	"github.com/xtls/xray-core/main/commands/base"
 )
 
 var cmdVLESSEnc = &base.Command{
@@ -39,5 +39,3 @@ func executeVLESSEnc(cmd *base.Command, args []string) {
 func generateDotConfig(fields ...string) string {
 	return strings.Join(fields, ".")
 }
-
-

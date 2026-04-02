@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/dimas862/xray-core/app/dns/fakedns"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/features/dns"
+	"github.com/xtls/xray-core/app/dns/fakedns"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/features/dns"
 )
 
 type FakeDNSPoolElementConfig struct {
@@ -142,5 +142,3 @@ func (FakeDNSPostProcessingStage) Process(config *Config) error {
 
 	return nil
 }
-
-

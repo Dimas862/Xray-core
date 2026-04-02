@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/platform"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/platform"
 )
 
 type FileReaderFunc func(path string) (io.ReadCloser, error)
@@ -27,6 +27,10 @@ func ReadFile(path string) ([]byte, error) {
 
 func ReadAsset(file string) ([]byte, error) {
 	return ReadFile(platform.GetAssetLocation(file))
+}
+
+func OpenAsset(file string) (io.ReadCloser, error) {
+	return NewFileReader(platform.GetAssetLocation(file))
 }
 
 func ReadCert(file string) ([]byte, error) {
@@ -50,5 +54,3 @@ func CopyFile(dst string, src string) error {
 	_, err = f.Write(bytes)
 	return err
 }
-
-

@@ -4,8 +4,8 @@ import (
 	"context"
 	"net"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/errors"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
 )
 
 type PacketHeader interface {
@@ -39,5 +39,3 @@ func CreateConnectionAuthenticator(config interface{}) (ConnectionAuthenticator,
 	}
 	return nil, errors.New("not a ConnectionAuthenticator")
 }
-
-

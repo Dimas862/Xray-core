@@ -12,8 +12,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/dimas862/xray-core/common/crypto"
-	"github.com/dimas862/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/crypto"
+	"github.com/xtls/xray-core/common/errors"
 	"lukechampine.com/blake3"
 )
 
@@ -326,5 +326,3 @@ func (i *ServerInstance) Handshake(conn net.Conn, fallback *[]byte) (*CommonConn
 	}
 	return c, nil
 }
-
-

@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/protocol"
 )
 
 type SniffHeader struct {
@@ -151,5 +151,3 @@ func SniffTLS(b []byte) (*SniffHeader, error) {
 	}
 	return nil, err
 }
-
-

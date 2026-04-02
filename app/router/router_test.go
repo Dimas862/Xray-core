@@ -5,14 +5,14 @@ import (
 	"testing"
 
 	"github.com/golang/mock/gomock"
-	. "github.com/dimas862/xray-core/app/router"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/features/dns"
-	"github.com/dimas862/xray-core/features/outbound"
-	routing_session "github.com/dimas862/xray-core/features/routing/session"
-	"github.com/dimas862/xray-core/testing/mocks"
+	. "github.com/xtls/xray-core/app/router"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/features/dns"
+	"github.com/xtls/xray-core/features/outbound"
+	routing_session "github.com/xtls/xray-core/features/routing/session"
+	"github.com/xtls/xray-core/testing/mocks"
 )
 
 type mockOutboundManager struct {
@@ -276,5 +276,3 @@ func TestIPIfNonMatchIP(t *testing.T) {
 		t.Error("expect tag 'test', bug actually ", tag)
 	}
 }
-
-

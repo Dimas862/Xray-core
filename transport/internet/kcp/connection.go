@@ -10,10 +10,10 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/signal"
-	"github.com/dimas862/xray-core/common/signal/semaphore"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/signal"
+	"github.com/xtls/xray-core/common/signal/semaphore"
 )
 
 var (
@@ -204,7 +204,7 @@ type Connection struct {
 }
 
 // NewConnection create a new KCP connection between local and remote.
-func NewConnection(meta ConnMetadata, writer PacketWriter, closer io.Closer, config *Config) *Connection {
+func NewConnection(meta ConnMetadata, writer io.Writer, closer io.Closer, config *Config) *Connection {
 	errors.LogInfo(context.Background(), "#", meta.Conversation, " creating connection to ", meta.RemoteAddr)
 
 	conn := &Connection{
@@ -215,7 +215,7 @@ func NewConnection(meta ConnMetadata, writer PacketWriter, closer io.Closer, con
 		dataOutput: signal.NewNotifier(),
 		Config:     config,
 		output:     NewRetryableWriter(NewSegmentWriter(writer)),
-		mss:        config.GetMTUValue() - uint32(writer.Overhead()) - DataSegmentOverhead,
+		mss:        config.GetMTUValue() - DataSegmentOverhead,
 		roundTrip: &RoundTripInfo{
 			rto:    100,
 			minRtt: config.GetTTIValue(),
@@ -661,5 +661,3 @@ func (c *Connection) Ping(current uint32, cmd Command) {
 	atomic.StoreUint32(&c.lastPingTime, current)
 	seg.Release()
 }
-
-

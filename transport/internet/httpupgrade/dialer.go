@@ -7,12 +7,13 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/transport/internet"
-	"github.com/dimas862/xray-core/transport/internet/stat"
-	"github.com/dimas862/xray-core/transport/internet/tls"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/utils"
+	"github.com/xtls/xray-core/transport/internet"
+	"github.com/xtls/xray-core/transport/internet/stat"
+	"github.com/xtls/xray-core/transport/internet/tls"
 )
 
 type ConnRF struct {
@@ -51,6 +52,15 @@ func dialhttpUpgrade(ctx context.Context, dest net.Destination, streamSettings *
 		return nil, err
 	}
 
+	if streamSettings.TcpmaskManager != nil {
+		newConn, err := streamSettings.TcpmaskManager.WrapConnClient(pconn)
+		if err != nil {
+			pconn.Close()
+			return nil, errors.New("mask err").Base(err)
+		}
+		pconn = newConn
+	}
+
 	var conn net.Conn
 	var requestURL url.URL
 	tConfig := tls.ConfigFromStreamSettings(streamSettings)
@@ -86,6 +96,7 @@ func dialhttpUpgrade(ctx context.Context, dest net.Destination, streamSettings *
 	for key, value := range transportConfiguration.Header {
 		AddHeader(req.Header, key, value)
 	}
+	utils.TryDefaultHeadersWith(req.Header, "ws")
 	req.Header.Set("Connection", "Upgrade")
 	req.Header.Set("Upgrade", "websocket")
 
@@ -130,5 +141,3 @@ func Dial(ctx context.Context, dest net.Destination, streamSettings *internet.Me
 func init() {
 	common.Must(internet.RegisterTransportDialer(protocolName, Dial))
 }
-
-

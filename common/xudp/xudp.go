@@ -10,12 +10,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/platform"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/session"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/platform"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/session"
 	"lukechampine.com/blake3"
 )
 
@@ -35,6 +35,7 @@ func init() {
 	if strings.ToLower(platform.NewEnvFlag(platform.XUDPLog).GetValue(func() string { return "" })) == "true" {
 		Show = true
 	}
+	BaseKey = make([]byte, 32)
 	rand.Read(BaseKey)
 	go func() {
 		time.Sleep(100 * time.Millisecond) // this is not nice, but need to give some time for Android to setup ENV
@@ -52,7 +53,7 @@ func GetGlobalID(ctx context.Context) (globalID [8]byte) {
 		return
 	}
 	if inbound := session.InboundFromContext(ctx); inbound != nil && inbound.Source.Network == net.Network_UDP &&
-		(inbound.Name == "dokodemo-door" || inbound.Name == "socks" || inbound.Name == "shadowsocks") {
+		(inbound.Name == "dokodemo-door" || inbound.Name == "socks" || inbound.Name == "shadowsocks" || inbound.Name == "tun" || inbound.Name == "wireguard") {
 		h := blake3.New(8, BaseKey)
 		h.Write([]byte(inbound.Source.String()))
 		copy(globalID[:], h.Sum(nil))
@@ -189,5 +190,3 @@ func (r *PacketReader) ReadMultiBuffer() (buf.MultiBuffer, error) {
 		b.Release()
 	}
 }
-
-

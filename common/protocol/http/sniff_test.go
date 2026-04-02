@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	. "github.com/dimas862/xray-core/common/protocol/http"
+	. "github.com/xtls/xray-core/common/protocol/http"
 )
 
 func TestHTTPHeaders(t *testing.T) {
@@ -104,5 +104,3 @@ first_name=John&last_name=Doe&action=Submit`,
 		}
 	}
 }
-
-

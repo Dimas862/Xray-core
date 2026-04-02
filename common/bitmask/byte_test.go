@@ -3,7 +3,7 @@ package bitmask_test
 import (
 	"testing"
 
-	. "github.com/dimas862/xray-core/common/bitmask"
+	. "github.com/xtls/xray-core/common/bitmask"
 )
 
 func TestBitmaskByte(t *testing.T) {
@@ -34,5 +34,3 @@ func TestBitmaskByte(t *testing.T) {
 		t.Fatal("expected ", b, " to not contain 2, but actually did")
 	}
 }
-
-

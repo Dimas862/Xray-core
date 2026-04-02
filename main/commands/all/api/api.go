@@ -1,7 +1,7 @@
 package api
 
 import (
-	"github.com/dimas862/xray-core/main/commands/base"
+	"github.com/xtls/xray-core/main/commands/base"
 )
 
 // CmdAPI calls an API in an Xray process
@@ -29,10 +29,10 @@ var CmdAPI = &base.Command{
 		cmdInboundUserCount,
 		cmdAddRules,
 		cmdRemoveRules,
+		cmdListRules,
 		cmdSourceIpBlock,
 		cmdOnlineStats,
 		cmdOnlineStatsIpList,
+		cmdGetAllOnlineUsers,
 	},
 }
-
-

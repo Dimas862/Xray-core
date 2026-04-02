@@ -4,11 +4,11 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	. "github.com/dimas862/xray-core/proxy/trojan"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	. "github.com/xtls/xray-core/proxy/trojan"
 )
 
 func toAccount(a *Account) protocol.Account {
@@ -90,5 +90,3 @@ func TestUDPRequest(t *testing.T) {
 		t.Error("data: ", r)
 	}
 }
-
-

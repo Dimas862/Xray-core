@@ -3,21 +3,21 @@ package core_test
 import (
 	"testing"
 
-	"github.com/dimas862/xray-core/app/dispatcher"
-	"github.com/dimas862/xray-core/app/proxyman"
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/common/uuid"
-	. "github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/dns"
-	"github.com/dimas862/xray-core/features/dns/localdns"
-	_ "github.com/dimas862/xray-core/main/distro/all"
-	"github.com/dimas862/xray-core/proxy/dokodemo"
-	"github.com/dimas862/xray-core/proxy/vmess"
-	"github.com/dimas862/xray-core/proxy/vmess/outbound"
-	"github.com/dimas862/xray-core/testing/servers/tcp"
+	"github.com/xtls/xray-core/app/dispatcher"
+	"github.com/xtls/xray-core/app/proxyman"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/uuid"
+	. "github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/dns"
+	"github.com/xtls/xray-core/features/dns/localdns"
+	_ "github.com/xtls/xray-core/main/distro/all"
+	"github.com/xtls/xray-core/proxy/dokodemo"
+	"github.com/xtls/xray-core/proxy/vmess"
+	"github.com/xtls/xray-core/proxy/vmess/outbound"
+	"github.com/xtls/xray-core/testing/servers/tcp"
 	"google.golang.org/protobuf/proto"
 )
 
@@ -63,17 +63,13 @@ func TestXrayClose(t *testing.T) {
 		Outbound: []*OutboundHandlerConfig{
 			{
 				ProxySettings: serial.ToTypedMessage(&outbound.Config{
-					Receiver: []*protocol.ServerEndpoint{
-						{
-							Address: net.NewIPOrDomain(net.LocalHostIP),
-							Port:    uint32(0),
-							User: []*protocol.User{
-								{
-									Account: serial.ToTypedMessage(&vmess.Account{
-										Id: userID.String(),
-									}),
-								},
-							},
+					Receiver: &protocol.ServerEndpoint{
+						Address: net.NewIPOrDomain(net.LocalHostIP),
+						Port:    uint32(0),
+						User:  &protocol.User{
+							Account: serial.ToTypedMessage(&vmess.Account{
+								Id: userID.String(),
+							}),
 						},
 					},
 				}),
@@ -88,5 +84,3 @@ func TestXrayClose(t *testing.T) {
 	common.Must(err)
 	server.Close()
 }
-
-

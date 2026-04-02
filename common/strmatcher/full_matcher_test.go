@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	. "github.com/dimas862/xray-core/common/strmatcher"
+	. "github.com/xtls/xray-core/common/strmatcher"
 )
 
 func TestFullMatcherGroup(t *testing.T) {
@@ -48,5 +48,3 @@ func TestEmptyFullMatcherGroup(t *testing.T) {
 		t.Error("Expect [], but ", r)
 	}
 }
-
-

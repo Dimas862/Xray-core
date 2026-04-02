@@ -1,7 +1,7 @@
 package dokodemo
 
 import (
-	"github.com/dimas862/xray-core/common/net"
+	"github.com/xtls/xray-core/common/net"
 )
 
 // GetPredefinedAddress returns the defined address from proto config. Null if address is not valid.
@@ -12,5 +12,3 @@ func (v *Config) GetPredefinedAddress() net.Address {
 	}
 	return addr
 }
-
-

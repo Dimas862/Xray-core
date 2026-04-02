@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	. "github.com/dimas862/xray-core/transport/internet/splithttp"
+	. "github.com/xtls/xray-core/transport/internet/splithttp"
 )
 
 type fakeRoundTripper struct{}
@@ -90,5 +90,3 @@ func TestDefault(t *testing.T) {
 		t.Error("did not get 1 distinct clients, got ", len(xmuxClients))
 	}
 }
-
-

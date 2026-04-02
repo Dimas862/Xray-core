@@ -3,7 +3,7 @@ package net_test
 import (
 	"testing"
 
-	. "github.com/dimas862/xray-core/common/net"
+	. "github.com/xtls/xray-core/common/net"
 )
 
 func TestPortRangeContains(t *testing.T) {
@@ -16,5 +16,3 @@ func TestPortRangeContains(t *testing.T) {
 		t.Error("expected port range containing 53, but actually not")
 	}
 }
-
-

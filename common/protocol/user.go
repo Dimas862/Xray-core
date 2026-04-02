@@ -1,8 +1,8 @@
 package protocol
 
 import (
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/serial"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/serial"
 )
 
 func (u *User) GetTypedAccount() (Account, error) {
@@ -53,5 +53,3 @@ type MemoryUser struct {
 	Email   string
 	Level   uint32
 }
-
-

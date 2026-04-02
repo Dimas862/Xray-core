@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/dimas862/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/errors"
 )
 
 type weightScaler func(value, weight float64) float64
@@ -90,5 +90,3 @@ func (s *WeightManager) getMatch(tag, find string, isRegexp bool) string {
 	}
 	return r.FindString(tag)
 }
-
-

@@ -7,22 +7,22 @@ import (
 	"sync"
 	"time"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/buf"
-	"github.com/dimas862/xray-core/common/errors"
-	"github.com/dimas862/xray-core/common/log"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/protocol"
-	"github.com/dimas862/xray-core/common/session"
-	"github.com/dimas862/xray-core/core"
-	"github.com/dimas862/xray-core/features/dns"
-	"github.com/dimas862/xray-core/features/outbound"
-	"github.com/dimas862/xray-core/features/policy"
-	"github.com/dimas862/xray-core/features/routing"
-	routing_session "github.com/dimas862/xray-core/features/routing/session"
-	"github.com/dimas862/xray-core/features/stats"
-	"github.com/dimas862/xray-core/transport"
-	"github.com/dimas862/xray-core/transport/pipe"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/buf"
+	"github.com/xtls/xray-core/common/errors"
+	"github.com/xtls/xray-core/common/log"
+	"github.com/xtls/xray-core/common/net"
+	"github.com/xtls/xray-core/common/protocol"
+	"github.com/xtls/xray-core/common/session"
+	"github.com/xtls/xray-core/core"
+	"github.com/xtls/xray-core/features/dns"
+	"github.com/xtls/xray-core/features/outbound"
+	"github.com/xtls/xray-core/features/policy"
+	"github.com/xtls/xray-core/features/routing"
+	routing_session "github.com/xtls/xray-core/features/routing/session"
+	"github.com/xtls/xray-core/features/stats"
+	"github.com/xtls/xray-core/transport"
+	"github.com/xtls/xray-core/transport/pipe"
 )
 
 var errSniffingTimeout = errors.New("timeout on sniffing")
@@ -183,12 +183,9 @@ func (d *DefaultDispatcher) getLink(ctx context.Context) (*transport.Link, *tran
 		if p.Stats.UserOnline {
 			name := "user>>>" + user.Email + ">>>online"
 			if om, _ := stats.GetOrRegisterOnlineMap(d.stats, name); om != nil {
-				sessionInbounds := session.InboundFromContext(ctx)
-				userIP := sessionInbounds.Source.Address.String()
+				userIP := sessionInbound.Source.Address.String()
 				om.AddIP(userIP)
-				// log Online user with ips
-				// errors.LogDebug(ctx, "user>>>" + user.Email + ">>>online", om.Count(), om.List())
-
+				context.AfterFunc(ctx, func() { om.RemoveIP(userIP) })
 			}
 		}
 	}
@@ -196,7 +193,7 @@ func (d *DefaultDispatcher) getLink(ctx context.Context) (*transport.Link, *tran
 	return inboundLink, outboundLink
 }
 
-func (d *DefaultDispatcher) WrapLink(ctx context.Context, link *transport.Link) *transport.Link {
+func WrapLink(ctx context.Context, policyManager policy.Manager, statsManager stats.Manager, link *transport.Link) *transport.Link {
 	sessionInbound := session.InboundFromContext(ctx)
 	var user *protocol.MemoryUser
 	if sessionInbound != nil {
@@ -206,16 +203,16 @@ func (d *DefaultDispatcher) WrapLink(ctx context.Context, link *transport.Link) 
 	link.Reader = &buf.TimeoutWrapperReader{Reader: link.Reader}
 
 	if user != nil && len(user.Email) > 0 {
-		p := d.policy.ForLevel(user.Level)
+		p := policyManager.ForLevel(user.Level)
 		if p.Stats.UserUplink {
 			name := "user>>>" + user.Email + ">>>traffic>>>uplink"
-			if c, _ := stats.GetOrRegisterCounter(d.stats, name); c != nil {
+			if c, _ := stats.GetOrRegisterCounter(statsManager, name); c != nil {
 				link.Reader.(*buf.TimeoutWrapperReader).Counter = c
 			}
 		}
 		if p.Stats.UserDownlink {
 			name := "user>>>" + user.Email + ">>>traffic>>>downlink"
-			if c, _ := stats.GetOrRegisterCounter(d.stats, name); c != nil {
+			if c, _ := stats.GetOrRegisterCounter(statsManager, name); c != nil {
 				link.Writer = &SizeStatWriter{
 					Counter: c,
 					Writer:  link.Writer,
@@ -224,12 +221,10 @@ func (d *DefaultDispatcher) WrapLink(ctx context.Context, link *transport.Link) 
 		}
 		if p.Stats.UserOnline {
 			name := "user>>>" + user.Email + ">>>online"
-			if om, _ := stats.GetOrRegisterOnlineMap(d.stats, name); om != nil {
-				sessionInbounds := session.InboundFromContext(ctx)
-				userIP := sessionInbounds.Source.Address.String()
+			if om, _ := stats.GetOrRegisterOnlineMap(statsManager, name); om != nil {
+				userIP := sessionInbound.Source.Address.String()
 				om.AddIP(userIP)
-				// log Online user with ips
-				// errors.LogDebug(ctx, "user>>>" + user.Email + ">>>online", om.Count(), om.List())
+				context.AfterFunc(ctx, func() { om.RemoveIP(userIP) })
 			}
 		}
 	}
@@ -357,7 +352,7 @@ func (d *DefaultDispatcher) DispatchLink(ctx context.Context, destination net.De
 		content = new(session.Content)
 		ctx = session.ContextWithContent(ctx, content)
 	}
-	outbound = d.WrapLink(ctx, outbound)
+	outbound = WrapLink(ctx, d.policy, d.stats, outbound)
 	sniffingRequest := content.SniffingRequest
 	if !sniffingRequest.Enabled {
 		d.routedDispatch(ctx, outbound, destination)
@@ -449,6 +444,7 @@ func sniffer(ctx context.Context, cReader *cachedReader, metadataOnly bool, netw
 	}
 	return contentResult, contentErr
 }
+
 func (d *DefaultDispatcher) routedDispatch(ctx context.Context, link *transport.Link, destination net.Destination) {
 	outbounds := session.OutboundsFromContext(ctx)
 	ob := outbounds[len(outbounds)-1]
@@ -483,7 +479,9 @@ func (d *DefaultDispatcher) routedDispatch(ctx context.Context, link *transport.
 				handler = h
 			} else {
 				errors.LogWarning(ctx, "non existing outTag: ", outTag)
-				return
+				common.Close(link.Writer)
+				common.Interrupt(link.Reader)
+				return // DO NOT CHANGE: the traffic shouldn't be processed by default outbound if the specified outbound tag doesn't exist (yet), e.g., VLESS Reverse Proxy
 			}
 		} else {
 			errors.LogInfo(ctx, "default route for ", destination)
@@ -519,5 +517,3 @@ func (d *DefaultDispatcher) routedDispatch(ctx context.Context, link *transport.
 
 	handler.Dispatch(ctx, link)
 }
-
-

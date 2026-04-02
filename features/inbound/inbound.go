@@ -3,10 +3,9 @@ package inbound
 import (
 	"context"
 
-	"github.com/dimas862/xray-core/common"
-	"github.com/dimas862/xray-core/common/net"
-	"github.com/dimas862/xray-core/common/serial"
-	"github.com/dimas862/xray-core/features"
+	"github.com/xtls/xray-core/common"
+	"github.com/xtls/xray-core/common/serial"
+	"github.com/xtls/xray-core/features"
 )
 
 // Handler is the interface for handlers that process inbound connections.
@@ -20,9 +19,6 @@ type Handler interface {
 	ReceiverSettings() *serial.TypedMessage
 	// Returns the active proxy settings.
 	ProxySettings() *serial.TypedMessage
-
-	// Deprecated: Do not use in new code.
-	GetRandomInboundProxy() (interface{}, net.Port, int)
 }
 
 // Manager is a feature that manages InboundHandlers.
@@ -48,5 +44,3 @@ type Manager interface {
 func ManagerType() interface{} {
 	return (*Manager)(nil)
 }
-
-
